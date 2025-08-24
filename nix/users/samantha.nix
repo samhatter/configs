@@ -1,10 +1,10 @@
 { config, pkgs, lib, ... }:
 
 {
-    sops.age.keyFile = "home/samantha/.config/sops/age/keys.txt";
+    sops.age.keyFile = "/var/lib/sops-nix/key.txt";
 
     sops.secrets."samantha-password" = {
-        sopsFile = ../secrets/shared/passwords.yaml;
+        sopsFile = ../../secrets/shared/passwords.yaml;
         format = "yaml";
         key = "samantha_password";
         mode = "0400";
@@ -20,25 +20,4 @@
     };
 
     programs.fish.enable = true;
-   
-    home-manager.backupFileExtension = "backup";
- 
-    home-manager.users.samantha = { pkgs, ... }: {
-        home.stateVersion = "24.05";
-
-        programs.fish = {
-            enable = true;
-            plugins = [
-                { name = "grc"; src = pkgs.fishPlugins.grc; }
-            ];
-        };
-
-        programs.git = {
-            enable = true;
-            userName = "Samantha Vincent";
-            userEmail = "sammyvincent2001@gmail.com";
-        };
-
-        programs.ssh.enable = true;
-    };
 }

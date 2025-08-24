@@ -45,6 +45,7 @@
         curl
         htop
         jq
+        home-manager
     ];
 
     users.mutableUsers = false;
