@@ -1,6 +1,8 @@
 { config, pkgs, lib, ... }:
 
 {
+    sops.age.keyFile = "home/samantha/.config/sops/age/keys.txt";
+
     sops.secrets."samantha-password" = {
         sopsFile = ../secrets/shared/passwords.yaml;
         format = "yaml";
@@ -18,7 +20,9 @@
     };
 
     programs.fish.enable = true;
-    
+   
+    home-manager.backupFileExtension = "backup";
+ 
     home-manager.users.samantha = { pkgs, ... }: {
         home.stateVersion = "24.05";
 

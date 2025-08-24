@@ -1,13 +1,11 @@
 keys:
-  - &snapcaster age13x0dfgn57mj769gq7z3q5jmwt4y2fgc3cme3mmqx487vf8jcsc5s4g7uaa
-
+  snapcaster: &snapcaster
+    - age1u73xn0l5wchhn9ktz3r5mxc74qfl70ygs33qgw9udt56gh256uvq4uxmpd
 creation_rules:
   - path_regex: nix/secrets/snapcaster/.*\.(env|ya?ml|json|ini)$
     key_groups:
-    - age:
-      - *snapcaster
+    - age: *snapcaster
 
   - path_regex: nix/secrets/shared/.*\.(env|ya?ml|json|ini)$
     key_groups:
-    - age:
-      - *snapcaster
+    - age: *snapcaster

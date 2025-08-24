@@ -35,7 +35,5 @@
         };
     };
 
-    sops.age.sshKeyPaths = [ "/etc/ssh/snapcaster_ed25519_key" ];
-
     system.stateVersion = "24.05";
 }
