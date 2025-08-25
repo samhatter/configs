@@ -11,11 +11,15 @@
             "github.com" = {
                 user = "git";
             };
-            "samantha-home-server.net" = {
+            "arcanis" = {
                 user = "samantha";
+                hostname = "samantha-home-server.net";
+                port = 200;
             };
-            "10.0.0.69" = {
+            "arcanis-local" = {
                 user = "samantha";
+                hostname = "10.0.0.69";
+                port = 200;
             };
         };
     };
