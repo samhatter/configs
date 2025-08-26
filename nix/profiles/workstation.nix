@@ -33,6 +33,7 @@
         gnome-tweaks
         gnomeExtensions.dash-to-dock
         vscode
+        less
     ];
 
     programs.gnome-terminal.enable = true;
