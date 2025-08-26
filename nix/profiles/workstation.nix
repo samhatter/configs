@@ -32,7 +32,7 @@
         chromium
         gnome-tweaks
         gnomeExtensions.dash-to-dock
-        vscode
+        neovim
         less
     ];
 

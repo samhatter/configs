@@ -4,6 +4,7 @@
     imports = [
         ./modules/fish.nix
         ./modules/git.nix
+        ./modules/neovim.nix
         ./modules/ssh.nix
     ];
 
