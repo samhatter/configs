@@ -10,14 +10,14 @@
 
     outputs = { self, nixpkgs, home-manager, sops-nix, ... }:
     {
-        homeConfigurations = {
-            samantha = home-manager.lib.homeManagerConfiguration {
-                pkgs = import nixpkgs { system = "x86_64-linux"; };
-                modules = [
-                    sops-nix.homeManagerModules.sops
-                    ./samantha/home.nix
-                ];
-            };
+    homeConfigurations."samantha@snapcaster" =
+        home-manager.lib.homeManagerConfiguration {
+            pkgs = import nixpkgs { system = "x86_64-linux"; };
+            extraSpecialArgs = { hostName = "snapcaster"; };
+            modules = [
+                sops-nix.homeManagerModules.sops
+                ./samantha/home.nix
+            ];
         };
     };
 }

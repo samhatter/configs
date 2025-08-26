@@ -1,11 +1,11 @@
-{ pkgs, config, ... }:
+{ pkgs, config, hostName, ... }:
 {
     programs.ssh = {
         enable = true;
 
         matchBlocks = {
             "*" = {
-                identityFile = "${config.home.homeDirectory}/.ssh/snapcaster_ed25519";
+                identityFile = "${config.home.homeDirectory}/.ssh/${hostName}_ed25519";
                 identitiesOnly = true;
             };
             "github.com" = {
