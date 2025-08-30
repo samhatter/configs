@@ -8,6 +8,7 @@
     
 
     fonts.packages = with pkgs; [
+        ibm-plex
         dejavu_fonts
         noto-fonts
         noto-fonts-emoji
@@ -32,7 +33,6 @@
         chromium
         gnome-tweaks
         gnomeExtensions.dash-to-dock
-        neovim
         less
     ];
 
