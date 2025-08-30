@@ -6,6 +6,7 @@
     withPython3 = true;
 
     plugins = with pkgs.vimPlugins; [
+      gruvbox
       nvim-lspconfig
     ];
 
@@ -15,6 +16,7 @@
     ];
 
     extraConfig = ''
+      let mapleader=' '
       set number          " show line numbers
       set tabstop=2       " spaces per tab
       set shiftwidth=2    " spaces per indent
@@ -23,13 +25,13 @@
       set clipboard+=unnamedplus " use system clipboard
       set cursorline      " highlight current line
       set termguicolors   " 24-bit colors
+      set background=dark
+      colorscheme gruvbox
       syntax on
       filetype plugin indent on
     '';
 
     extraLuaConfig = ''
-      vim.g.mapleader = " "
-
       local lsp = require("lspconfig")
 
       lsp.nil_ls.setup({
