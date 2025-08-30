@@ -7,6 +7,8 @@
       size = 11;
     };
 
+    themeFile = "gruvbox-dark";
+
     settings = {
       confirm_os_window_close = 0;
       enable_audio_bell = "no";
@@ -52,6 +54,4 @@
       "ctrl+shift+enter" = "launch --cwd=current";
     };
   };
-
-  fonts.fontconfig.enable = true;
 }
