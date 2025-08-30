@@ -1,16 +1,18 @@
-{ config, pkgs, ... }:
+{pkgs, ...}: {
+  imports = [
+    ./modules/fish.nix
+    ./modules/git.nix
+    ./modules/neovim.nix
+    ./modules/ssh.nix
+  ];
 
-{
-    imports = [
-        ./modules/fish.nix
-        ./modules/git.nix
-        ./modules/neovim.nix
-        ./modules/ssh.nix
-    ];
+  home.username = "samantha";
+  home.homeDirectory = "/home/samantha";
+  home.stateVersion = "24.11";
 
-    home.username = "samantha";
-    home.homeDirectory = "/home/samantha";
-    home.stateVersion = "24.11";
+  sops.age.keyFile = "/var/lib/sops-nix/key.txt";
 
-    sops.age.keyFile = "/var/lib/sops-nix/key.txt";
+  home.packages = with pkgs; [
+    xclip
+  ];
 }
