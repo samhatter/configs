@@ -11,7 +11,7 @@
             br = "branch";
             ci = "commit";
             st = "status";
-            lg = "log --oneline --graph --decorate";
+            lg = "log --oneline --graph --decorate --all --color";
         };
 
         extraConfig = {

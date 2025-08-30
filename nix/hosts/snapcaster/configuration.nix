@@ -16,6 +16,10 @@
     tod.driver = pkgs.libfprint-2-tod1-goodix-550a;
   };
 
+  security.pam.services = {
+    sudo.fprintAuth = false;
+  };
+
   services.power-profiles-daemon.enable = false;
 
   services.tlp = {
