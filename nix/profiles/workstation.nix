@@ -49,6 +49,7 @@
     gnomeExtensions.dash-to-dock
     gnomeExtensions.resource-monitor
     less
+    discord
   ];
 
   programs.gnome-terminal.enable = true;
