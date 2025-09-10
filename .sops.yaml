@@ -1,15 +1,14 @@
 keys:
-  snapcaster: &snapcaster
-    - age1u73xn0l5wchhn9ktz3r5mxc74qfl70ygs33qgw9udt56gh256uvq4uxmpd
-  tarmogoyf: &tarmogoyf
-    - age16lnwskf7xfstjms79ttag63f2350e78rmlyhfsxq2jlzmltjlessw9dnsv
+  snapcaster: &snapcaster age1u73xn0l5wchhn9ktz3r5mxc74qfl70ygs33qgw9udt56gh256uvq4uxmpd
+  tarmogoyf: &tarmogoyf age16lnwskf7xfstjms79ttag63f2350e78rmlyhfsxq2jlzmltjlessw9dnsv
 creation_rules:
   - path_regex: secrets/snapcaster/.*\.(env|ya?ml|json|ini)$
     key_groups:
-    - age: *snapcaster
-    - age: *tarmogoyf
-
+      - age:
+        - *snapcaster
+        - *tarmogoyf
   - path_regex: secrets/shared/.*\.(env|ya?ml|json|ini)$
     key_groups:
-    - age: *snapcaster
-    - age: *tarmogoyf
+      - age:
+        - *snapcaster
+        - *tarmogoyf
