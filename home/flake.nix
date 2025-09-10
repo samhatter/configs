@@ -25,6 +25,17 @@
         ./samantha/home.nix
       ];
     };
+    homeConfigurations."samantha@tarmogoyf" = home-manager.lib.homeManagerConfiguration {
+      pkgs = import nixpkgs {system = "x86_64-linux";};
+      extraSpecialArgs = {
+        hostName = "tarmogoyf";
+      };
+      modules = [
+        sops-nix.homeManagerModules.sops
+        ./samantha/home.nix
+      ];
+    };
+ 
   };
 }
 
