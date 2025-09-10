@@ -1,8 +1,6 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 
 {
-    sops.age.keyFile = "/var/lib/sops-nix/key.txt";
-
     sops.secrets."samantha-password" = {
         sopsFile = ../../secrets/shared/passwords.yaml;
         format = "yaml";

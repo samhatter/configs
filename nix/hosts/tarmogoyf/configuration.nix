@@ -9,6 +9,9 @@
     ./hardware-configuration.nix
   ];
 
+  
+  sops.age.keyFile = "/var/lib/sops-nix/key.txt";
+
   services.fprintd = {
     enable = true;
     package = pkgs.fprintd-tod;

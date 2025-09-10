@@ -27,6 +27,18 @@
         ];
       };
     };
+    nixosConfigurations = {
+      tarmogoyf = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {
+          inherit nixpkgs-fork;
+        };
+        modules = [
+          sops-nix.nixosModules.sops
+          ./hosts/tarmogoyf/configuration.nix
+        ];
+      };
+    };
   };
 }
 
