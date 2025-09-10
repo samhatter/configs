@@ -8,6 +8,7 @@
     plugins = with pkgs.vimPlugins; [
       gruvbox
       nvim-lspconfig
+      nvim-treesitter.withAllGrammars
     ];
 
     extraPackages = with pkgs; [
@@ -41,6 +42,16 @@
           },
         },
       })
+
+      require'nvim-treesitter.configs'.setup {
+        highlight = {
+           enable = true,
+        },
+        indent = {
+          enable = true,
+        },
+      }
+
 
       vim.keymap.set("n", "<leader>f", function()
           vim.lsp.buf.format({ async = true })
