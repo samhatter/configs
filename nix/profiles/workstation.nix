@@ -48,8 +48,9 @@
     gnome-tweaks
     gnomeExtensions.dash-to-dock
     gnomeExtensions.resource-monitor
-    less
     discord
+    pciutils
+    sops
   ];
 
   programs.gnome-terminal.enable = true;

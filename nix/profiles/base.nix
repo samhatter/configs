@@ -41,6 +41,7 @@
         gitFull
         gh
         vim
+        less
         wget
         curl
         htop
