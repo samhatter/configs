@@ -18,27 +18,27 @@
     },
     "nixpkgs-fork": {
       "locked": {
-        "lastModified": 1747279156,
-        "narHash": "sha256-XF0mB7NMiM2znqEAIExedvppiZ2cgvaXlKn9umgrY5g=",
+        "lastModified": 1757469739,
+        "narHash": "sha256-Q9SzCCh4dHNX+RUzuf+bqyzSFn7LbdDte7M/Hg5qs0M=",
         "owner": "samhatter",
         "repo": "nixpkgs",
-        "rev": "37d97743a72b0fa7e0bd7b1c05b488330985e642",
+        "rev": "cf0b15a4b6c4bcebffa7ee2309d8126a1a089ea7",
         "type": "github"
       },
       "original": {
         "owner": "samhatter",
-        "ref": "adding-StartupWMClass-to-plex-desktop",
+        "ref": "sammy-dev",
         "repo": "nixpkgs",
         "type": "github"
       }
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1756536218,
-        "narHash": "sha256-ynQxPVN2FIPheUgTFhv01gYLbaiSOS7NgWJPm9LF9D0=",
+        "lastModified": 1758029226,
+        "narHash": "sha256-TjqVmbpoCqWywY9xIZLTf6ANFvDCXdctCjoYuYPYdMI=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "a918bb3594dd243c2f8534b3be01b3cb4ed35fd1",
+        "rev": "08b8f92ac6354983f5382124fef6006cade4a1c1",
         "type": "github"
       },
       "original": {
@@ -63,11 +63,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1754988908,
-        "narHash": "sha256-t+voe2961vCgrzPFtZxha0/kmFSHFobzF00sT8p9h0U=",
+        "lastModified": 1758007585,
+        "narHash": "sha256-HYnwlbY6RE5xVd5rh0bYw77pnD8lOgbT4mlrfjgNZ0c=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "3223c7a92724b5d804e9988c6b447a0d09017d48",
+        "rev": "f77d4cfa075c3de66fc9976b80e0c4fc69e2c139",
         "type": "github"
       },
       "original": {
