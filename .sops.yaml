@@ -1,14 +1,17 @@
 keys:
   snapcaster: &snapcaster age1u73xn0l5wchhn9ktz3r5mxc74qfl70ygs33qgw9udt56gh256uvq4uxmpd
   tarmogoyf: &tarmogoyf age16lnwskf7xfstjms79ttag63f2350e78rmlyhfsxq2jlzmltjlessw9dnsv
+  twin: &twin age1rhz3xwa8w8rmrq2gcd2x7escw6sgm3paeczzhmpxd3zzypduc39srzp0w4
 creation_rules:
   - path_regex: secrets/snapcaster/.*\.(env|ya?ml|json|ini)$
     key_groups:
       - age:
         - *snapcaster
         - *tarmogoyf
+        - *twin
   - path_regex: secrets/shared/.*\.(env|ya?ml|json|ini)$
     key_groups:
       - age:
         - *snapcaster
         - *tarmogoyf
+        - *twin
