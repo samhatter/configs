@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  networking.hostName = "snapcaster";
+  networking.hostName = "twin";
   networking.firewall.enable = false;
 
   imports = [
