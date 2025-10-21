@@ -35,7 +35,16 @@
         ./samantha/home.nix
       ];
     };
- 
+    homeConfigurations."samantha@twin" = home-manager.lib.homeManagerConfiguration {
+      pkgs = import nixpkgs {system = "x86_64-linux";};
+      extraSpecialArgs = {
+        hostName = "twin";
+      };
+      modules = [
+        sops-nix.homeManagerModules.sops
+        ./samantha/home.nix
+      ];
+    }; 
   };
 }
 
