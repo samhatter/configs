@@ -18,7 +18,7 @@
             };
             "arcanis-local" = {
                 user = "samantha";
-                hostname = "10.0.0.69";
+                hostname = "10.0.0.2";
                 port = 200;
             };
         };
