@@ -16,6 +16,5 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-
   system.stateVersion = "25.05";
 }

@@ -7,12 +7,17 @@
     nixpkgs-fork.url = "github:samhatter/nixpkgs?ref=sammy-dev";
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     nixpkgs,
     nixpkgs-fork,
     sops-nix,
+    nixos-wsl,
     ...
   }: {
     nixosConfigurations = {
@@ -58,6 +63,7 @@
           inherit nixpkgs-fork;
         };
         modules = [
+          nixos-wsl.nixosModules.default
           sops-nix.nixosModules.sops
           ./hosts/scapeshift/configuration.nix
         ];
