@@ -9,12 +9,5 @@
   ];
 
   sops.age.keyFile = "/var/lib/sops-nix/keys.txt";
-
-  hardware.nvidia = {
-    open = false;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
-
   system.stateVersion = "25.05";
 }
