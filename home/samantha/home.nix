@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./modules/fish.nix
+    ./modules/gh.nix
     ./modules/git.nix
     ./modules/gnome.nix
     ./modules/kitty.nix
