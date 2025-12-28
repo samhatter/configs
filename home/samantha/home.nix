@@ -25,4 +25,6 @@
     discord
     pciutils
   ];
+
+  home.allowUnfree = true;
 }
