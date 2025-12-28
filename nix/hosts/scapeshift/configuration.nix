@@ -9,5 +9,6 @@
   ];
 
   sops.age.keyFile = "/var/lib/sops-nix/keys.txt";
+  
   system.stateVersion = "25.05";
 }
