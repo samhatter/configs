@@ -1,9 +1,6 @@
 { config, pkgs, lib, ... }:
 
 {
-    boot.loader.systemd-boot.enable = true;
-    boot.loader.efi.canTouchEfiVariables = true;
-
     networking.useDHCP = lib.mkDefault true;
 
     time.timeZone = "America/Los_Angeles";
