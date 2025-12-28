@@ -8,6 +8,8 @@
     ./modules/ssh.nix
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
   home.username = "samantha";
   home.homeDirectory = "/home/samantha";
   home.stateVersion = "24.11";
@@ -25,6 +27,4 @@
     discord
     pciutils
   ];
-
-  home.allowUnfree = true;
 }
