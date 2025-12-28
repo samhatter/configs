@@ -22,7 +22,7 @@
       };
       modules = [
         sops-nix.homeManagerModules.sops
-        ./samantha/home.nix
+        ./samantha/hosts/snapcaster.nix
       ];
     };
     homeConfigurations."samantha@tarmogoyf" = home-manager.lib.homeManagerConfiguration {
@@ -32,7 +32,7 @@
       };
       modules = [
         sops-nix.homeManagerModules.sops
-        ./samantha/home.nix
+        ./samantha/hosts/tarmogoyf.nix
       ];
     };
     homeConfigurations."samantha@twin" = home-manager.lib.homeManagerConfiguration {
@@ -42,7 +42,7 @@
       };
       modules = [
         sops-nix.homeManagerModules.sops
-        ./samantha/home.nix
+        ./samantha/hosts/twin.nix
       ];
     };
     homeConfigurations."samantha@scapeshift" = home-manager.lib.homeManagerConfiguration {
@@ -52,7 +52,7 @@
       };
       modules = [
         sops-nix.homeManagerModules.sops
-        ./samantha/home.nix
+        ./samantha/hosts/scapeshift.nix
       ];
     }; 
   };
