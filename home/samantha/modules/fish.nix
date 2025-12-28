@@ -8,7 +8,7 @@
         ];
 
         shellInit = ''
-            status --is-interactive; and set -gx EDITOR code
+            status --is-interactive; and set -gx EDITOR nvim
             status --is-interactive; and set -gx PAGER less
         '';
 
