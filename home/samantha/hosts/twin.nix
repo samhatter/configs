@@ -3,6 +3,8 @@
     ../modules/fish.nix
     ../modules/gh.nix
     ../modules/git.nix
+    ../modules/gnome.nix
+    ../modules/kitty.nix
     ../modules/neovim.nix
     ../modules/ssh.nix
     ../modules/vscode.nix
@@ -18,6 +20,13 @@
 
   home.packages = with pkgs; [
     xclip
+    chromium
+    plex-desktop
+    plexamp
+    gnome-tweaks
+    gnomeExtensions.dash-to-dock
+    gnomeExtensions.resource-monitor
+    discord
     pciutils
   ];
 }
