@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, config, ...}: {
   networking.hostName = "scapeshift";
   networking.firewall.enable = false;
 
