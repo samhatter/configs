@@ -3,8 +3,8 @@
   networking.firewall.enable = false;
 
   imports = [
-    ../profiles/base.nix
-    ../profiles/wsl.nix
+    ../../profiles/base.nix
+    ../../profiles/wsl.nix
     ../../users/samantha.nix
   ];
 
