@@ -1,13 +1,13 @@
 {pkgs, ...}: {
   imports = [
-    ./modules/fish.nix
-    ./modules/gh.nix
-    ./modules/git.nix
-    ./modules/gnome.nix
-    ./modules/kitty.nix
-    ./modules/neovim.nix
-    ./modules/ssh.nix
-    ./modules/vscode.nix
+    ../modules/fish.nix
+    ../modules/gh.nix
+    ../modules/git.nix
+    ../modules/gnome.nix
+    ../modules/kitty.nix
+    ../modules/neovim.nix
+    ../modules/ssh.nix
+    ../modules/vscode.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
