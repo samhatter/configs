@@ -41,13 +41,25 @@
     };
     nixosConfigurations = {
       twin = nixpkgs.lib.nixosSystem {
-	system = "x86_64-linux";
-	specialArgs = {
+        system = "x86_64-linux";
+        specialArgs = {
           inherit nixpkgs-fork;
         };
         modules = [
           sops-nix.nixosModules.sops
-	  ./hosts/twin/configuration.nix
+          ./hosts/twin/configuration.nix
+        ];
+      };
+    };
+    nixosConfigurations = {
+      scapeshift = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {
+          inherit nixpkgs-fork;
+        };
+        modules = [
+          sops-nix.nixosModules.sops
+          ./hosts/scapeshift/configuration.nix
         ];
       };
     };
