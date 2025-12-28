@@ -16,5 +16,13 @@
 
   home.packages = with pkgs; [
     xclip
+    chromium
+    plex-desktop
+    plexamp
+    gnome-tweaks
+    gnomeExtensions.dash-to-dock
+    gnomeExtensions.resource-monitor
+    discord
+    pciutils
   ];
 }

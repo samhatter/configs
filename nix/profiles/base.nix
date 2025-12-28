@@ -39,7 +39,6 @@
 
     environment.systemPackages = with pkgs; [
         gitFull
-        gh
         vim
         less
         wget
@@ -47,6 +46,7 @@
         htop
         jq
         home-manager
+        sops
     ];
 
     users.mutableUsers = false;

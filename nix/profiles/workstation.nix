@@ -41,18 +41,6 @@
     )
   ];
 
-  environment.systemPackages = with pkgs; [
-    chromium
-    plex-desktop
-    plexamp
-    gnome-tweaks
-    gnomeExtensions.dash-to-dock
-    gnomeExtensions.resource-monitor
-    discord
-    pciutils
-    sops
-  ];
-
   programs.gnome-terminal.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.gnome.gnome-settings-daemon.enable = true;
