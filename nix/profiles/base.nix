@@ -44,7 +44,6 @@
     jq
     home-manager
     sops
-    fish
   ];
 
   users.mutableUsers = false;
@@ -55,5 +54,5 @@
   '';
 
   programs.bash.completion.enable = true;
-  programs.zsh.enable = true;
+  programs.fish.enable = true;
 }
