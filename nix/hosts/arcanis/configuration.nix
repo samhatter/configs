@@ -13,10 +13,10 @@
 
   networking.hostName = "arcanis";
   networking.networkmanager.enable = true;
-  
+
   services.getty.autologinUser = "samantha";
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [ libva libva-utils mesa ];
   };
