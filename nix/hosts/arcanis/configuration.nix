@@ -13,14 +13,7 @@
 
   networking.hostName = "arcanis";
   networking.networkmanager.enable = true;
-
-  users.users.samantha = {
-    isNormalUser = true;
-    description = "samantha";
-    extraGroups = [ "networkmanager" "wheel" "docker" "video" "render" ];
-    openssh.authorizedKeys.keyFiles = [ /home/samantha/.ssh/authorized_keys ];
-  };
-
+  
   services.getty.autologinUser = "samantha";
 
   hardware.opengl = {
@@ -72,5 +65,5 @@
   programs.nix-ld.enable = true;
 
   system.stateVersion = "23.11";
-  
+
 }
