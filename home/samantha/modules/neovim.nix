@@ -34,16 +34,43 @@
     '';
 
     extraLuaConfig = ''
-      local lsp = require("lspconfig")
+      -- Alejandra (Nix)
+      vim.lsp.config("alejandra", {
+        cmd = { "alejandra", "--lsp" },
+        filetypes = { "nix" },
+        root_markers = { "flake.nix", ".git" },
+      })
 
-      lsp.nil_ls.setup({
+      vim.lsp.enable("alejandra")
+
+
+      -- Pyright (Python)
+      vim.lsp.config("pyright", {
+        cmd = { "pyright-langserver", "--stdio" },
+        filetypes = { "python" },
+        root_markers = {
+          "pyproject.toml",
+          "setup.py",
+          "setup.cfg",
+          "requirements.txt",
+          ".git",
+        },
+
         settings = {
-          ["nil"] = {
-            formatting = { command = { "alejandra" } },
+          python = {
+            analysis = {
+              autoSearchPaths = true,
+              useLibraryCodeForTypes = true,
+              diagnosticMode = "workspace",
+            },
           },
         },
       })
 
+      vim.lsp.enable("pyright")
+
+
+      -- Treesitter
       require'nvim-treesitter.configs'.setup {
         highlight = {
            enable = true,
@@ -53,7 +80,7 @@
         },
       }
 
-
+      -- Keymaps
       vim.keymap.set("n", "<leader>f", function()
           vim.lsp.buf.format({ async = true })
       end, { desc = "Format file with LSP" })
