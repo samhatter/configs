@@ -5,8 +5,6 @@
   imports =
     [ ../../profiles/base.nix ../../profiles/wsl.nix ../../users/samantha.nix ];
 
-  sops.age.keyFile = "/var/lib/sops-nix/keys.txt";
-
   hardware.opengl.enable = true;
 
   # Point to Windows NVIDIA libraries for WSL (system-wide)

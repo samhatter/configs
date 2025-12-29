@@ -1,8 +1,12 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ ./hardware-configuration.nix ../profiles/base.nix ./modules/caddy.nix ];
+  imports = [
+    ./hardware-configuration.nix
+    ../../profiles/base.nix
+    ../../users/samantha.nix
+    ./modules/caddy.nix
+  ];
 
   networking.hostName = "arcanis";
   networking.networkmanager.enable = true;
@@ -13,9 +17,6 @@
     extraGroups = [ "networkmanager" "wheel" "docker" "video" "render" ];
     openssh.authorizedKeys.keyFiles = [ /home/samantha/.ssh/authorized_keys ];
   };
-
-  users.mutableUsers = false;
-  security.sudo.enable = true;
 
   services.getty.autologinUser = "samantha";
 

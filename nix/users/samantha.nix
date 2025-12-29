@@ -11,9 +11,12 @@
 
   users.users.samantha = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "video" "render" ];
     shell = pkgs.fish;
     hashedPasswordFile = config.sops.secrets."samantha-password".path;
+    openssh.authorizedKeys.keyFiles = [ /home/samantha/.ssh/authorized_keys ];
     createHome = true;
   };
+
+  sops.age.keyFile = "/var/lib/sops-nix/keys.txt";
 }

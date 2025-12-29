@@ -9,7 +9,6 @@
     ./hardware-configuration.nix
   ];
 
-  sops.age.keyFile = "/var/lib/sops-nix/keys.txt";
 
   security.pam.services = { sudo.fprintAuth = false; };
 
