@@ -50,15 +50,6 @@
     };
   };
 
-  services.openssh = {
-    enable = true;
-    ports = [ 200 ];
-    settings = {
-      PasswordAuthentication = false;
-      KbdInteractiveAuthentication = false;
-    };
-  };
-
   networking.firewall.enable = false;
 
   fileSystems."/storage" = {
