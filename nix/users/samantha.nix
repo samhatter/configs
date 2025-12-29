@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   sops.secrets."samantha-password" = {
     sopsFile = ../../secrets/shared/passwords.yaml;
     format = "yaml";

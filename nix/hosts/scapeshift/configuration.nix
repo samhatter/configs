@@ -1,5 +1,8 @@
-{ pkgs, config, ... }:
 {
+  pkgs,
+  config,
+  ...
+}: {
   networking.hostName = "scapeshift";
   networking.firewall.enable = false;
 
@@ -17,7 +20,7 @@
   };
 
   # Configure nix-ld to find WSL libraries
-  programs.nix-ld.libraries = with pkgs; [ stdenv.cc.cc.lib ];
+  programs.nix-ld.libraries = with pkgs; [stdenv.cc.cc.lib];
 
   environment.systemPackages = with pkgs; [
     cudatoolkit

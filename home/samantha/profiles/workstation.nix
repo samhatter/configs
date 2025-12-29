@@ -1,11 +1,13 @@
-{ pkgs, nixpkgs-fork, ... }:
-let
+{
+  pkgs,
+  nixpkgs-fork,
+  ...
+}: let
   forkPkgs = import nixpkgs-fork {
     system = pkgs.stdenv.hostPlatform.system;
     config = pkgs.config;
   };
-in
-{
+in {
   imports = [
     ../modules/kitty.nix
     ../modules/vscode.nix

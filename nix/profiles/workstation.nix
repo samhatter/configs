@@ -1,6 +1,8 @@
-{ nixpkgs-fork, pkgs, ... }:
 {
-
+  nixpkgs-fork,
+  pkgs,
+  ...
+}: {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -35,7 +37,7 @@
   services.gnome.gnome-keyring.enable = true;
   services.gnome.gnome-settings-daemon.enable = true;
   xdg.portal = {
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
     xdgOpenUsePortal = true;
   };
   security.pam.services.gdm.enableGnomeKeyring = true;

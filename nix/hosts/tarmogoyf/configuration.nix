@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
 {
+  config,
+  pkgs,
+  ...
+}: {
   networking.hostName = "tarmogoyf";
   networking.firewall.enable = false;
 
@@ -45,10 +48,9 @@
     enable = true;
   };
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {
-
     modesetting.enable = true;
 
     powerManagement.enable = true;
@@ -65,7 +67,6 @@
       intelBusId = "PCI:0:2:0";
 
       nvidiaBusId = "PCI:3:0:0";
-
     };
   };
 

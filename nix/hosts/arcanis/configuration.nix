@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     ../../profiles/base.nix
@@ -40,7 +42,7 @@
       containers = {
         portainer = {
           image = "portainer/portainer";
-          ports = [ "9000:9000" ];
+          ports = ["9000:9000"];
           volumes = [
             "/etc/portainer:/data"
             "/var/run/docker.sock:/var/run/docker.sock"
@@ -60,5 +62,4 @@
   programs.nix-ld.enable = true;
 
   system.stateVersion = "23.11";
-
 }

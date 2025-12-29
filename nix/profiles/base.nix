@@ -3,9 +3,7 @@
   pkgs,
   lib,
   ...
-}:
-
-{
+}: {
   networking.useDHCP = lib.mkDefault true;
 
   time.timeZone = "America/Los_Angeles";
@@ -59,7 +57,7 @@
 
   services.openssh = {
     enable = true;
-    ports = [ 200 ];
+    ports = [200];
     settings = {
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;

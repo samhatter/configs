@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   networking.hostName = "snapcaster";
   networking.firewall.enable = false;
 

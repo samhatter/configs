@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   imports = [
     ../profiles/base.nix
     ../profiles/workstation.nix
@@ -10,5 +9,4 @@
   home.stateVersion = "24.11";
 
   sops.age.keyFile = "/var/lib/sops-nix/key.txt";
-
 }

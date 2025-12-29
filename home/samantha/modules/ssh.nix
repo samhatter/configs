@@ -1,5 +1,8 @@
-{ config, hostName, ... }:
 {
+  config,
+  hostName,
+  ...
+}: {
   programs.ssh = {
     enable = true;
 

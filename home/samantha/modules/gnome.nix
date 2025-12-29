@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   dconf.settings = {
     "org/gnome/settings-daemon/plugins/power" = {
       power-button-action = "interactive";
@@ -19,9 +18,9 @@
   fonts.fontconfig = {
     enable = true;
     defaultFonts = {
-      monospace = [ "IBM Plex Mono" ];
-      serif = [ "IBM Plex Serif" ];
-      sansSerif = [ "IBM Plex Sans" ];
+      monospace = ["IBM Plex Mono"];
+      serif = ["IBM Plex Serif"];
+      sansSerif = ["IBM Plex Sans"];
     };
   };
 

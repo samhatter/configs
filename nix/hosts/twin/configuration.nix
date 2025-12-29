@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   networking.hostName = "twin";
   networking.firewall.enable = false;
 

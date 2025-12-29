@@ -10,75 +10,73 @@
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs =
-    {
-      nixpkgs,
-      nixpkgs-fork,
-      home-manager,
-      sops-nix,
-      ...
-    }:
-    {
-      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
+  outputs = {
+    nixpkgs,
+    nixpkgs-fork,
+    home-manager,
+    sops-nix,
+    ...
+  }: {
+    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
 
-      homeConfigurations."samantha@snapcaster" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "x86_64-linux"; };
-        extraSpecialArgs = {
-          hostName = "snapcaster";
-          inherit nixpkgs-fork;
-        };
-        modules = [
-          sops-nix.homeManagerModules.sops
-          ./samantha/hosts/snapcaster.nix
-        ];
+    homeConfigurations."samantha@snapcaster" = home-manager.lib.homeManagerConfiguration {
+      pkgs = import nixpkgs {system = "x86_64-linux";};
+      extraSpecialArgs = {
+        hostName = "snapcaster";
+        inherit nixpkgs-fork;
       };
-
-      homeConfigurations."samantha@tarmogoyf" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "x86_64-linux"; };
-        extraSpecialArgs = {
-          hostName = "tarmogoyf";
-          inherit nixpkgs-fork;
-        };
-        modules = [
-          sops-nix.homeManagerModules.sops
-          ./samantha/hosts/tarmogoyf.nix
-        ];
-      };
-
-      homeConfigurations."samantha@twin" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "x86_64-linux"; };
-        extraSpecialArgs = {
-          hostName = "twin";
-          inherit nixpkgs-fork;
-        };
-        modules = [
-          sops-nix.homeManagerModules.sops
-          ./samantha/hosts/twin.nix
-        ];
-      };
-
-      homeConfigurations."samantha@scapeshift" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "x86_64-linux"; };
-        extraSpecialArgs = {
-          hostName = "scapeshift";
-          inherit nixpkgs-fork;
-        };
-        modules = [
-          sops-nix.homeManagerModules.sops
-          ./samantha/hosts/scapeshift.nix
-        ];
-      };
-
-      homeConfigurations."samantha@arcanis" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "x86_64-linux"; };
-        extraSpecialArgs = {
-          hostName = "arcanis";
-          inherit nixpkgs-fork;
-        };
-        modules = [
-          sops-nix.homeManagerModules.sops
-          ./samantha/hosts/arcanis.nix
-        ];
-      };
+      modules = [
+        sops-nix.homeManagerModules.sops
+        ./samantha/hosts/snapcaster.nix
+      ];
     };
+
+    homeConfigurations."samantha@tarmogoyf" = home-manager.lib.homeManagerConfiguration {
+      pkgs = import nixpkgs {system = "x86_64-linux";};
+      extraSpecialArgs = {
+        hostName = "tarmogoyf";
+        inherit nixpkgs-fork;
+      };
+      modules = [
+        sops-nix.homeManagerModules.sops
+        ./samantha/hosts/tarmogoyf.nix
+      ];
+    };
+
+    homeConfigurations."samantha@twin" = home-manager.lib.homeManagerConfiguration {
+      pkgs = import nixpkgs {system = "x86_64-linux";};
+      extraSpecialArgs = {
+        hostName = "twin";
+        inherit nixpkgs-fork;
+      };
+      modules = [
+        sops-nix.homeManagerModules.sops
+        ./samantha/hosts/twin.nix
+      ];
+    };
+
+    homeConfigurations."samantha@scapeshift" = home-manager.lib.homeManagerConfiguration {
+      pkgs = import nixpkgs {system = "x86_64-linux";};
+      extraSpecialArgs = {
+        hostName = "scapeshift";
+        inherit nixpkgs-fork;
+      };
+      modules = [
+        sops-nix.homeManagerModules.sops
+        ./samantha/hosts/scapeshift.nix
+      ];
+    };
+
+    homeConfigurations."samantha@arcanis" = home-manager.lib.homeManagerConfiguration {
+      pkgs = import nixpkgs {system = "x86_64-linux";};
+      extraSpecialArgs = {
+        hostName = "arcanis";
+        inherit nixpkgs-fork;
+      };
+      modules = [
+        sops-nix.homeManagerModules.sops
+        ./samantha/hosts/arcanis.nix
+      ];
+    };
+  };
 }
