@@ -6,6 +6,9 @@
 }: {
   networking.useDHCP = lib.mkDefault true;
 
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
   time.timeZone = "America/Los_Angeles";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
