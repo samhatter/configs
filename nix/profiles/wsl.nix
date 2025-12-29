@@ -1,9 +1,6 @@
-{
-  pkgs,
-  ...
-}: {
-    wsl.enable = true;
-    wsl.defaultUser = "samantha";
+{ pkgs, ... }: {
+  wsl.enable = true;
+  wsl.defaultUser = "samantha";
 
-    programs.nix-ld.enable = true;
+  programs.nix-ld.enable = true;
 }

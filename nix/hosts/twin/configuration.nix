@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   networking.hostName = "twin";
   networking.firewall.enable = false;
 
@@ -11,9 +11,7 @@
 
   sops.age.keyFile = "/var/lib/sops-nix/keys.txt";
 
-  security.pam.services = {
-    sudo.fprintAuth = false;
-  };
+  security.pam.services = { sudo.fprintAuth = false; };
 
   services.power-profiles-daemon.enable = false;
 

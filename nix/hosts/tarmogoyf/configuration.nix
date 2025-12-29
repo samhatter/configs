@@ -1,4 +1,4 @@
-{config, pkgs, ...}: {
+{ config, pkgs, ... }: {
   networking.hostName = "tarmogoyf";
   networking.firewall.enable = false;
 
@@ -9,7 +9,6 @@
     ./hardware-configuration.nix
   ];
 
-  
   sops.age.keyFile = "/var/lib/sops-nix/keys.txt";
 
   services.fprintd = {
@@ -19,9 +18,7 @@
     tod.driver = pkgs.libfprint-2-tod1-goodix-550a;
   };
 
-  security.pam.services = {
-    sudo.fprintAuth = false;
-  };
+  security.pam.services = { sudo.fprintAuth = false; };
 
   services.power-profiles-daemon.enable = false;
 
@@ -43,11 +40,9 @@
 
   services.hardware.bolt.enable = true;
 
-  hardware.graphics = {
-    enable = true;
-  };
+  hardware.graphics = { enable = true; };
 
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
 
@@ -58,9 +53,9 @@
     open = false;
 
     nvidiaSettings = true;
-    
+
     package = config.boot.kernelPackages.nvidiaPackages.stable;
-    
+
     prime = {
       sync.enable = true;
 

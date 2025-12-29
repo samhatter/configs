@@ -1,21 +1,21 @@
 { config, pkgs, ... }:
 
 {
-    sops.secrets."samantha-password" = {
-        sopsFile = ../../secrets/shared/passwords.yaml;
-        format = "yaml";
-        key = "samantha_password";
-        mode = "0400";
-        neededForUsers = true;
-    };
+  sops.secrets."samantha-password" = {
+    sopsFile = ../../secrets/shared/passwords.yaml;
+    format = "yaml";
+    key = "samantha_password";
+    mode = "0400";
+    neededForUsers = true;
+  };
 
-    users.users.samantha = {
-        isNormalUser = true;
-        extraGroups = [ "wheel" "networkmanager" "docker" ];
-        shell = pkgs.fish;
-        hashedPasswordFile = config.sops.secrets."samantha-password".path;
-        createHome = true;
-    };
+  users.users.samantha = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager" "docker" ];
+    shell = pkgs.fish;
+    hashedPasswordFile = config.sops.secrets."samantha-password".path;
+    createHome = true;
+  };
 
-    programs.fish.enable = true;
+  programs.fish.enable = true;
 }

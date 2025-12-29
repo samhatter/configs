@@ -1,12 +1,8 @@
-{
-  nixpkgs-fork,
-  pkgs,
-  ...
-}: {
+{ nixpkgs-fork, pkgs, ... }: {
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  
+
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.displayManager.gdm.wayland = true;
@@ -35,21 +31,20 @@
   services.avahi.enable = true;
 
   nixpkgs.overlays = [
-    (
-      final: prev: let
+    (final: prev:
+      let
         forkPkgs = import nixpkgs-fork {
           inherit (final) system;
           config = prev.config;
         };
-      in {plex-desktop = forkPkgs.plex-desktop;}
-    )
+      in { plex-desktop = forkPkgs.plex-desktop; })
   ];
 
   programs.gnome-terminal.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.gnome.gnome-settings-daemon.enable = true;
   xdg.portal = {
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     xdgOpenUsePortal = true;
   };
   security.pam.services.gdm.enableGnomeKeyring = true;

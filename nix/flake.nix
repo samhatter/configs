@@ -13,60 +13,39 @@
     };
   };
 
-  outputs = {
-    nixpkgs,
-    nixpkgs-fork,
-    sops-nix,
-    nixos-wsl,
-    ...
-  }: {
+  outputs = { nixpkgs, nixpkgs-fork, sops-nix, nixos-wsl, ... }: {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
 
     nixosConfigurations = {
       snapcaster = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {
-          inherit nixpkgs-fork;
-        };
-        modules = [
-          sops-nix.nixosModules.sops
-          ./hosts/snapcaster/configuration.nix
-        ];
+        specialArgs = { inherit nixpkgs-fork; };
+        modules =
+          [ sops-nix.nixosModules.sops ./hosts/snapcaster/configuration.nix ];
       };
     };
 
     nixosConfigurations = {
       tarmogoyf = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {
-          inherit nixpkgs-fork;
-        };
-        modules = [
-          sops-nix.nixosModules.sops
-          ./hosts/tarmogoyf/configuration.nix
-        ];
+        specialArgs = { inherit nixpkgs-fork; };
+        modules =
+          [ sops-nix.nixosModules.sops ./hosts/tarmogoyf/configuration.nix ];
       };
     };
 
     nixosConfigurations = {
       twin = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {
-          inherit nixpkgs-fork;
-        };
-        modules = [
-          sops-nix.nixosModules.sops
-          ./hosts/twin/configuration.nix
-        ];
+        specialArgs = { inherit nixpkgs-fork; };
+        modules = [ sops-nix.nixosModules.sops ./hosts/twin/configuration.nix ];
       };
     };
-    
+
     nixosConfigurations = {
       scapeshift = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {
-          inherit nixpkgs-fork;
-        };
+        specialArgs = { inherit nixpkgs-fork; };
         modules = [
           nixos-wsl.nixosModules.default
           sops-nix.nixosModules.sops
