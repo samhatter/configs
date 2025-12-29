@@ -10,9 +10,6 @@
     ./modules/caddy.nix
   ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
   networking.hostName = "arcanis";
   networking.networkmanager.enable = true;
 
