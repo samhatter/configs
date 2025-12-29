@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [ ../profiles/base.nix ];
 
   home.username = "samantha";

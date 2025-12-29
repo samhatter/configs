@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   services.caddy = {
     enable = true;
     email = "sammyvincent2001@gmail.com";

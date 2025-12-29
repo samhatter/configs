@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   programs.kitty = {
     enable = true;
 
@@ -28,8 +29,7 @@
       scrollback_lines = 10000;
       detect_urls = "yes";
       open_url_modifiers = "ctrl";
-      clipboard_control =
-        "write-clipboard write-primary read-clipboard read-primary";
+      clipboard_control = "write-clipboard write-primary read-clipboard read-primary";
 
       repaint_delay = 8;
       input_delay = 2;

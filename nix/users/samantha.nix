@@ -11,7 +11,13 @@
 
   users.users.samantha = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" "docker" "video" "render" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+      "video"
+      "render"
+    ];
     shell = pkgs.fish;
     hashedPasswordFile = config.sops.secrets."samantha-password".path;
     openssh.authorizedKeys.keys = [

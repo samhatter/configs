@@ -1,5 +1,9 @@
-{ pkgs, ... }: {
-  imports = [ ../profiles/base.nix ../profiles/workstation.nix ];
+{ pkgs, ... }:
+{
+  imports = [
+    ../profiles/base.nix
+    ../profiles/workstation.nix
+  ];
 
   home.username = "samantha";
   home.homeDirectory = "/home/samantha";

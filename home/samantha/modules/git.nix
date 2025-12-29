@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   programs.git = {
     enable = true;
 
@@ -15,7 +16,9 @@
 
     extraConfig = {
       init.defaultBranch = "main";
-      core = { editor = "nvim"; };
+      core = {
+        editor = "nvim";
+      };
     };
   };
 }

@@ -1,11 +1,14 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   dconf.settings = {
     "org/gnome/settings-daemon/plugins/power" = {
       power-button-action = "interactive";
       sleep-inactive-ac-type = "nothing";
     };
 
-    "org/gnome/desktop/datetime" = { automatic-timezone = true; };
+    "org/gnome/desktop/datetime" = {
+      automatic-timezone = true;
+    };
 
     "org/gnome/desktop/interface" = {
       font-hinting = "full";
@@ -30,4 +33,3 @@
     };
   };
 }
-

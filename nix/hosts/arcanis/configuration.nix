@@ -18,7 +18,11 @@
 
   hardware.graphics = {
     enable = true;
-    extraPackages = with pkgs; [ libva libva-utils mesa ];
+    extraPackages = with pkgs; [
+      libva
+      libva-utils
+      mesa
+    ];
   };
 
   virtualisation = {

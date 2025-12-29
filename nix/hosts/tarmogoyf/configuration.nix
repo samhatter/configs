@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   networking.hostName = "tarmogoyf";
   networking.firewall.enable = false;
 
@@ -16,7 +17,9 @@
     tod.driver = pkgs.libfprint-2-tod1-goodix-550a;
   };
 
-  security.pam.services = { sudo.fprintAuth = false; };
+  security.pam.services = {
+    sudo.fprintAuth = false;
+  };
 
   services.power-profiles-daemon.enable = false;
 
@@ -38,7 +41,9 @@
 
   services.hardware.bolt.enable = true;
 
-  hardware.graphics = { enable = true; };
+  hardware.graphics = {
+    enable = true;
+  };
 
   services.xserver.videoDrivers = [ "nvidia" ];
 

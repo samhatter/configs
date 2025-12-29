@@ -1,11 +1,14 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.fish = {
     enable = true;
 
-    plugins = [{
-      name = "grc";
-      src = pkgs.fishPlugins.grc;
-    }];
+    plugins = [
+      {
+        name = "grc";
+        src = pkgs.fishPlugins.grc;
+      }
+    ];
 
     shellInit = ''
       status --is-interactive; and set -gx EDITOR nvim

@@ -1,4 +1,5 @@
-{ nixpkgs-fork, pkgs, ... }: {
+{ nixpkgs-fork, pkgs, ... }:
+{
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -31,13 +32,18 @@
   services.avahi.enable = true;
 
   nixpkgs.overlays = [
-    (final: prev:
+    (
+      final: prev:
       let
         forkPkgs = import nixpkgs-fork {
           inherit (final) system;
           config = prev.config;
         };
-      in { plex-desktop = forkPkgs.plex-desktop; })
+      in
+      {
+        plex-desktop = forkPkgs.plex-desktop;
+      }
+    )
   ];
 
   programs.gnome-terminal.enable = true;

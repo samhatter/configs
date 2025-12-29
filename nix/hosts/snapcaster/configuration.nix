@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   networking.hostName = "snapcaster";
   networking.firewall.enable = false;
 
@@ -16,7 +17,9 @@
     tod.driver = pkgs.libfprint-2-tod1-goodix-550a;
   };
 
-  security.pam.services = { sudo.fprintAuth = false; };
+  security.pam.services = {
+    sudo.fprintAuth = false;
+  };
 
   services.power-profiles-daemon.enable = false;
 

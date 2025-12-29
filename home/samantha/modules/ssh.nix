@@ -1,4 +1,5 @@
-{ config, hostName, ... }: {
+{ config, hostName, ... }:
+{
   programs.ssh = {
     enable = true;
 
@@ -7,7 +8,9 @@
         identityFile = "${config.home.homeDirectory}/.ssh/${hostName}_ed25519";
         identitiesOnly = true;
       };
-      "github.com" = { user = "git"; };
+      "github.com" = {
+        user = "git";
+      };
       "arcanis" = {
         user = "samantha";
         hostname = "samantha-home-server.net";
