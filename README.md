@@ -12,7 +12,7 @@ For the first installation, you cannot use the reload script. Assumes you have s
 
 - [ ] Create new age key
     - `nix-shell -p age`
-    - `sudo age-keygen >> /var/lib/sops-nix/keys.txt`
+    - `sudo sh -c 'age-keygen >> /var/lib/sops-nix/keys.txt' && chmod 400 /var/lib/sops-nix/keys.txt`
 - [ ] Using an existing machine with a valid key, update passwords.yaml for new key.
     - Copy over new public key to `.sops.yaml`
     - `sops updatekeys secrets/shared/passwords.yaml`
