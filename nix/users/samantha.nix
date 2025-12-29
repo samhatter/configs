@@ -14,7 +14,7 @@
     extraGroups = [ "networkmanager" "wheel" "docker" "video" "render" ];
     shell = pkgs.fish;
     hashedPasswordFile = config.sops.secrets."samantha-password".path;
-    openssh.authorizedKeys.keyFiles = [ /home/samantha/.ssh/authorized_keys ];
+    openssh.authorizedKeys.keyFiles = [ "/home/samantha/.ssh/authorized_keys" ];
     createHome = true;
   };
 

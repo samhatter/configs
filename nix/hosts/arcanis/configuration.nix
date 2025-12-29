@@ -69,6 +69,8 @@
     fsType = "ext4";
   };
 
-  system.stateVersion = "23.11";
+  programs.nix-ld.enable = true;
 
+  system.stateVersion = "23.11";
+  
 }
