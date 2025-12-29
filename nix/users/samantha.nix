@@ -21,7 +21,7 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGSgHsql24Wx3SosGqvSGtVq0VsdyZ2f8SYIBbg2zIAI samantha@snapcaster"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDREtiARFeF6oQEkVQeyfX0t8X3soPNv6puVXJfOXq1C samantha@tarmogoyf"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJhY28/mGm59ibWCwyTnof92vWosXzZVEGPnbEf0/ppL samantha@scapeshift"
-    ]
+    ];
     createHome = true;
   };
 
