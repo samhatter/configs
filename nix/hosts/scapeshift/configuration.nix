@@ -11,7 +11,11 @@
   sops.age.keyFile = "/var/lib/sops-nix/keys.txt";
 
   hardware.opengl.enable = true;
-  hardware.opengl.driSupport = true;
+
+  environment.systemPackages = with pkgs; [
+    cudatoolkit
+    linuxPackages.nvidia_x11
+  ];
   
   system.stateVersion = "25.05";
 }
