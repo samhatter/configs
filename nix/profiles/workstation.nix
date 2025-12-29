@@ -13,7 +13,7 @@
     ibm-plex
     dejavu_fonts
     noto-fonts
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     fira-code
   ];
 
