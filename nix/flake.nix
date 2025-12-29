@@ -33,9 +33,7 @@
             ./hosts/snapcaster/configuration.nix
           ];
         };
-      };
 
-      nixosConfigurations = {
         tarmogoyf = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit nixpkgs-fork; };
@@ -44,9 +42,7 @@
             ./hosts/tarmogoyf/configuration.nix
           ];
         };
-      };
 
-      nixosConfigurations = {
         twin = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit nixpkgs-fork; };
@@ -55,9 +51,7 @@
             ./hosts/twin/configuration.nix
           ];
         };
-      };
 
-      nixosConfigurations = {
         scapeshift = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit nixpkgs-fork; };
@@ -67,9 +61,7 @@
             ./hosts/scapeshift/configuration.nix
           ];
         };
-      };
 
-      nixosConfigurations = {
         arcanis = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit nixpkgs-fork; };
