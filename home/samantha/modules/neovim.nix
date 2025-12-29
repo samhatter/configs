@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs.neovim = {
     enable = true;
     viAlias = true;
@@ -11,10 +11,7 @@
       nvim-treesitter.withAllGrammars
     ];
 
-    extraPackages = with pkgs; [
-      nil
-      alejandra
-    ];
+    extraPackages = with pkgs; [ nil alejandra ];
 
     extraConfig = ''
       let mapleader=' '

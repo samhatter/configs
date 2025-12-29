@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   imports = [
     ../modules/fish.nix
     ../modules/gh.nix
@@ -10,8 +10,5 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  home.packages = with pkgs; [
-    xclip
-    pciutils
-  ];
+  home.packages = with pkgs; [ xclip pciutils ];
 }

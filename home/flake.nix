@@ -9,52 +9,40 @@
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = {
-    nixpkgs,
-    home-manager,
-    sops-nix,
-    ...
-  }: {
-    homeConfigurations."samantha@snapcaster" = home-manager.lib.homeManagerConfiguration {
-      pkgs = import nixpkgs {system = "x86_64-linux";};
-      extraSpecialArgs = {
-        hostName = "snapcaster";
+  outputs = { nixpkgs, home-manager, sops-nix, ... }: {
+    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
+
+    homeConfigurations."samantha@snapcaster" =
+      home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs { system = "x86_64-linux"; };
+        extraSpecialArgs = { hostName = "snapcaster"; };
+        modules =
+          [ sops-nix.homeManagerModules.sops ./samantha/hosts/snapcaster.nix ];
       };
-      modules = [
-        sops-nix.homeManagerModules.sops
-        ./samantha/hosts/snapcaster.nix
-      ];
-    };
-    homeConfigurations."samantha@tarmogoyf" = home-manager.lib.homeManagerConfiguration {
-      pkgs = import nixpkgs {system = "x86_64-linux";};
-      extraSpecialArgs = {
-        hostName = "tarmogoyf";
+
+    homeConfigurations."samantha@tarmogoyf" =
+      home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs { system = "x86_64-linux"; };
+        extraSpecialArgs = { hostName = "tarmogoyf"; };
+        modules =
+          [ sops-nix.homeManagerModules.sops ./samantha/hosts/tarmogoyf.nix ];
       };
-      modules = [
-        sops-nix.homeManagerModules.sops
-        ./samantha/hosts/tarmogoyf.nix
-      ];
-    };
-    homeConfigurations."samantha@twin" = home-manager.lib.homeManagerConfiguration {
-      pkgs = import nixpkgs {system = "x86_64-linux";};
-      extraSpecialArgs = {
-        hostName = "twin";
+
+    homeConfigurations."samantha@twin" =
+      home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs { system = "x86_64-linux"; };
+        extraSpecialArgs = { hostName = "twin"; };
+        modules =
+          [ sops-nix.homeManagerModules.sops ./samantha/hosts/twin.nix ];
       };
-      modules = [
-        sops-nix.homeManagerModules.sops
-        ./samantha/hosts/twin.nix
-      ];
-    };
-    homeConfigurations."samantha@scapeshift" = home-manager.lib.homeManagerConfiguration {
-      pkgs = import nixpkgs {system = "x86_64-linux";};
-      extraSpecialArgs = {
-        hostName = "scapeshift";
+
+    homeConfigurations."samantha@scapeshift" =
+      home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs { system = "x86_64-linux"; };
+        extraSpecialArgs = { hostName = "scapeshift"; };
+        modules =
+          [ sops-nix.homeManagerModules.sops ./samantha/hosts/scapeshift.nix ];
       };
-      modules = [
-        sops-nix.homeManagerModules.sops
-        ./samantha/hosts/scapeshift.nix
-      ];
-    }; 
   };
 }
 
