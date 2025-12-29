@@ -12,6 +12,11 @@
 
   hardware.opengl.enable = true;
 
+  # Point to Windows NVIDIA libraries for WSL
+  environment.sessionVariables = {
+    LD_LIBRARY_PATH = "/usr/lib/wsl/lib";
+  };
+
   environment.systemPackages = with pkgs; [
     cudatoolkit
     linuxPackages.nvidia_x11
