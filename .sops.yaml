@@ -2,7 +2,7 @@ keys:
   snapcaster: &snapcaster age1u73xn0l5wchhn9ktz3r5mxc74qfl70ygs33qgw9udt56gh256uvq4uxmpd
   tarmogoyf: &tarmogoyf age16lnwskf7xfstjms79ttag63f2350e78rmlyhfsxq2jlzmltjlessw9dnsv
   twin: &twin age1rhz3xwa8w8rmrq2gcd2x7escw6sgm3paeczzhmpxd3zzypduc39srzp0w4
-  scapeshift: &scapeshift age127jxcfj6kx72hh5yfpswvv2y02ac7ktvwafv6atrcf5lftll6pyqgxe406
+  scapeshift: &scapeshift age18fllgltcm628rljsn0apn7ds5mcfryqwh5n3kqz74ld3vm3h09usmsjlde
   arcanis: &arcanis age1n7m4qddze6jmky0zzgasxr2fsea25t4ejppzv0flftsuzhrytgaqm49c2d
 creation_rules:
   - path_regex: secrets/shared/.*\.(env|ya?ml|json|ini)$
