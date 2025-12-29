@@ -5,7 +5,7 @@
 - nixos rebuild: `sudo nixos-rebuild switch --flake ./nix#<host>`
 - home manager switch: `home-manager switch -b backup --flake ./home#samantha@<host>`
 - fmt: `nix fmt .`
-- sops updateKeys: `sops updateKeys /path/to/secret`
+- sops updateKeys: `sops updatekeys /path/to/secret`
 
 ## New Device Install/Intake Checklist
 For the first installation, you cannot use the reload script. Assumes you have some nixos live usb or older system. Prepare for outcome where sops fails and user password is unknown.
