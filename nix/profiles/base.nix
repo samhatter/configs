@@ -44,6 +44,7 @@
     jq
     home-manager
     sops
+    fish
   ];
 
   users.mutableUsers = false;
