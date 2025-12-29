@@ -18,6 +18,8 @@
     interactiveShellInit = ''
       set -g fish_greeting
       set -gx LESS -FRi
+      set -gx NIXPKGS_ALLOW_UNFREE 1
+
 
       function fish_prompt
           set_color green
