@@ -3,6 +3,8 @@
   programs.ssh = {
     enable = true;
 
+    enableDefaultConfig = false;
+
     matchBlocks = {
       "*" = {
         identityFile = "${config.home.homeDirectory}/.ssh/${hostName}_ed25519";
