@@ -16,6 +16,4 @@
     hashedPasswordFile = config.sops.secrets."samantha-password".path;
     createHome = true;
   };
-
-  programs.fish.enable = true;
 }

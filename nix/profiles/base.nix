@@ -49,13 +49,6 @@
   users.mutableUsers = false;
   security.sudo.enable = true;
 
-  services.openssh = {
-    enable = true;
-    settings.PasswordAuthentication = false;
-    settings.KbdInteractiveAuthentication = false;
-    settings.PermitRootLogin = "prohibit-password";
-  };
-
   services.journald.extraConfig = ''
     systemMaxIse=500M
   '';
