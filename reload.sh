@@ -54,7 +54,7 @@ fi
 # Reload home-manager if config exists
 if [ "$HM_EXISTS" = true ]; then
     echo -e "\n${BLUE}==> Building home-manager configuration...${NC}"
-    if home-manager switch --flake "${HOME_FLAKE}#${HOME_CONFIG}"; then
+    if home-manager switch -b backup --flake "${HOME_FLAKE}#${HOME_CONFIG}"; then
         echo -e "${GREEN}✓ Home-manager configuration applied successfully${NC}"
     else
         echo -e "${RED}✗ Home-manager configuration failed${NC}"
