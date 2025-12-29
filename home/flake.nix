@@ -43,6 +43,14 @@
         modules =
           [ sops-nix.homeManagerModules.sops ./samantha/hosts/scapeshift.nix ];
       };
+
+    homeConfigurations."samantha@arcanis" =
+      home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs { system = "x86_64-linux"; };
+        extraSpecialArgs = { hostName = "arcanis"; };
+        modules =
+          [ sops-nix.homeManagerModules.sops ./samantha/hosts/arcanis.nix ];
+      };
   };
 }
 
