@@ -14,12 +14,18 @@
       "arcanis" = {
         user = "samantha";
         hostname = "samantha-home-server.net";
-        port = 20;
       };
       "arcanis-local" = {
         user = "samantha";
         hostname = "10.0.0.2";
-        port = 20;
+      };
+      "tarmogoyf" = {
+        user = "samantha";
+        hostname = "10.0.0.6";
+      };
+      "snapcaster" = {
+        user = "samantha";
+        hostname = "10.0.0.9";
       };
     };
   };
