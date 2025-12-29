@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ../profiles/base.nix
-    ../pofiles/workstation.nix
+    ../profiles/workstation.nix
   ];
 
   home.username = "samantha";
