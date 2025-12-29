@@ -12,10 +12,15 @@
 
   hardware.opengl.enable = true;
 
-  # Point to Windows NVIDIA libraries for WSL
-  environment.sessionVariables = {
+  # Point to Windows NVIDIA libraries for WSL (system-wide)
+  environment.variables = {
     LD_LIBRARY_PATH = "/usr/lib/wsl/lib";
   };
+
+  # Configure nix-ld to find WSL libraries
+  programs.nix-ld.libraries = with pkgs; [
+    stdenv.cc.cc.lib
+  ];
 
   environment.systemPackages = with pkgs; [
     cudatoolkit
