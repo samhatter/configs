@@ -14,7 +14,7 @@
   };
 
   outputs = { nixpkgs, nixpkgs-fork, sops-nix, nixos-wsl, ... }: {
-    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
+    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
 
     nixosConfigurations = {
       snapcaster = nixpkgs.lib.nixosSystem {
