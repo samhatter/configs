@@ -20,6 +20,8 @@
     nixos-wsl,
     ...
   }: {
+    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
+
     nixosConfigurations = {
       snapcaster = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -32,6 +34,7 @@
         ];
       };
     };
+
     nixosConfigurations = {
       tarmogoyf = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -44,6 +47,7 @@
         ];
       };
     };
+
     nixosConfigurations = {
       twin = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -56,6 +60,7 @@
         ];
       };
     };
+    
     nixosConfigurations = {
       scapeshift = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
