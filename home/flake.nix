@@ -1,8 +1,9 @@
 {
   description = "Home Manager flake";
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs-fork.url = "github:samhatter/nixpkgs?ref=sammy-dev";
+    home-manager.url = "github:nix-community/home-manager/release-25.11";
     sops-nix.url = "github:Mic92/sops-nix";
 
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -12,6 +13,7 @@
   outputs =
     {
       nixpkgs,
+      nixpkgs-fork,
       home-manager,
       sops-nix,
       ...
@@ -20,9 +22,10 @@
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
 
       homeConfigurations."samantha@snapcaster" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "x86_64-linux"; };
+        pkgs = import nixpkgs { stdenv.hostPlatform.system = "x86_64-linux"; };
         extraSpecialArgs = {
           hostName = "snapcaster";
+          inherit nixpkgs-fork;
         };
         modules = [
           sops-nix.homeManagerModules.sops
@@ -31,9 +34,10 @@
       };
 
       homeConfigurations."samantha@tarmogoyf" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "x86_64-linux"; };
+        pkgs = import nixpkgs { stdenv.hostPlatform.system = "x86_64-linux"; };
         extraSpecialArgs = {
           hostName = "tarmogoyf";
+          inherit nixpkgs-fork;
         };
         modules = [
           sops-nix.homeManagerModules.sops
@@ -42,9 +46,10 @@
       };
 
       homeConfigurations."samantha@twin" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "x86_64-linux"; };
+        pkgs = import nixpkgs { stdenv.hostPlatform.system = "x86_64-linux"; };
         extraSpecialArgs = {
           hostName = "twin";
+          inherit nixpkgs-fork;
         };
         modules = [
           sops-nix.homeManagerModules.sops
@@ -53,9 +58,10 @@
       };
 
       homeConfigurations."samantha@scapeshift" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "x86_64-linux"; };
+        pkgs = import nixpkgs { stdenv.hostPlatform.system = "x86_64-linux"; };
         extraSpecialArgs = {
           hostName = "scapeshift";
+          inherit nixpkgs-fork;
         };
         modules = [
           sops-nix.homeManagerModules.sops
@@ -64,9 +70,10 @@
       };
 
       homeConfigurations."samantha@arcanis" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "x86_64-linux"; };
+        pkgs = import nixpkgs { stdenv.hostPlatform.system = "x86_64-linux"; };
         extraSpecialArgs = {
           hostName = "arcanis";
+          inherit nixpkgs-fork;
         };
         modules = [
           sops-nix.homeManagerModules.sops

@@ -31,21 +31,6 @@
   services.printing.enable = true;
   services.avahi.enable = true;
 
-  nixpkgs.overlays = [
-    (
-      final: prev:
-      let
-        forkPkgs = import nixpkgs-fork {
-          inherit (final) system;
-          config = prev.config;
-        };
-      in
-      {
-        plex-desktop = forkPkgs.plex-desktop;
-      }
-    )
-  ];
-
   programs.gnome-terminal.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.gnome.gnome-settings-daemon.enable = true;
