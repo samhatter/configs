@@ -68,6 +68,27 @@
 
       vim.lsp.enable("pyright")
 
+      -- Gopls (Go)
+      vim.lsp.config.gopls = {
+        cmd = { "gopls" },
+        filetypes = { "go", "gomod", "gowork", "gotmpl" },
+        root_markers = { "go.work", "go.mod", ".git" },
+        settings = {
+          gopls = {
+            gofumpt = true,
+            analyses = {
+              unusedparams = true,
+              nilness = true,
+              unusedwrite = true,
+            },
+            staticcheck = true,
+          },
+        },
+      }
+
+      vim.lsp.enable("gopls")
+
+
 
       -- Treesitter
       require'nvim-treesitter.configs'.setup {
