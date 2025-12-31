@@ -28,7 +28,7 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHYPYk8fH6GlvOR4J9fxS6jb5pqPCtEw0NacU0SuBT4X samanthavincent@Samanthas-MacBook-Pro.local"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGSgHsql24Wx3SosGqvSGtVq0VsdyZ2f8SYIBbg2zIAI samantha@snapcaster"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDREtiARFeF6oQEkVQeyfX0t8X3soPNv6puVXJfOXq1C samantha@tarmogoyf"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJhY28/mGm59ibWCwyTnof92vWosXzZVEGPnbEf0/ppL samantha@scapeshift"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOulY7h9FYHfLa/wg59LFxiEYfK66BHvLFncfj0OrO17 samantha@scapeshift"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKcZcDOSjq6ZkiQ4vaBY2KKNaZhnPRzlPqJPhJPD1qxD samantha@arcanis"
     ];
     createHome = true;
