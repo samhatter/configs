@@ -27,24 +27,10 @@
   virtualisation = {
     docker = {
       enable = true;
-      liveRestore = false;
+      liveRestore = true;
       daemon.settings = {
         experimental = true;
         metrics-addr = "0.0.0.0:9323";
-      };
-    };
-
-    oci-containers = {
-      backend = "docker";
-      containers = {
-        portainer = {
-          image = "portainer/portainer";
-          ports = ["9000:9000"];
-          volumes = [
-            "/etc/portainer:/data"
-            "/var/run/docker.sock:/var/run/docker.sock"
-          ];
-        };
       };
     };
   };

@@ -5,17 +5,11 @@
     virtualHosts."plex.samantha-home-server.net".extraConfig = ''
       reverse_proxy 127.0.0.1:32400
     '';
-    virtualHosts."langfuse.samantha-home-server.net".extraConfig = ''
-      reverse_proxy 127.0.0.1:3136
-    '';
     virtualHosts."torrent.samantha-home-server.net".extraConfig = ''
       reverse_proxy 127.0.0.1:1024
     '';
     virtualHosts."soulseek.samantha-home-server.net".extraConfig = ''
       reverse_proxy 127.0.0.1:2048
-    '';
-    virtualHosts."portainer.samantha-home-server.net".extraConfig = ''
-      reverse_proxy 127.0.0.1:9000
     '';
     virtualHosts."grafana.samantha-home-server.net".extraConfig = ''
       reverse_proxy 127.0.0.1:3000
