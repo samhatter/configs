@@ -27,7 +27,7 @@
   virtualisation = {
     docker = {
       enable = true;
-      liveRestore = false;
+      liveRestore = true;
       daemon.settings = {
         experimental = true;
         metrics-addr = "0.0.0.0:9323";
