@@ -6,4 +6,12 @@
   boot.loader.efi.canTouchEfiVariables = false;
 
   programs.nix-ld.enable = true;
+
+  virtualisation.docker = {
+    enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
 }
