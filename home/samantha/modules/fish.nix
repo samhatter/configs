@@ -12,7 +12,6 @@
     shellInit = ''
       status --is-interactive; and set -gx EDITOR nvim
       status --is-interactive; and set -gx PAGER less
-      set -gx DOCKER_HOST unix://$XDG_RUNTIME_DIR/docker.sock
     '';
 
     interactiveShellInit = ''
