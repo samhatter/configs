@@ -21,5 +21,6 @@ in {
     gnomeExtensions.dash-to-dock
     gnomeExtensions.resource-monitor
     discord
+    element-desktop
   ];
 }
