@@ -53,7 +53,10 @@
         header Content-Type application/json
         header Access-Control-Allow-Origin *
         respond `{
-          "m.homeserver": {"base_url": "https://matrix.samantha-home-server.net"}
+          "m.homeserver": {"base_url": "https://matrix.samantha-home-server.net"},
+          "io.element.call": {
+            "url": "https://call.samantha-home-server.net"
+          }
         }`
       }
 
