@@ -36,6 +36,21 @@
     virtualHosts."web-graffiti.samantha-home-server.net".extraConfig = ''
       reverse_proxy 127.0.0.1:5554
     '';
+    virtualHosts."matrix.samantha-home-server.net".extraConfig = ''
+      reverse_proxy 127.0.0.1:5930
+
+      handle /.well-known/matrix/server {
+        header Content-Type application/json
+        header Access-Control-Allow-Origin *
+        respond `{"m.server": "matrix.samantha-home-server.net:443"}`
+      }
+
+      handle /.well-known/matrix/client {
+        header Content-Type application/json
+        header Access-Control-Allow-Origin *
+        respond `{"m.homeserver": {"base_url": "https://matrix.samantha-home-server.net"}}`
+      }
+    '';
     virtualHosts."unifi.samantha-home-server.net".extraConfig = ''
       reverse_proxy 127.0.0.1:8443 {
         transport http {
