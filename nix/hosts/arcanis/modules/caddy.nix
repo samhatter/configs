@@ -37,6 +37,10 @@
       reverse_proxy 127.0.0.1:5554
     '';
     virtualHosts."matrix.samantha-home-server.net".extraConfig = ''
+      handle_path /livekit/* {
+        reverse_proxy 127.0.0.1:7880
+      }
+
       reverse_proxy 127.0.0.1:5930
 
       handle /.well-known/matrix/server {
@@ -48,8 +52,9 @@
       handle /.well-known/matrix/client {
         header Content-Type application/json
         header Access-Control-Allow-Origin *
-        respond `{"m.homeserver": {"base_url": "https://matrix.samantha-home-server.net"}}`
+        respond `{"m.homeserver": {"base_url": "https://matrix.samantha-home-server.net"}, "org.matrix.msc3575.proxy": {"url": "https://matrix.samantha-home-server.net"}, "im.vector.riot.jitsi": {"preferredDomain": "matrix.samantha-home-server.net"}, "io.element.call": {"widget_url": "https://call.element.io", "use_exclusively": false}, "org.matrix.msc3401.call": {"livekit_service_url": "https://matrix.samantha-home-server.net/livekit/", "livekit_alias": "matrix.samantha-home-server.net"}}`
       }
+
     '';
     virtualHosts."unifi.samantha-home-server.net".extraConfig = ''
       reverse_proxy 127.0.0.1:8443 {
