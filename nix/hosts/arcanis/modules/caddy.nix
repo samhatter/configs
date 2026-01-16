@@ -49,7 +49,9 @@
       handle /.well-known/matrix/client {
         header Content-Type application/json
         header Access-Control-Allow-Origin *
-        respond `{"m.homeserver": {"base_url": "https://matrix.samantha-home-server.net"}, "io.element.call": {"widget_url": "https://call.element.io", "use_exclusively": false}}`
+        respond `{
+          "m.homeserver": {"base_url": "https://matrix.samantha-home-server.net"}
+        }`
       }
     '';
     virtualHosts."unifi.samantha-home-server.net".extraConfig = ''
