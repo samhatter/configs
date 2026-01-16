@@ -42,24 +42,7 @@
         uri strip_prefix /_admin
         reverse_proxy 127.0.0.1:5931
       }
-
-      handle /.well-known/matrix/server {
-        header Content-Type application/json
-        header Access-Control-Allow-Origin *
-        respond `{"m.server": "matrix.samantha-home-server.net:443"}`
-      }
-
-      handle /.well-known/matrix/client {
-        header Content-Type application/json
-        header Access-Control-Allow-Origin *
-        respond `{
-          "m.homeserver": {"base_url": "https://matrix.samantha-home-server.net"},
-          "io.element.call": {
-            "url": "https://call.samantha-home-server.net"
-          }
-        }`
-      }
-
+      
       reverse_proxy 127.0.0.1:5930
     '';
     virtualHosts."unifi.samantha-home-server.net".extraConfig = ''
@@ -73,8 +56,10 @@
       reverse_proxy 127.0.0.1:8093
     '';
     virtualHosts."sfu.samantha-home-server.net".extraConfig = ''
-      encode gzip
-      reverse_proxy 127.0.0.1:7880
+      reverse_proxy 127.0.0.1:7880 {
+        header_up Upgrade {http.request.header.Upgrade}
+        header_up Connection {http.request.header.Connection}
+      }
     '';
     virtualHosts."sfu-jwt.samantha-home-server.net".extraConfig = ''
       reverse_proxy 127.0.0.1:8881
