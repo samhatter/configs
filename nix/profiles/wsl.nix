@@ -14,4 +14,8 @@
       setSocketVariable = true;
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    pyenv
+  ];
 }

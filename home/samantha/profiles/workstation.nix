@@ -22,5 +22,6 @@ in {
     gnomeExtensions.resource-monitor
     discord
     element-desktop
+    pyenv
   ];
 }
