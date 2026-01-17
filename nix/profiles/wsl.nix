@@ -27,5 +27,9 @@
     bzip2
     libffi
     xz
+    tk
+    ncurses
+    gdbm
+    expat
   ];
 }
