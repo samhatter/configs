@@ -17,5 +17,15 @@
 
   environment.systemPackages = with pkgs; [
     pyenv
+    # pyenv build dependencies
+    gcc
+    gnumake
+    zlib
+    openssl
+    readline
+    sqlite
+    bzip2
+    libffi
+    xz
   ];
 }
