@@ -46,4 +46,16 @@
       setSocketVariable = true;
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    gcc
+    gnumake
+    zlib
+    openssl
+    readline
+    sqlite
+    bzip2
+    libffi
+    xz
+  ];
 }
