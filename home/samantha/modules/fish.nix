@@ -21,6 +21,11 @@
 
 
       function fish_prompt
+          if set -q VIRTUAL_ENV
+              set_color green
+              echo -n "("(basename "$VIRTUAL_ENV")") "
+          end
+
           set_color green
           echo -n (whoami)"@"(hostname -s)" "
           set_color blue
