@@ -6,4 +6,8 @@
   home.stateVersion = "24.11";
 
   sops.age.keyFile = "/var/lib/sops-nix/key.txt";
+
+  home.packages = with pkgs; [
+    fluxcd
+  ];
 }
