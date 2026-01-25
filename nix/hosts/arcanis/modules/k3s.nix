@@ -17,5 +17,6 @@
   services.k3s.extraFlags = toString [
     "--write-kubeconfig=/home/samantha/.kube/config"
     "--write-kubeconfig-mode=0644"
+    "--disable=traefik"
   ];
 }

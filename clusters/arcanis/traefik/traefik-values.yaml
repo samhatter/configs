@@ -1,7 +1,0 @@
-certificatesResolvers:
-  letsencrypt:
-    acme:
-      email: sammyvincent2001@gmail.com
-      storage: /data/acme.json
-      httpChallenge:
-        entryPoint: web

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: traefik-values
+  namespace: kube-system
+data:
+  values.yaml: |
+    certificatesResolvers:
+      letsencrypt:
+        acme:
+          email: sammyvincent2001@gmail.com
+          storage: /data/acme.json
+          httpChallenge:
+            entryPoint: web
