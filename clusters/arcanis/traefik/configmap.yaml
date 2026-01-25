@@ -5,20 +5,6 @@ metadata:
   namespace: traefik
 data:
   values.yaml: |
-    entryPoints:
-      web:
-        address: :80
-      websecure:
-        address: :443
-
-    certificatesResolvers:
-      letsencrypt:
-        acme:
-          email: sammyvincent2001@gmail.com
-          storage: /data/acme.json
-          httpChallenge:
-            entryPoint: web
-
     ports:
       web:
         port: 80
@@ -30,3 +16,11 @@ data:
       size: 1Gi
       path: /data
       accessMode: ReadWriteOnce
+
+    certificatesResolvers:
+      letsencrypt:
+        acme:
+          email: sammyvincent2001@gmail.com
+          storage: /data/acme.json
+          httpChallenge:
+            entryPoint: web
