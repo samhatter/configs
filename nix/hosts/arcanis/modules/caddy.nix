@@ -23,7 +23,7 @@
     virtualHosts."radarr.samantha-home-server.net".extraConfig = ''
       reverse_proxy 127.0.0.1:7878
     '';
-    virtualHosts."art.amantha-home-server.net".extraConfig = ''
+    virtualHosts."art.samantha-home-server.net".extraConfig = ''
       reverse_proxy 127.0.0.1:2727
     '';
     virtualHosts."files.samantha-home-server.net".extraConfig = ''
