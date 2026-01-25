@@ -64,5 +64,8 @@
     virtualHosts."sfu-jwt.samantha-home-server.net".extraConfig = ''
       reverse_proxy 127.0.0.1:8881
     '';
+    virtualHosts."samantha-home-server.net".extraConfig = ''
+      reverse_proxy 127.0.0.1:6475
+    '';
   };
 }
