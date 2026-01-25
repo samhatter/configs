@@ -5,6 +5,12 @@ metadata:
   namespace: traefik
 data:
   values.yaml: |
+    entryPoints:
+      web:
+        address: :80
+      websecure:
+        address: :443
+
     certificatesResolvers:
       letsencrypt:
         acme:
