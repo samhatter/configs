@@ -5,7 +5,13 @@ metadata:
   namespace: homepage
   annotations:
     traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/router.tls.certresolver: letsencrypt
 spec:
+  tls:
+  - hosts:
+    - samantha-home-server.net
+    secretName: homepage-tls
   rules:
   - host: samantha-home-server.net
     http:
