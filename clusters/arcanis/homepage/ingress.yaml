@@ -8,10 +8,7 @@ metadata:
     traefik.ingress.kubernetes.io/router.tls: "true"
     traefik.ingress.kubernetes.io/router.tls.certresolver: letsencrypt
 spec:
-  tls:
-  - hosts:
-    - samantha-home-server.net
-    secretName: homepage-tls
+  ingressClassName: traefik
   rules:
   - host: samantha-home-server.net
     http:
