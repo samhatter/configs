@@ -7,8 +7,8 @@
     ./hardware-configuration.nix
     ../../profiles/base.nix
     ../../users/samantha.nix
-    ../modules/k3s.nix
-    ../modules/firewall.nix
+    ./modules/k3s.nix
+    ./modules/firewall.nix
   ];
 
   networking.hostName = "arcanis";
