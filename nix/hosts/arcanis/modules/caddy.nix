@@ -38,6 +38,34 @@
     '';
     virtualHosts."matrix.samantha-home-server.net".extraConfig = ''
 
+      handle /manifest.json {
+        reverse_proxy 127.0.0.1:5931
+      }
+
+      handle /asset-manifest.json {
+        reverse_proxy 127.0.0.1:5931
+      }
+
+      handle /static/* {
+        reverse_proxy 127.0.0.1:5931
+      }
+
+      handle /assets/* {
+        reverse_proxy 127.0.0.1:5931
+      }
+
+      handle /images/* {
+        reverse_proxy 127.0.0.1:5931
+      }
+
+      handle /favicon.ico {
+        reverse_proxy 127.0.0.1:5931
+      }
+
+      handle /config.json {
+        reverse_proxy 127.0.0.1:5931
+      }
+
       handle /_admin* {
         uri strip_prefix /_admin
         reverse_proxy 127.0.0.1:5931
