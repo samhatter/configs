@@ -7,7 +7,6 @@
     ./hardware-configuration.nix
     ../../profiles/base.nix
     ../../users/samantha.nix
-    # ./modules/caddy.nix
     ../modules/k3s.nix
     ../modules/firewall.nix
   ];
@@ -25,17 +24,6 @@
       mesa
     ];
   };
-
-  # virtualisation = {
-  #   docker = {
-  #     enable = true;
-  #     liveRestore = true;
-  #     daemon.settings = {
-  #       experimental = true;
-  #       metrics-addr = "0.0.0.0:9323";
-  #     };
-  #   };
-  # };
 
   fileSystems."/storage" = {
     device = "/dev/pool/storage";
