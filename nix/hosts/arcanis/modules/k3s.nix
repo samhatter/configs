@@ -10,7 +10,12 @@
 
   services.k3s.enable = true;
   services.k3s.role = "server";
+  systemd.tmpfiles.rules = [
+    "d /home/samantha/.kube 0750 samantha users -"
+  ];
+
   services.k3s.extraFlags = toString [
+    "--write-kubeconfig=/home/samantha/.kube/config"
     "--write-kubeconfig-mode=0644"
   ];
 }
