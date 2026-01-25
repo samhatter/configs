@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: traefik-values
-  namespace: kube-system
+  namespace: traefik
 data:
   values.yaml: |
     certificatesResolvers:
@@ -12,3 +12,15 @@ data:
           storage: /data/acme.json
           httpChallenge:
             entryPoint: web
+
+    ports:
+      web:
+        port: 80
+      websecure:
+        port: 443
+
+    persistence:
+      enabled: true
+      size: 1Gi
+      path: /data
+      accessMode: ReadWriteOnce
