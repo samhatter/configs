@@ -7,7 +7,7 @@
     ./hardware-configuration.nix
     ../../profiles/base.nix
     ../../users/samantha.nix
-    ./modules/caddy.nix
+    # ./modules/caddy.nix
   ];
 
   networking.hostName = "arcanis";
