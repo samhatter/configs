@@ -109,6 +109,16 @@ spec:
             secretKeyRef:
               name: soulseek-config
               key: secret-message
+        - name: SLSKD_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: soulseek-config
+              key: web-username
+        - name: SLSKD_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: soulseek-config
+              key: web-password
         volumeMounts:
         - name: media
           mountPath: /media

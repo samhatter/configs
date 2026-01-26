@@ -6,6 +6,8 @@ metadata:
 type: Opaque
 stringData:
     secret-message: ENC[AES256_GCM,data:qMrNKlqjMNhRWy5swYU=,iv:ZumF+F7/KaqjrO4Mbjr+vcUGBWCyGVfi0B8oeeX49RA=,tag:TOiLAQhibf1mixji1JdfdQ==,type:str]
+    web-username: ENC[AES256_GCM,data:+Mq9K8slLDI=,iv:Z5uuxKTdFVf2eQNWga1PAWDcE8w6o10J/6MG36p/jcY=,tag:58dwUWgRpwymlZlYI/kyhQ==,type:str]
+    web-password: ENC[AES256_GCM,data:ptXkDiAwmQIz4nM=,iv:G4BPZ0dmdbbedhYs1NuChk5YuTm4LlkXJmR+zHTKQRg=,tag:+Rcmrz0WfbWXN2iUA2PF3Q==,type:str]
 sops:
     age:
         - recipient: age1n7m4qddze6jmky0zzgasxr2fsea25t4ejppzv0flftsuzhrytgaqm49c2d
@@ -17,7 +19,7 @@ sops:
             TjI1Tkg0bmFFMXVxRXI1NXZVMitLWGMKLctKRR9xtJySk6aCT7Q4oWUjmavjPfFk
             u+Pt/6ig31UX9GS3WRZ7q4iqtCJZ2UDIhNLinpND/BMaiViTLylXLQ==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2026-01-26T07:08:44Z"
-    mac: ENC[AES256_GCM,data:YvubbLILI17J5x54mlYrjoBnKqVWp8qimvpt+UeUjMKBAodD1wY5Si/k7KDxRwrbgA707r3iYeUgEnjRLI6feSidUf0uLtkUWqVkT+T0hMkcfPIgkXsCcK9BDGtsv+zzTTdr6TEoL1go3lELXV+T2rry4Josmrrkw9OLbKyiFoE=,iv:UmsA8+T1ZBm7qAIA4Vkx9ww/yBDgJHUAA+9fjQIL11I=,tag:cSz6dUVvM0b1QYv/8/jeSQ==,type:str]
+    lastmodified: "2026-01-26T15:36:49Z"
+    mac: ENC[AES256_GCM,data:L3Ni2I7CbRJWKy06sbHA7Vi+1Fv6KSCBXZ25hwCBw2id3JJMTPezZrXHTPqFxXUC0z2i7ZbbwTQmwjp8bN51fHxgiZak+T8FpHjsgYrytRpcAycsNCDyU3gSGsOeQM1MWDZbIOq+nYGxJ4W4Ofo2nzFLar0SWmr+cB2Hgh66N8w=,iv:WVXpXKk91aK9F+l19SGFrkiU8rt4Mred0oZo3j2m0u8=,tag:rYo2d3QNUMIQUVx/RiJrrA==,type:str]
     encrypted_regex: ^(data|stringData)$
     version: 3.11.0

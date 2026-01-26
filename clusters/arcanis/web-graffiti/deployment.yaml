@@ -101,12 +101,12 @@ spec:
             secretKeyRef:
               name: web-graffiti-config
               key: slskd-password
-        - name: SLSKD_WEB_AUTHENTICATION_USERNAME
+        - name: SLSKD_USERNAME
           valueFrom:
             secretKeyRef:
               name: web-graffiti-config
               key: web-username
-        - name: SLSKD_WEB_AUTHENTICATION_PASSWORD
+        - name: SLSKD_PASSWORD
           valueFrom:
             secretKeyRef:
               name: web-graffiti-config
