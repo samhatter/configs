@@ -5,6 +5,11 @@ metadata:
   namespace: prowlarr
 spec:
   replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
   selector:
     matchLabels:
       app: prowlarr
@@ -35,6 +40,11 @@ metadata:
   namespace: prowlarr
 spec:
   replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
   selector:
     matchLabels:
       app: flaresolverr
