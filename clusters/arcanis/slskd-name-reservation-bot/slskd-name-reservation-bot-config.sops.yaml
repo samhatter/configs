@@ -5,7 +5,7 @@ metadata:
     namespace: slskd-name-reservation-bot
 type: Opaque
 stringData:
-    slskd-slsk-password: ENC[AES256_GCM,data:DSoriRdFPe2arDA=,iv:2DWObH9JvSA8sPdnEsO5Yb3Wu6i3y6cokONIx0r2pxk=,tag:MnM8I18nUxtHG61e7asXaQ==,type:str]
+    slskd-slsk-password: ENC[AES256_GCM,data:LaOpytPjTxxOtQ==,iv:CLqITd1DNWt0o+8S8ubUJNUk1mEdyANGcOiILA2s8Ds=,tag:1NFmZM79FpL8WZG+dqGaTQ==,type:str]
 sops:
     age:
         - recipient: age1n7m4qddze6jmky0zzgasxr2fsea25t4ejppzv0flftsuzhrytgaqm49c2d
@@ -17,7 +17,7 @@ sops:
             cHZkUGt5MGNueDlmZ0k1RGZFMHhEb00KEU1C2wczSo3AJM737MlmLkF/T/9kMFFZ
             M6DRtleAJtPXYVM+gmUjyYUlfTOBgM+DSA5jeFMDJr1SWKfAVePiHA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2026-01-26T20:02:45Z"
-    mac: ENC[AES256_GCM,data:VvP9k8aPHsalmwgCaJ3uCwiK4IFaF5uXACEcV3aXasqULO5Evm35LUv0zLEw9HOlpso6spAJn93t/YYnB9mZ6YNZmKSRCFo5U9nZCeLA4rFZyHSL/tY5tkSc2THgBCk+zt30WrX6NWQ9z9ROC1sRjwdztpHCcDnsEH1zivEZ05U=,iv:3VuWJnP3zACC9PLdyenH5nK/e5kRHt2iy2D7HJUjcmw=,tag:Sw6WPVPmEV3PzYkBaOtyfw==,type:str]
+    lastmodified: "2026-01-26T20:27:24Z"
+    mac: ENC[AES256_GCM,data:xERQjm7h5ClYpY4jtSLpZ6eHboeKJkhaKkfi7z9/4MnfnF8yWjKrJxTZFqHXZnMIS37lOwzHqS56gQvhOaevDd8fcWUCZALUeh9oRjY0FZPkwM9qmGvS9cP2tKTBYoBc8VfZRvtafy9CbYuBFZ1/TB4mHxF7ngSZdDNRzNKTAAI=,iv:Nzf9YuBn2fa6sWAJIHIAoR3r4t196qLqlde52wBVdJM=,tag:mIMA3Dl4zW6wEDTPEsv0cA==,type:str]
     encrypted_regex: ^(data|stringData)$
     version: 3.11.0
