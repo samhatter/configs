@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: slskd-name-reservation-bot
-  namespace: slskd-name-reservation-bot
-spec:
-  selector:
-    app: slskd-name-reservation-bot
