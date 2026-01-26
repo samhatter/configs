@@ -90,8 +90,7 @@ spec:
         - name: scripts
           mountPath: /scripts
       - name: slskd
-        image: docker.io/library/soulseek-slskd:latest
-        imagePullPolicy: Never
+        image: ghcr.io/samhatter/slskd:latest
         env:
         - name: SLSKD_DOWNLOADS_DIR
           value: /media
