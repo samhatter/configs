@@ -6,4 +6,3 @@ resources:
   - service.yaml
   - ingress.yaml
   - unifi-mongo.sops.yaml
-  - middleware.yaml
