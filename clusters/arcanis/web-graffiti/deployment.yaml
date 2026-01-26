@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: soulseek
-  namespace: soulseek
+  name: web-graffiti-slskd
+  namespace: web-graffiti
 spec:
   replicas: 1
   strategy:
@@ -12,11 +12,11 @@ spec:
       maxUnavailable: 1
   selector:
     matchLabels:
-      app: soulseek
+      app: web-graffiti-slskd
   template:
     metadata:
       labels:
-        app: soulseek
+        app: web-graffiti-slskd
     spec:
       containers:
       - name: gluetun
@@ -27,62 +27,39 @@ spec:
             - NET_ADMIN
         env:
         - name: VPN_SERVICE_PROVIDER
-          valueFrom:
-            secretKeyRef:
-              name: soulseek-vpn
-              key: vpn-service-provider
+          value: "protonvpn"
         - name: VPN_PORT_FORWARDING
           value: "on"
         - name: VPN_PORT_FORWARDING_PROVIDER
-          valueFrom:
-            secretKeyRef:
-              name: soulseek-vpn
-              key: vpn-port-forwarding-provider
+          value: "protonvpn"
         - name: VPN_PORT_FORWARDING_STATUS_FILE
-          valueFrom:
-            secretKeyRef:
-              name: soulseek-vpn
-              key: vpn-port-forwarding-status-file
+          value: "/gluetun/forwarded_port"
         - name: VPN_PORT_FORWARDING_UP_COMMAND
-          valueFrom:
-            secretKeyRef:
-              name: soulseek-vpn
-              key: vpn-port-forwarding-up-command
+          value: "/scripts/update-port.sh {{PORTS}}"
         - name: TZ
           value: "UTC/UTC"
         - name: VPN_TYPE
-          valueFrom:
-            secretKeyRef:
-              name: soulseek-vpn
-              key: vpn-type
+          value: "wireguard"
         - name: WIREGUARD_PUBLIC_KEY
           valueFrom:
             secretKeyRef:
-              name: soulseek-vpn
+              name: web-graffiti-vpn
               key: wireguard-public-key
         - name: WIREGUARD_PRIVATE_KEY
           valueFrom:
             secretKeyRef:
-              name: soulseek-vpn
+              name: web-graffiti-vpn
               key: wireguard-private-key
         - name: WIREGUARD_ADDRESSES
-          valueFrom:
-            secretKeyRef:
-              name: soulseek-vpn
-              key: wireguard-addresses
+          value: "10.2.0.2/32"
         - name: WIREGUARD_PERSISTENT_KEEPALIVE
           value: "25"
         - name: LOG_LEVEL
           value: "info"
         - name: VPN_INTERFACE_MTU
           value: "1280"
-        - name: SERVER_CITIES
-          valueFrom:
-            secretKeyRef:
-              name: soulseek-vpn
-              key: server-cities
         ports:
-        - containerPort: 2048
+        - containerPort: 5554
           name: slskd
         volumeMounts:
         - name: gluetun
@@ -92,48 +69,67 @@ spec:
       - name: slskd
         image: ghcr.io/samhatter/slskd:latest
         env:
+        - name: SLSKD_NO_SHARE_SCAN
+          value: "false"
+        - name: SLSKD_NO_AUTH
+          value: "false"
         - name: SLSKD_DOWNLOADS_DIR
-          value: /media
+          value: "/storage/downloads"
         - name: SLSKD_SHARED_DIR
-          value: /media
-        - name: SLSKD_UPLOAD_SPEED_LIMIT
-          value: "1000"
-        - name: SLSKD_DOWNLOAD_SPEED_LIMIT
-          value: "4000"
+          value: "/storage"
         - name: SLSKD_REMOTE_CONFIGURATION
           value: "true"
         - name: SLSKD_HTTP_PORT
-          value: "2048"
-        - name: SECRET_MESSAGE
+          value: "5554"
+        - name: SLSKD_DISK_LOGGER
+          value: "true"
+        - name: SLSKD_UPLOAD_SPEED_LIMIT
+          value: "1000000"
+        - name: SLSKD_DOWNLOAD_SPEED_LIMIT
+          value: "1000000"
+        - name: SLSKD_UPLOAD_SLOTS
+          value: "500"
+        - name: SLSKD_DOWNLOAD_SLOTS
+          value: "500"
+        - name: SLSKD_SLSK_USERNAME
           valueFrom:
             secretKeyRef:
-              name: soulseek-config
-              key: secret-message
+              name: web-graffiti-config
+              key: slskd-username
+        - name: SLSKD_SLSK_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: web-graffiti-config
+              key: slskd-password
+        - name: SLSKD_WEB_AUTHENTICATION_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: web-graffiti-config
+              key: web-username
+        - name: SLSKD_WEB_AUTHENTICATION_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: web-graffiti-config
+              key: web-password
         volumeMounts:
-        - name: media
-          mountPath: /media
+        - name: storage
+          mountPath: /storage
         - name: app
           mountPath: /app
-        - name: theme
-          mountPath: /slskd/wwwroot/theme.css
       volumes:
       - name: gluetun
         hostPath:
-          path: /storage/appdata/soulseek/gluetun
+          path: /storage/appdata/web-graffiti/gluetun
           type: DirectoryOrCreate
       - name: scripts
         hostPath:
-          path: /storage/appdata/soulseek/scripts
+          path: /storage/appdata/web-graffiti/scripts
           type: DirectoryOrCreate
-      - name: media
+      - name: storage
         hostPath:
-          path: /storage/media
+          path: /storage/web-graffiti
           type: Directory
       - name: app
         hostPath:
-          path: /storage/appdata/soulseek/app
+          path: /storage/appdata/web-graffiti/slskd
           type: DirectoryOrCreate
-      - name: theme
-        hostPath:
-          path: /storage/appdata/soulseek/theme.css
-          type: FileOrCreate

@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: web-graffiti-vpn
+    namespace: web-graffiti
+type: Opaque
+stringData:
+    wireguard-public-key: ENC[AES256_GCM,data:leFPu1YyrVtLCEuWg7o1Ntb+ucIIeQwiRoay6G+L+EQPB/KVeCAfdrNo88Y=,iv:BzFPkamP0Cez1F0J74daB0YVoqdottEDmQoPPnykZlo=,tag:MbGPShXtYbinG1561WYeiw==,type:str]
+    wireguard-private-key: ENC[AES256_GCM,data:rMif+lGdp3CHz+nGXrpOtMAvo6/fuGiKfAc+bTAMgKqg7pSB8vXazo2Kru4=,iv:dP68jQIvF491eRRfzmZWPjMkjnGZjErcDjlKoj42CwE=,tag:dddmTKVqDZ51UdV42ZywDA==,type:str]
+    server-cities: ENC[AES256_GCM,data:7AFQJAN82Qo=,iv:DG9IlqWgSKT+2+FGO1INpPexgkGQHy94xg0GCRmgPbQ=,tag:i3QhHDkHF9vySx32nPb8XA==,type:str]
+    slskd-password: ENC[AES256_GCM,data:vmuWPuCb+AtSPIw=,iv:uBzSZ1l6vA7MrWKXZoidl04R88fBiUW0UncsNifkQS0=,tag:x4L4yalYeqPRQV8tH9VFyw==,type:str]
+sops:
+    age:
+        - recipient: age1n7m4qddze6jmky0zzgasxr2fsea25t4ejppzv0flftsuzhrytgaqm49c2d
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBMYTFzVWh2b3A5ZlhxWkJK
+            U0lCZlNIeVU2eUNCTDVHZjFUT2JhYzJCRGdFCkpJUEk1dXhuLzhpU1l3OXJneXVa
+            Vk1ZVVpJMTJGRDEzWnp6REduMm85cGMKLS0tIHUvQjV4b3hBaDBxMmhKUVdpOWxh
+            Z1lqUHZ2SXhvNWJKZGNaMlhaVGxTMncKTFzQJ//Xl9KXV7e5dPOPYyQ25XHh39gS
+            1J4y0sbCis3w3Ceq3iBrME+gvJzD4ZsjumrOL01OOcpbxdW508cyfA==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2026-01-26T15:11:57Z"
+    mac: ENC[AES256_GCM,data:g1iQT+6PWzCJfhb/ehXaeTXUb+ibgRELHBxllhjOSCZqusYAt2Zf0gmR6bc+AtZUMAZT4pOkqWyPSunJ6W1I/DjUTBo9z0qkoC0kDLF03ciwtv1J6ePwtRGBvS04e0DAq5u5ZU7yMITvd/SZaKczhGXqMnpCldsAMzGNLDkgs8E=,iv:zygVH3uZdM0WnyGk0/jZDz+kAbixoUCvL5r0bUK4uH8=,tag:fBAVJBiasPUPXDYR+Fg3Tg==,type:str]
+    encrypted_regex: ^(data|stringData)$
+    version: 3.11.0

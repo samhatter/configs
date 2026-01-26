@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: web-graffiti-slskd
+  namespace: web-graffiti
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    cert-manager.io/cluster-issuer: cloudflare
+spec:
+  ingressClassName: traefik
+  tls:
+  - hosts:
+    - web-graffiti.samantha.day
+    secretName: web-graffiti-tls
+  rules:
+  - host: web-graffiti.samantha.day
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: web-graffiti-slskd
+            port:
+              number: 5554

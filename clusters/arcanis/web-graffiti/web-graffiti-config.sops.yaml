@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: web-graffiti-config
+    namespace: web-graffiti
+type: Opaque
+stringData:
+    slskd-username: ENC[AES256_GCM,data:WCv4jC5pAH9WqzK8,iv:4KnJlQVRLUJlBGEtlJ8q3jhyt8zQn8PtQv/TF9NJBWE=,tag:XqBIdJs23UgeAxX07IWo4g==,type:str]
+    slskd-password: ENC[AES256_GCM,data:s7oFS/iG4eMNSIs=,iv:ezjMzyeXP8oCryqyign0vaMFg7aw4ozU53D04swa7C0=,tag:amF+vBPaZIgbiWLL9K803Q==,type:str]
+    web-username: ENC[AES256_GCM,data:gynMDx+J0Bw=,iv:5RSkYTJkeMlk4ihkZENqkO/0Iic71HjUB1c4WvNiZHs=,tag:ATr0N4ETC2NZMwaMY5IjkQ==,type:str]
+    web-password: ENC[AES256_GCM,data:eOyWaco1zNxfyLo=,iv:5sQv25EXmE4cTPn7PU5XnSC1zvnxWMgTFTu80NrDKL4=,tag:uQFhNEfeIuC9ZHEvkIKgiA==,type:str]
+sops:
+    age:
+        - recipient: age1n7m4qddze6jmky0zzgasxr2fsea25t4ejppzv0flftsuzhrytgaqm49c2d
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB3RTVKZ3h4ZGtzcVhlL3Nx
+            VjA4UHJSMTdYMXl3Um5ucUJSMy9ReEtTV1hrCnUzWU1yTHJaOTVOdHdtNTNNVjFu
+            SHVoMTUrZXJCTVpuRTJHMkJvTERVc0UKLS0tIFUyOUxPdTNzR0lFNmN5eitraklC
+            YjhkYnozaHdHR1ZMeDZ2aWJSVDIyTTgKgkA2I/Vzb8Zkx0wF3LFMdHpJGIohBZQx
+            V/VLVitsicyZ1N++3Sju90L/kMkNLqA01lrHbrxW1rTRomsLxhqBOg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2026-01-26T08:27:37Z"
+    mac: ENC[AES256_GCM,data:jmOOHjK9m8vQsoEPz7tmjbg/zOe7zE2SkF2ELWHeYp2y5dhg/nLA/UuR1+Yw1OF5rxI7Ha6I9AmMvwxflhLnaajl0tFWCcYpZjM1ZvEhMqE6CxynXKotdE33mKMyXlSplckD1wxENUhVRh73K2NZdokjlpJCinY/gJZL/VatqLw=,iv:4rr0sL8purMT1Pbdjt04BJlpp4x17GP5NXk+iiuuxRk=,tag:SEIYsXPKqoyOgQEDT1yKPg==,type:str]
+    encrypted_regex: ^(data|stringData)$
+    version: 3.11.0
