@@ -67,7 +67,7 @@ spec:
             secretKeyRef:
               name: slskd-name-reservation-bot-config
               key: slskd-slsk-password
-        - volumeMounts:
+        volumeMounts:
         - name: app
           mountPath: /app
         - name: usernames
@@ -85,4 +85,3 @@ spec:
         hostPath:
           path: /storage/appdata/slskd-name-reservation-bot/usernames.txt
           type: FileOrCreate
-          
