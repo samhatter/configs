@@ -13,7 +13,8 @@ creation_rules:
         - *twin
         - *scapeshift
         - *arcanis
-  - path_regex: clusters/arcanis/*/.*\.(env|ya?ml|json|ini)$
+  - path_regex: clusters/arcanis/.*\.sops\.(env|ya?ml|json|ini)$
+    encrypted_regex: ^(data|stringData)$
     key_groups:
       - age:
         - *arcanis
