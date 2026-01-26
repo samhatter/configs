@@ -4,7 +4,6 @@ resources:
   - namespace.yaml
   - deployment.yaml
   - service.yaml
-  - ingress.yaml
   - network-policy.yaml
   - slskd-name-reservation-bot-vpn.sops.yaml
   - slskd-name-reservation-bot-config.sops.yaml
