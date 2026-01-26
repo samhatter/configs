@@ -29,17 +29,7 @@ spec:
                 - -c
                 - |
                   sleep 5
-                  mongo --eval "
-                  db = db.getSiblingDB('unifi');
-                  db.createUser({
-                    user: 'unifi',
-                    pwd: '$MONGO_PASS',
-                    roles: [
-                      { role: 'dbOwner', db: 'unifi' },
-                      { role: 'dbOwner', db: 'unifi_stat' }
-                    ]
-                  });
-                  " unifi || true
+                  mongo --eval "db.getSiblingDB('unifi').createUser({user: 'unifi', pwd: '$MONGO_PASS', roles: [{role: 'dbOwner', db: 'unifi'}, {role: 'dbOwner', db: 'unifi_stat'}]})" admin || echo "FAILED TO CREATE USER"
         env:
         - name: MONGO_INITDB_ROOT_USERNAME
           value: "unifi"
