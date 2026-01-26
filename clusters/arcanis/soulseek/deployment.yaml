@@ -1,0 +1,143 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: soulseek
+  namespace: soulseek
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: soulseek
+  template:
+    metadata:
+      labels:
+        app: soulseek
+    spec:
+      containers:
+      - name: gluetun
+        image: qmcgaw/gluetun:latest
+        securityContext:
+          capabilities:
+            add:
+            - NET_ADMIN
+        env:
+        - name: VPN_SERVICE_PROVIDER
+          valueFrom:
+            secretKeyRef:
+              name: soulseek-vpn
+              key: vpn-service-provider
+        - name: VPN_PORT_FORWARDING
+          value: "on"
+        - name: VPN_PORT_FORWARDING_PROVIDER
+          valueFrom:
+            secretKeyRef:
+              name: soulseek-vpn
+              key: vpn-port-forwarding-provider
+        - name: VPN_PORT_FORWARDING_STATUS_FILE
+          valueFrom:
+            secretKeyRef:
+              name: soulseek-vpn
+              key: vpn-port-forwarding-status-file
+        - name: VPN_PORT_FORWARDING_UP_COMMAND
+          valueFrom:
+            secretKeyRef:
+              name: soulseek-vpn
+              key: vpn-port-forwarding-up-command
+        - name: TZ
+          value: "UTC/UTC"
+        - name: VPN_TYPE
+          valueFrom:
+            secretKeyRef:
+              name: soulseek-vpn
+              key: vpn-type
+        - name: WIREGUARD_PUBLIC_KEY
+          valueFrom:
+            secretKeyRef:
+              name: soulseek-vpn
+              key: wireguard-public-key
+        - name: WIREGUARD_PRIVATE_KEY
+          valueFrom:
+            secretKeyRef:
+              name: soulseek-vpn
+              key: wireguard-private-key
+        - name: WIREGUARD_ADDRESSES
+          valueFrom:
+            secretKeyRef:
+              name: soulseek-vpn
+              key: wireguard-addresses
+        - name: WIREGUARD_PERSISTENT_KEEPALIVE
+          value: "25"
+        - name: LOG_LEVEL
+          value: "info"
+        - name: VPN_INTERFACE_MTU
+          value: "1280"
+        - name: SERVER_CITIES
+          valueFrom:
+            secretKeyRef:
+              name: soulseek-vpn
+              key: server-cities
+        ports:
+        - containerPort: 2048
+          name: slskd
+        volumeMounts:
+        - name: gluetun
+          mountPath: /gluetun
+        - name: scripts
+          mountPath: /scripts
+      - name: slskd
+        image: slskd:latest
+        env:
+        - name: SLSKD_DOWNLOADS_DIR
+          value: /media
+        - name: SLSKD_SHARED_DIR
+          value: /media
+        - name: SLSKD_UPLOAD_SPEED_LIMIT
+          value: "1000"
+        - name: SLSKD_DOWNLOAD_SPEED_LIMIT
+          value: "4000"
+        - name: SLSKD_REMOTE_CONFIGURATION
+          value: "true"
+        - name: SLSKD_HTTP_PORT
+          value: "2048"
+        - name: SECRET_MESSAGE
+          valueFrom:
+            secretKeyRef:
+              name: soulseek-config
+              key: secret-message
+        ports:
+        - containerPort: 2048
+          name: slskd
+        volumeMounts:
+        - name: media
+          mountPath: /media
+        - name: app
+          mountPath: /app
+        - name: theme
+          mountPath: /slskd/wwwroot/theme.css
+          subPath: theme.css
+      volumes:
+      - name: gluetun
+        hostPath:
+          path: /storage/appdata/soulseek/gluetun
+          type: DirectoryOrCreate
+      - name: scripts
+        hostPath:
+          path: /storage/appdata/soulseek/scripts
+          type: DirectoryOrCreate
+      - name: media
+        hostPath:
+          path: /storage/media
+          type: Directory
+      - name: app
+        hostPath:
+          path: /storage/appdata/soulseek/app
+          type: DirectoryOrCreate
+      - name: theme
+        hostPath:
+          path: /storage/appdata/soulseek/theme.css
+          type: FileOrCreate

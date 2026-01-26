@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: soulseek-config
+    namespace: soulseek
+type: Opaque
+stringData:
+    secret-message: ENC[AES256_GCM,data:qMrNKlqjMNhRWy5swYU=,iv:ZumF+F7/KaqjrO4Mbjr+vcUGBWCyGVfi0B8oeeX49RA=,tag:TOiLAQhibf1mixji1JdfdQ==,type:str]
+sops:
+    age:
+        - recipient: age1n7m4qddze6jmky0zzgasxr2fsea25t4ejppzv0flftsuzhrytgaqm49c2d
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBSc0FGTURoSVJIay80dlg1
+            aXVudGN5ZUQ4SEpXb0t2Z29QdHpaUWNhZjB3Cjh4UWp5cE5jZXk1Sm9xTk9MSzlq
+            RVdoWFdDZ1NQekxhZGFveDJtNlRuUUEKLS0tIGxLY3ZDOWhieGJPT09JTlZmVnFO
+            TjI1Tkg0bmFFMXVxRXI1NXZVMitLWGMKLctKRR9xtJySk6aCT7Q4oWUjmavjPfFk
+            u+Pt/6ig31UX9GS3WRZ7q4iqtCJZ2UDIhNLinpND/BMaiViTLylXLQ==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2026-01-26T07:08:44Z"
+    mac: ENC[AES256_GCM,data:YvubbLILI17J5x54mlYrjoBnKqVWp8qimvpt+UeUjMKBAodD1wY5Si/k7KDxRwrbgA707r3iYeUgEnjRLI6feSidUf0uLtkUWqVkT+T0hMkcfPIgkXsCcK9BDGtsv+zzTTdr6TEoL1go3lELXV+T2rry4Josmrrkw9OLbKyiFoE=,iv:UmsA8+T1ZBm7qAIA4Vkx9ww/yBDgJHUAA+9fjQIL11I=,tag:cSz6dUVvM0b1QYv/8/jeSQ==,type:str]
+    encrypted_regex: ^(data|stringData)$
+    version: 3.11.0

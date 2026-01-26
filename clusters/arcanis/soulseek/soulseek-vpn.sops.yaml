@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: soulseek-vpn
+    namespace: soulseek
+type: Opaque
+stringData:
+    vpn-service-provider: ENC[AES256_GCM,data:TgItrABTmXNW,iv:Nz2fLldd3tgHgLy3sArbzNHcOvZ4eYC0SuRiwQps3Jw=,tag:XhdmjusXSH1VsoTgAXapYQ==,type:str]
+    vpn-port-forwarding-provider: ENC[AES256_GCM,data:b2C4CQoi7VGT,iv:pk3SfYyPWapMZUw0Ncn4Qv1mbvmtN3W18E+e8Ti3Qdo=,tag:jQM/MhMYoT9OnGWu0WOKpg==,type:str]
+    vpn-port-forwarding-status-file: ENC[AES256_GCM,data:d3M1f5jO5gRgbaPqYhRp5UsoM3eJaqU=,iv:Jbz3KVYAIhlyxe58ZHO+zt1iDh//1CnQphq1tBB/PpI=,tag:bchVoQcn0klIc83wZqyqIg==,type:str]
+    vpn-port-forwarding-up-command: ENC[AES256_GCM,data:Zwb0IDAye+HRzg/ZEc6FnccfZQTPVGVcZuOi9qU/ECG+,iv:3jVJS1bslgLl3DRS2qyBmL2zr+enFlsXpoPJlhUMHsc=,tag:bASyuc0dSEow0yYNWE3X+A==,type:str]
+    vpn-type: ENC[AES256_GCM,data:VAmXujWCeq3N,iv:3GIaLbwjUgH6E0OXZI3xE/hoQbdCuZ+DC01TBWIzL/k=,tag:MM720yk1xAXoj1N6B5R75g==,type:str]
+    wireguard-public-key: ENC[AES256_GCM,data:ZooRFXjQHMc/Hl+Ld9D6pAW/hEZmCeV9UOt3G8XcJ0EnATbh55sSHut8krA=,iv:29l8R3hbbvYjkuGnfNO6FEAT3kqUP2Nli8UyEYlb6io=,tag:VTPR25EwsMhltlDZB6UWDg==,type:str]
+    wireguard-private-key: ENC[AES256_GCM,data:OSbwMPvJtWXaZhA42qv60e84+9pK222GtCT9iMINHIyooyYALUDyYl6k2ag=,iv:9LBzDBv/MGdQQQHrVxGPstpt4dANIqNL94BBJmx0fZ4=,tag:stQBTlDiVslekrKtpLJVmw==,type:str]
+    wireguard-addresses: ENC[AES256_GCM,data:n/Rz0JANtEGFRU0=,iv:NMd6TNV0dSPWUOLwT+rQl8Nckn6A6x2UHcf90tmwoF8=,tag:gPusN40Jj1J0SNdMGRV30g==,type:str]
+    server-cities: ENC[AES256_GCM,data:E7c0TXyK/Jw=,iv:xxpR6T/M0MS9YHOVq+jyYKGZT8HtAbSw12CAhEnRPtY=,tag:U7CPnebw/K1Pcao4sDWinA==,type:str]
+sops:
+    age:
+        - recipient: age1n7m4qddze6jmky0zzgasxr2fsea25t4ejppzv0flftsuzhrytgaqm49c2d
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBPYUoralhSWUpadFlmcnl1
+            ZUI2djBQcGpzSmhDYSt5K3FnM1pSdDZrSkRZCm96N25nTE9sbXVUVmZJNVFMQVpz
+            OW1SZEhpVURxSmk4dUtpdEZaQTl3cUkKLS0tICtxck0xL1FPRXhwdnc5Ry9tSWQz
+            MG51OHJvSE1heG5zcll6T1hqaGcxTTgKDRopNJAIdcWdraMnlPgahOQkB327jNXJ
+            JwR8w7x8apdz/k/sP2fDH8O3Rlu8XBPT3gYIcuDzAycgL2LMi6qZtg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2026-01-26T07:09:04Z"
+    mac: ENC[AES256_GCM,data:5RpmofqwyXjpeA8J68yLOOpH+190llqoEITNfIHAhauVr5wtMeY3z0afgtEIjNkCnClF1rmK0QoJ7R/v5nlVgibZkWHQe4oo5Mce46J7DSuJFDpXY2LE2n6ctcXnHItTEF3XhWVjxeqYcsHi70wPprOU3Xjc5ta8WPVzUfgkk34=,iv:Y3CEZ6JjFA8Ld83cZ2s/773hLM6Allch5pxeTSN1D+o=,tag:K7mlmGVoMl0wUdiDpiEmwA==,type:str]
+    encrypted_regex: ^(data|stringData)$
+    version: 3.11.0
