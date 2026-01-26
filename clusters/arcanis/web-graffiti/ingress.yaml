@@ -4,17 +4,13 @@ metadata:
   name: web-graffiti-slskd
   namespace: web-graffiti
   annotations:
-    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
     traefik.ingress.kubernetes.io/router.tls: "true"
-    cert-manager.io/cluster-issuer: cloudflare
+    traefik.ingress.kubernetes.io/router.tls.certresolver: letsencrypt
 spec:
   ingressClassName: traefik
-  tls:
-  - hosts:
-    - web-graffiti.samantha.day
-    secretName: web-graffiti-tls
   rules:
-  - host: web-graffiti.samantha.day
+  - host: web-graffiti.samantha-home-server.net
     http:
       paths:
       - path: /
