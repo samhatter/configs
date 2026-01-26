@@ -42,15 +42,6 @@ spec:
                   });
                   " admin || true
         env:
-        - name: MONGO_INITDB_ROOT_USERNAME
-          value: "unifi"
-        - name: MONGO_INITDB_ROOT_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: unifi-mongo-auth
-              key: mongodb-password
-        - name: MONGO_INITDB_DATABASE
-          value: "unifi"
         - name: MONGO_PASS
           valueFrom:
             secretKeyRef:
