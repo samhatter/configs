@@ -50,6 +50,11 @@ spec:
             secretKeyRef:
               name: web-graffiti-vpn
               key: wireguard-private-key
+        - name: SERVER_CITIES
+          valueFrom:
+            secretKeyRef:
+              name: web-graffiti-vpn
+              key: server-cities
         - name: WIREGUARD_ADDRESSES
           value: "10.2.0.2/32"
         - name: WIREGUARD_PERSISTENT_KEEPALIVE

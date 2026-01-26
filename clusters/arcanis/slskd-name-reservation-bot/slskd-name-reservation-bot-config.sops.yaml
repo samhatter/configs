@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: slskd-name-reservation-bot-config
+    namespace: slskd-name-reservation-bot
+type: Opaque
+stringData:
+    slskd-password: ENC[AES256_GCM,data:0mRgqUILnQxqig==,iv:AcYwbPrpY3HUzg5fZ8n0qxgcFtZFN3kE+3rLCJv/lDE=,tag:1PhvWLvO08hvQ34xaHxS4Q==,type:str]
+sops:
+    age:
+        - recipient: age1n7m4qddze6jmky0zzgasxr2fsea25t4ejppzv0flftsuzhrytgaqm49c2d
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBGczdZbTVFQ3c4TitIcVAy
+            SklkRDlXcVVqSHdUSmZncmRmckRnajFUamxnCjFaNDM4NTBWU2c2Z3RkekVDRmMv
+            WlQxZU1DSTBiUUR2KzdDMHhXVFhXQUkKLS0tIEIrQWxKZThJQmxBeThjdDVTN3dq
+            cUxsdit0UDVDZ1RxNkM2Um0vNElIR2sKKs79siqYC+DU7h9wrf+yALBWBD6DifkD
+            lxI0fLWiNH7fDVEF9yaKItca2E/vpocaoAwCadmgVJZ3MKtHW53whw==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2026-01-26T18:57:15Z"
+    mac: ENC[AES256_GCM,data:DLr1/yP0C+tTkcDb/g51ecEm02j5xHQRPVcwpmRr9iCGdBliAsM9+7bLh/xHU10uwOsHSPhOW4f/FuPh160pw96EVeEftx7wpujbLwGK+qBrtIblGXUC5tT+ETpx9pdmXth5l7APfVgfwKOveF5R09cTmJ/uzdHlOx2epG5gUG0=,iv:YL/2DJegZaufLqiTEiOqahl5KZZIKPdVca8VN3huNnU=,tag:BBHnsR1AJ4cmK61I3EGaBw==,type:str]
+    encrypted_regex: ^(data|stringData)$
+    version: 3.11.0

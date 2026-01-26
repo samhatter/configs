@@ -1,0 +1,78 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: slskd-name-reservation-bot
+  namespace: slskd-name-reservation-bot
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: slskd-name-reservation-bot
+  template:
+    metadata:
+      labels:
+        app: slskd-name-reservation-bot
+    spec:
+      containers:
+      - name: gluetun
+        image: qmcgaw/gluetun:latest
+        securityContext:
+          capabilities:
+            add:
+            - NET_ADMIN
+        env:
+        - name: VPN_SERVICE_PROVIDER
+          value: "protonvpn"
+        - name: TZ
+          value: "UTC/UTC"
+        - name: VPN_TYPE
+          value: "wireguard"
+        - name: WIREGUARD_PUBLIC_KEY
+          valueFrom:
+            secretKeyRef:
+              name: slskd-name-reservation-bot-vpn
+              key: wireguard-public-key
+        - name: WIREGUARD_PRIVATE_KEY
+          valueFrom:
+            secretKeyRef:
+              name: slskd-name-reservation-bot-vpn
+              key: wireguard-private-key
+        - name: SERVER_CITIES
+          valueFrom:
+            secretKeyRef:
+              name: slskd-name-reservation-bot-vpn
+              key: server-cities
+        - name: WIREGUARD_ADDRESSES
+          value: "10.2.0.2/32"
+        - name: WIREGUARD_PERSISTENT_KEEPALIVE
+          value: "25"
+        - name: LOG_LEVEL
+          value: "info"
+        - name: VPN_INTERFACE_MTU
+          value: "1280"
+        ports:
+        volumeMounts:
+        - name: gluetun
+          mountPath: /gluetun
+      - name: slskd-name-reservation-bot
+        image: ghcr.io/samhatter/slskd-name-reservation-bot:latest
+        env:
+        - name: SLSKD_SLSK_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: slskd-name-reservation-bot-config
+              key: slskd-password
+      volumes:
+      - name: gluetun
+        hostPath:
+          path: /storage/appdata/slskd-name-reservation-bot/gluetun
+          type: DirectoryOrCreate
+      - name: app
+        hostPath:
+          path: /storage/appdata/slskd-name-reservation-bot/app
+          type: DirectoryOrCreate

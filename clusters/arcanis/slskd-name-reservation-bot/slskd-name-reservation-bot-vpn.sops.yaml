@@ -1,0 +1,20 @@
+type: Opaque
+stringData:
+    wireguard-public-key: ENC[AES256_GCM,data:1eequVoYZFoGZkmkXNRkw12AHlljcZL2J8epbkQYVvn3Gz5zdsLJBfHCNg0=,iv:wP4yWpGeXPwx47KwOacQbXb9qySCCt142tM0XaaFjDQ=,tag:eKVD3+RWJpvcrfyFSqrEPg==,type:str]
+    wireguard-private-key: ENC[AES256_GCM,data:uQwAXWcTINIw2ZPPNeqjFgdyWE5TjyYQczdfPJNKz0EL95vst0fRqKZNJew=,iv:fi94dlso9xVXcL5bwfjFmY4PORqsMdSQK26LI3zDygo=,tag:9+OmruN+uTlxrVEmApVzvQ==,type:str]
+    server-cities: ENC[AES256_GCM,data:yGPOeayIFqI=,iv:e+sEjXN7bUJogECLVk3l8lfYP0+8btVadZXVPRbRs98=,tag:ntrT9+L5UpxDKXnraIw/og==,type:str]
+sops:
+    age:
+        - recipient: age1n7m4qddze6jmky0zzgasxr2fsea25t4ejppzv0flftsuzhrytgaqm49c2d
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBZd1pNSFFzTU1EZ2s1VnJh
+            bm1Mb2pYOTVNV2VuMCtZUnZJdy9DV1pPMVJjCmdHQmlMVFRNbjh1SjFESjVndGdB
+            VWdxcUFxbU9XNWh0aGdOQ2JHQkFUdWcKLS0tIEFLc1kwMTdkbG9BbjB5M09wME5Z
+            OUtRZkdIR2hLd29VWnMrOEdKdDJCZXMKxAboVNcHAUw6/gEDrL6L+lmS0zwGTFBv
+            m9VzwwLUC9CxDdiCAWEU94wDU+VXuB+FjLaUA2UZBGDYMnAYVV0GBw==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2026-01-26T19:39:41Z"
+    mac: ENC[AES256_GCM,data:Xlnnmq2NTo5bX3UYHBjrBHah+q8fR0sC6Smzc/yP2UjZynC6vFLZf+Ho77aCgpluXAX6IYfGIlx6vWJHgZo6HyUnOWro/P6T/pd5IN/WpgkTKIc3A7ke1QOtMRuy7Ejy92NkcoSdskY1eCn093mbJ1LDwKSOUrdUMI9WyWM9dEY=,iv:60DCZN67VmAw7465tnhX+U2dlLhjan0fHELewwPUHyM=,tag:4KI9o/9NJkUAeYIveZzPQw==,type:str]
+    encrypted_regex: ^(data|stringData)$
+    version: 3.11.0
