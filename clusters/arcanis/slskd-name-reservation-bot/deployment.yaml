@@ -62,6 +62,8 @@ spec:
       - name: slskd-name-reservation-bot
         image: ghcr.io/samhatter/slskd-name-reservation-bot:latest
         env:
+        - name: INTERVAL
+          value: "86400" # 24 hours
         - name: SLSKD_SLSK_PASSWORD
           valueFrom:
             secretKeyRef:
