@@ -90,7 +90,8 @@ spec:
         - name: scripts
           mountPath: /scripts
       - name: slskd
-        image: slskd:latest
+        image: soulseek:latest
+        imagePullPolicy: Never
         env:
         - name: SLSKD_DOWNLOADS_DIR
           value: /media
