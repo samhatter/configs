@@ -4,5 +4,6 @@ resources:
   - namespace.yaml
   - deployment.yaml
   - service.yaml
+  - ingress.yaml
   - soulseek-vpn.sops.yaml
   - soulseek-config.sops.yaml
