@@ -5,9 +5,7 @@ metadata:
     namespace: unifi
 type: Opaque
 stringData:
-    mongodb-username: ENC[AES256_GCM,data:8l3QVbM=,iv:rY/uBzqeXzWcqOEoVj/zs0aeMbnUxBqYNE+Vx5qmmLw=,tag:6s0c63WpB0oGWs6wRjt9BA==,type:str]
     mongodb-password: ENC[AES256_GCM,data:idkHVZeD3B28pzI=,iv:wtWsvJaR6h/RZ4D66yMeBvHwJNNTjwESoUvbim2ISvc=,tag:/jljgWROvj/695Uijxqk6A==,type:str]
-    mongodb-database: ENC[AES256_GCM,data:6sODgrk=,iv:IgpZgD1dvXTGAYq9RPtGvBZLuLGtPfwLJRYXA57Kp5s=,tag:zfsjh77DchOyDMllE4o5JQ==,type:str]
 sops:
     age:
         - recipient: age1n7m4qddze6jmky0zzgasxr2fsea25t4ejppzv0flftsuzhrytgaqm49c2d
@@ -19,7 +17,7 @@ sops:
             cmlua3pHNDNOQzBRbFlhYTNRM3ZPVnMKax/s8UlYLFX7XrYenII2kUzSNBbXoda7
             GkJLHMJ7BpR2567s9V4zgrMucNWnBGfqwJ6hEpcvfDtlctQ/a7Vz5g==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2026-01-26T03:59:00Z"
-    mac: ENC[AES256_GCM,data:OZTKB4OBH9EHhqWnjCyCcuo7TS6N8Ckh18hDPbfXn2TfjjFgPdiRhQTcKbqK9wfOhgsKycnaU4ciy4Tw1dqvGXk+ftyoTEx3dxlVBya2+FxZoMNoG4pBfT+MPu1ea0L5EVcUbJ/F4MVj9g9dQdc9ea5Md03iRiSRVB7IRpDp5WM=,iv:E0ZR8GOPirZnQwD1rJ+vNmuPC6x48l9v7tza5HMr4HU=,tag:2XXZPR9bFdCh8WOtIUzxAg==,type:str]
+    lastmodified: "2026-01-26T04:32:20Z"
+    mac: ENC[AES256_GCM,data:922lb59XcFRuZ6DCxejU76w+5MU8WdvHyqUZq28ktEHFhBrK6jwIgyPKhUn1JGOASRKjV5jvGjnfIRsNW2+YKXXZdrTaepI0/IFCipSA+VdBUACN24MHrll4PtuTtbQwe9tpLA411N2LIaiK1/nFE0mquYxoTFyfAYkBtmc2cmU=,iv:pbx/NEMNQvzIGuuIn93GHo0WEDmQQuUISHuofOfg8TA=,tag:JvKtBcy1zIHkIhQ63IJ2AA==,type:str]
     encrypted_regex: ^(data|stringData)$
     version: 3.11.0
