@@ -1,0 +1,24 @@
+apiVersion: v1
+metadata:
+    name: unifi-mongo-auth
+    namespace: unifi
+type: Opaque
+stringData:
+    mongodb-username: ENC[AES256_GCM,data:8l3QVbM=,iv:rY/uBzqeXzWcqOEoVj/zs0aeMbnUxBqYNE+Vx5qmmLw=,tag:6s0c63WpB0oGWs6wRjt9BA==,type:str]
+    mongodb-password: ENC[AES256_GCM,data:idkHVZeD3B28pzI=,iv:wtWsvJaR6h/RZ4D66yMeBvHwJNNTjwESoUvbim2ISvc=,tag:/jljgWROvj/695Uijxqk6A==,type:str]
+    mongodb-database: ENC[AES256_GCM,data:6sODgrk=,iv:IgpZgD1dvXTGAYq9RPtGvBZLuLGtPfwLJRYXA57Kp5s=,tag:zfsjh77DchOyDMllE4o5JQ==,type:str]
+sops:
+    age:
+        - recipient: age1n7m4qddze6jmky0zzgasxr2fsea25t4ejppzv0flftsuzhrytgaqm49c2d
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBMZklrblNaQStGdXhPYmhK
+            OE4xMFZqaUF3MDV1T3NzNHRUSDNBTlc5NjJvCkVDeVUxL240eUwwR01xbzVaWWRk
+            ZHNtMy9vOXozNHIyV3JWYUg4NjFzZEUKLS0tIHhPMXhGUTZOL01vNktZK0JjSUd3
+            cmlua3pHNDNOQzBRbFlhYTNRM3ZPVnMKax/s8UlYLFX7XrYenII2kUzSNBbXoda7
+            GkJLHMJ7BpR2567s9V4zgrMucNWnBGfqwJ6hEpcvfDtlctQ/a7Vz5g==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2026-01-26T03:32:54Z"
+    mac: ENC[AES256_GCM,data:bTvlDc3zYijo/Mv6wRlaGCIheyT6o9q263MoWkAi8DIIuGeX3e6cbkH95pHVHDEtvXDTK98+heFNFZCOGttW/gGFyHSb6vH+6A9KryP4C4RledS+AJGT2wHTzwvqJhkSeZgn6tLF5DP8K9Cvp/9o59G2z9rRM57J5R+h8m4sO1k=,iv:PXoZT72Xts0kdJHZG+iJqzKWumwZ0LhN9f4so1SZeoU=,tag:tzDFCheRNOpnuYvoExK6fA==,type:str]
+    encrypted_regex: ^(data|stringData)$
+    version: 3.11.0
