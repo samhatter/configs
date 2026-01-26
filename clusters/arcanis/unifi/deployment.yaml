@@ -30,14 +30,12 @@ spec:
                 - |
                   sleep 5
                   mongo --eval "
-                  db.auth('unifi', '$MONGO_PASS');
                   db.getSiblingDB('unifi').createUser({
                     user: 'unifi',
                     pwd: '$MONGO_PASS',
                     roles: [
                       { role: 'dbOwner', db: 'unifi' },
                       { role: 'dbOwner', db: 'unifi_stat' },
-                      { role: 'dbOwner', db: 'unifi_audit' }
                     ]
                   });
                   " admin || true
