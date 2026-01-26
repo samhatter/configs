@@ -1,7 +1,9 @@
-type: Opaque
+apiVersion: v1
+kind: Secret
 metadata:
     name: slskd-name-reservation-bot-vpn
     namespace: slskd-name-reservation-bot
+type: Opaque
 stringData:
     wireguard-public-key: ENC[AES256_GCM,data:1eequVoYZFoGZkmkXNRkw12AHlljcZL2J8epbkQYVvn3Gz5zdsLJBfHCNg0=,iv:wP4yWpGeXPwx47KwOacQbXb9qySCCt142tM0XaaFjDQ=,tag:eKVD3+RWJpvcrfyFSqrEPg==,type:str]
     wireguard-private-key: ENC[AES256_GCM,data:uQwAXWcTINIw2ZPPNeqjFgdyWE5TjyYQczdfPJNKz0EL95vst0fRqKZNJew=,iv:fi94dlso9xVXcL5bwfjFmY4PORqsMdSQK26LI3zDygo=,tag:9+OmruN+uTlxrVEmApVzvQ==,type:str]
