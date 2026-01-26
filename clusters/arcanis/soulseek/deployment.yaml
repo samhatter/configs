@@ -120,7 +120,6 @@ spec:
           mountPath: /app
         - name: theme
           mountPath: /slskd/wwwroot/theme.css
-          subPath: theme.css
       volumes:
       - name: gluetun
         hostPath:
