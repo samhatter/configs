@@ -32,5 +32,12 @@
 
   programs.nix-ld.enable = true;
 
+  virtualisation.docker = {
+    enable = true;
+    enableOnBoot = true;
+  };
+
+  users.users.samantha.extraGroups = ["docker"];
+
   system.stateVersion = "23.11";
 }
