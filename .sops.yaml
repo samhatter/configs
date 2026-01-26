@@ -13,3 +13,8 @@ creation_rules:
         - *twin
         - *scapeshift
         - *arcanis
+  - path_regex: secrets/arcanis/.*\.(env|ya?ml|json|ini)$
+    key_groups:
+      - age:
+        - *arcanis
+
