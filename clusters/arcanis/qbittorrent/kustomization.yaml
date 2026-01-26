@@ -5,4 +5,5 @@ resources:
   - deployment.yaml
   - service.yaml
   - ingress.yaml
+  - network-policy.yaml
   - qbittorrent-vpn.sops.yaml
