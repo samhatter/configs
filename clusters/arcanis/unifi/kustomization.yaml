@@ -5,4 +5,5 @@ resources:
   - deployment.yaml
   - service.yaml
   - ingress.yaml
+  - middleware.yaml
   - unifi-mongo.sops.yaml
