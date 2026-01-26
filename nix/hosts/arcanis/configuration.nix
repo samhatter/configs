@@ -32,5 +32,9 @@
 
   programs.nix-ld.enable = true;
 
+  environment.systemPackages = with pkgs; [
+    nerdctl
+  ];
+
   system.stateVersion = "23.11";
 }
