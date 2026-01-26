@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: matrix-postgres
+    namespace: matrix
+type: Opaque
+stringData:
+    postgres-password: ENC[AES256_GCM,data:/wfr/y0cVHrxSMcHOx9gqab276OSSqt2v5/seMI+scA=,iv:F4tI5RcKlUKq4r8cwMW+Jn52EIGyT6tc6tLcnYu/avw=,tag:T6/G9q4s5nkDyehi/UYMxw==,type:str]
+sops:
+    age:
+        - recipient: age1n7m4qddze6jmky0zzgasxr2fsea25t4ejppzv0flftsuzhrytgaqm49c2d
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBwQzg2Z0cxRlB4WjI5ZTFm
+            NHRKSnZsbzJZamhXbUtseVFOVjlvbTZ4TlRFCm5KQ0k0U3lUQ1RzWlZwN2x3cmRP
+            R2VPUzhzckRoWkJ6T3hNWkE3RVByTjAKLS0tIGhTbzRJM3MwbWU5U3pDTWV0UFVk
+            L1VlcTVrMlF4MDY1c1FsMk00eVJ0a28KiZE4g5wcXDq0c0s3xzIrfbKCLoY/V1/s
+            2DLtcMfoObUu33eR11ZikbgnqeJ/cfTxkqtLq++jsKgKTbpGuwhfcA==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2026-01-26T23:01:52Z"
+    mac: ENC[AES256_GCM,data:eOJd1PGBbuzMzaVOgjjemwq/s4U4fVWPjoLsGm332cWQshw9hv6wkBUWO0k90y5L03Ut2CmSkfiNBbsPr602WmzKMNofOel5WA1HfJva1JZzNF2It6rFOK52Ck518YXbeaQwRmP4EOYlNRZ5BgVa33Yfn0Lo0TyT4KDs+NShNqY=,iv:ncBKrRj+XRPvq3fSlQccdnjR1KikgffEAWU63rbvUQc=,tag:B+9WLMVLqWXQ4JIfRPdVPA==,type:str]
+    encrypted_regex: ^(data|stringData)$
+    version: 3.11.0

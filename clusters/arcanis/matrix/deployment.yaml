@@ -1,0 +1,148 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres
+  namespace: matrix
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:16-alpine
+        env:
+        - name: POSTGRES_USER
+          value: synapse
+        - name: POSTGRES_DB
+          value: synapse
+        - name: POSTGRES_INITDB_ARGS
+          value: "--encoding=UTF8 --locale=C"
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: matrix-postgres
+              key: postgres-password
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - name: postgres-data
+          mountPath: /var/lib/postgresql/data
+        livenessProbe:
+          exec:
+            command:
+            - pg_isready
+            - -U
+            - synapse
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+        readinessProbe:
+          exec:
+            command:
+            - pg_isready
+            - -U
+            - synapse
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          timeoutSeconds: 5
+      volumes:
+      - name: postgres-data
+        hostPath:
+          path: /storage/appdata/matrix/postgres
+          type: DirectoryOrCreate
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: synapse
+  namespace: matrix
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: synapse
+  template:
+    metadata:
+      labels:
+        app: synapse
+    spec:
+      securityContext:
+        fsGroup: 100
+      containers:
+      - name: synapse
+        image: matrixdotorg/synapse:latest
+        securityContext:
+          runAsUser: 1000
+          runAsGroup: 100
+        env:
+        - name: SYNAPSE_CONFIG_DIR
+          value: /config
+        ports:
+        - containerPort: 8008
+          name: http
+        volumeMounts:
+        - name: config
+          mountPath: /config
+        - name: data
+          mountPath: /data
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8008
+          initialDelaySeconds: 30
+          periodSeconds: 30
+          timeoutSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8008
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          timeoutSeconds: 5
+      volumes:
+      - name: config
+        hostPath:
+          path: /storage/appdata/matrix/config
+          type: Directory
+      - name: data
+        hostPath:
+          path: /storage/appdata/matrix/synapse_data
+          type: DirectoryOrCreate
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: synapse-admin
+  namespace: matrix
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: synapse-admin
+  template:
+    metadata:
+      labels:
+        app: synapse-admin
+    spec:
+      containers:
+      - name: synapse-admin
+        image: awesometechnologies/synapse-admin:latest
+        ports:
+        - containerPort: 80
+          name: http
