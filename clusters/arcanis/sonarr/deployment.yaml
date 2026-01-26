@@ -26,10 +26,6 @@ spec:
           mountPath: /tv
         - name: media
           mountPath: /media
-        securityContext:
-          runAsUser: 1000
-          runAsGroup: 100
-          fsGroup: 100
       volumes:
       - name: config
         hostPath:
