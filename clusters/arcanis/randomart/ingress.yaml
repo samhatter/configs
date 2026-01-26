@@ -10,7 +10,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-  - host: randomart.samantha-home-server.net
+  - host: art.samantha-home-server.net
     http:
       paths:
       - path: /
