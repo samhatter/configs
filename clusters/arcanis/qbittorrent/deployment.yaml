@@ -36,7 +36,7 @@ spec:
         - name: VPN_PORT_FORWARDING_STATUS_FILE
           value: "/gluetun/forwarded_port"
         - name: VPN_PORT_FORWARDING_UP_COMMAND
-          value: "/bin/sh -c 'wget -O- --retry-connrefused --post-data \"json={\\\"listen_port\\\":{{PORTS}}}\" 127.0.0.1:1024/api/v2/app/setPreferences 2>&1'"
+          value: "/bin/sh -c 'wget -O- --retry-connrefused --post-data \"json={\\\"listen_port\\\":{{PORTS}}}\" 127.0.0.1:80/api/v2/app/setPreferences 2>&1'"
         - name: TZ
           value: "UTC/UTC"
         - name: VPN_TYPE
