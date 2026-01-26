@@ -1,4 +1,5 @@
 apiVersion: v1
+kind: Secret
 metadata:
     name: unifi-mongo-auth
     namespace: unifi
@@ -18,7 +19,7 @@ sops:
             cmlua3pHNDNOQzBRbFlhYTNRM3ZPVnMKax/s8UlYLFX7XrYenII2kUzSNBbXoda7
             GkJLHMJ7BpR2567s9V4zgrMucNWnBGfqwJ6hEpcvfDtlctQ/a7Vz5g==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2026-01-26T03:32:54Z"
-    mac: ENC[AES256_GCM,data:bTvlDc3zYijo/Mv6wRlaGCIheyT6o9q263MoWkAi8DIIuGeX3e6cbkH95pHVHDEtvXDTK98+heFNFZCOGttW/gGFyHSb6vH+6A9KryP4C4RledS+AJGT2wHTzwvqJhkSeZgn6tLF5DP8K9Cvp/9o59G2z9rRM57J5R+h8m4sO1k=,iv:PXoZT72Xts0kdJHZG+iJqzKWumwZ0LhN9f4so1SZeoU=,tag:tzDFCheRNOpnuYvoExK6fA==,type:str]
+    lastmodified: "2026-01-26T03:59:00Z"
+    mac: ENC[AES256_GCM,data:OZTKB4OBH9EHhqWnjCyCcuo7TS6N8Ckh18hDPbfXn2TfjjFgPdiRhQTcKbqK9wfOhgsKycnaU4ciy4Tw1dqvGXk+ftyoTEx3dxlVBya2+FxZoMNoG4pBfT+MPu1ea0L5EVcUbJ/F4MVj9g9dQdc9ea5Md03iRiSRVB7IRpDp5WM=,iv:E0ZR8GOPirZnQwD1rJ+vNmuPC6x48l9v7tza5HMr4HU=,tag:2XXZPR9bFdCh8WOtIUzxAg==,type:str]
     encrypted_regex: ^(data|stringData)$
     version: 3.11.0
