@@ -18,32 +18,22 @@ spec:
       labels:
         app: unifi-db
     spec:
-      initContainers:
-      - name: init-mongo-user
-        image: mongo:4.4
-        env:
-        - name: MONGO_USER
-          valueFrom:
-            secretKeyRef:
-              name: unifi-mongo-auth
-              key: mongodb-username
-        - name: MONGO_PASS
-          valueFrom:
-            secretKeyRef:
-              name: unifi-mongo-auth
-              key: mongodb-password
-        command:
-          - sh
-          - -c
-          - |
-            mongosh --eval "db.createUser({
-              user: '$MONGO_USER',
-              pwd: '$MONGO_PASS',
-              roles: [{role: 'root', db: 'admin'}]
-            })" admin || true
       containers:
       - name: mongodb
         image: mongo:4.4
+        lifecycle:
+          postStart:
+            exec:
+              command:
+                - sh
+                - -c
+                - |
+                  sleep 5
+                  mongo --eval "db.createUser({
+                    user: '$MONGO_USER',
+                    pwd: '$MONGO_PASS',
+                    roles: [{role: 'root', db: 'admin'}]
+                  })" admin || true
         env:
         - name: MONGO_INITDB_ROOT_USERNAME
           valueFrom:
