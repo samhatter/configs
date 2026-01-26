@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sonarr
+  namespace: sonarr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sonarr
+  template:
+    metadata:
+      labels:
+        app: sonarr
+    spec:
+      containers:
+      - name: sonarr
+        image: linuxserver/sonarr:latest
+        ports:
+        - containerPort: 8989
+          name: http
+        volumeMounts:
+        - name: config
+          mountPath: /config
+        - name: tv
+          mountPath: /tv
+        - name: media
+          mountPath: /media
+        securityContext:
+          runAsUser: 1000
+          runAsGroup: 100
+          fsGroup: 100
+      volumes:
+      - name: config
+        hostPath:
+          path: /home/samantha/services/sonarr/config
+          type: Directory
+      - name: tv
+        hostPath:
+          path: /storage/media/tv
+          type: Directory
+      - name: media
+        hostPath:
+          path: /storage/media
+          type: Directory
