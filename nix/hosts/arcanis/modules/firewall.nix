@@ -18,8 +18,14 @@
       5443 # DNSCrypt
       8080 # UniFi Device Adoption
       8443 # UniFi Web UI
+      3080 # Adguard Web UI
     ];
     allowedUDPPorts = [
+      #Exposed through NAT
+      3487 # TURN UDP
+      7882 # RTC UDP
+
+      #ONLY on host
       53 # AdGuard DNS
       67 # AdGuard DHCP
       68 # AdGuard DHCP
@@ -28,11 +34,6 @@
       5443 # DNSCrypt
       8853 # DNS-over-QUIC
       10001 # UniFi L2 Discovery
-      #Exposed through NAT
-      3487 # TURN UDP
-      7882 # RTC UDP
-
-      #ONLY on host
       32410 # Plex GDM
       32412 # Plex GDM
       32413 # Plex GDM
