@@ -10,7 +10,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-  - host: qbittorrent.samantha-home-server.net
+  - host: torrent.samantha-home-server.net
     http:
       paths:
       - path: /
