@@ -1,0 +1,17 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: unifi
+  namespace: unifi
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`unifi.samantha-home-server.net`)
+      services:
+        - name: unifi-controller
+          port: 8443
+          serversTransport: unifi-transport
+  tls:
+    certResolver: letsencrypt
