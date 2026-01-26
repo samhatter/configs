@@ -67,6 +67,11 @@ spec:
             secretKeyRef:
               name: slskd-name-reservation-bot-config
               key: slskd-slsk-password
+        - volumeMounts:
+        - name: app
+          mountPath: /app
+        - name: usernames
+          mountPath: /app/usernames.txt
       volumes:
       - name: gluetun
         hostPath:
@@ -76,3 +81,8 @@ spec:
         hostPath:
           path: /storage/appdata/slskd-name-reservation-bot/app
           type: DirectoryOrCreate
+      - name: usernames
+        hostPath:
+          path: /storage/appdata/slskd-name-reservation-bot/usernames.txt
+          type: FileOrCreate
+          
