@@ -21,6 +21,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: web-graffiti-slskd
+            name: web-graffiti
             port:
               number: 5554

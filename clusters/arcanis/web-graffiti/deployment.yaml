@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-graffiti-slskd
+  name: web-graffiti
   namespace: web-graffiti
 spec:
   replicas: 1
@@ -12,11 +12,11 @@ spec:
       maxUnavailable: 1
   selector:
     matchLabels:
-      app: web-graffiti-slskd
+      app: web-graffiti
   template:
     metadata:
       labels:
-        app: web-graffiti-slskd
+        app: web-graffiti
     spec:
       containers:
       - name: gluetun

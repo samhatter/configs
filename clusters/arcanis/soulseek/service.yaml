@@ -10,4 +10,3 @@ spec:
   - name: slskd
     port: 2048
     targetPort: 2048
-    protocol: TCP
