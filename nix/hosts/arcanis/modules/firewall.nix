@@ -18,6 +18,12 @@
       #Exposed through NAT
       3487 # TURN UDP
       7882 # RTC UDP
+
+      #ONLY on host
+      32410 # Plex GDM
+      32412 # Plex GDM
+      32413 # Plex GDM
+      32414 # Plex GDM
     ];
 
     allowedUDPPortRanges = [
