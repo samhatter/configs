@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloudflare-ddns
+  namespace: ddns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cloudflare-ddns
+  template:
+    metadata:
+      labels:
+        app: cloudflare-ddns
+    spec:
+      containers:
+      - name: ddns
+        image: favonia/cloudflare-ddns:latest
+        env:
+        - name: CLOUDFLARE_API_TOKEN
+          value: "zimbNvg1qGaUDMXROrZ07cZLaefG2-aMcMTix7uj"
+        - name: DOMAINS
+          value: "samantha-home-server.net"
+        - name: PROXIED
+          value: "false"
+        - name: IP6_PROVIDER
+          value: "none"
+        securityContext:
+          runAsUser: 1000
+          runAsGroup: 100
+          readOnlyRootFilesystem: true
+          capabilities:
+            drop:
+            - ALL

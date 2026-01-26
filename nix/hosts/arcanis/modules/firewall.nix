@@ -12,9 +12,22 @@
 
       # ONLY on host
       6443 # Kubernetes API
-      8080 #
+      53 # AdGuard DNS
+      3000 # AdGuard Setup UI
+      853 # DNS-over-TLS
+      5443 # DNSCrypt
+      8080 # UniFi Device Adoption
+      8443 # UniFi Web UI
     ];
     allowedUDPPorts = [
+      53 # AdGuard DNS
+      67 # AdGuard DHCP
+      68 # AdGuard DHCP
+      784 # DNSCrypt
+      853 # DNS-over-TLS
+      5443 # DNSCrypt
+      8853 # DNS-over-QUIC
+      10001 # UniFi L2 Discovery
       #Exposed through NAT
       3487 # TURN UDP
       7882 # RTC UDP

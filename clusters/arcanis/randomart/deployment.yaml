@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: randomart
+  namespace: randomart
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: randomart
+  template:
+    metadata:
+      labels:
+        app: randomart
+    spec:
+      containers:
+      - name: randomart-ui
+        image: randomart:local
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
+          name: http
+        volumeMounts:
+        - name: app
+          mountPath: /app
+      volumes:
+      - name: app
+        hostPath:
+          path: /home/samantha/services/RandomArt/randomart_ui
+          type: Directory
