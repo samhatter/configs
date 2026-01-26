@@ -28,11 +28,11 @@ spec:
       volumes:
       - name: data
         hostPath:
-          path: /home/samantha/services/unifi/mongo-data
+          path: /storage/appdata/unifi/mongo-data
           type: DirectoryOrCreate
       - name: init-script
         hostPath:
-          path: /home/samantha/services/unifi/init-mongo.js
+          path: /storage/appdata/unifi/init-mongo.js
           type: File
 ---
 apiVersion: apps/v1
@@ -89,5 +89,5 @@ spec:
       volumes:
       - name: config
         hostPath:
-          path: /home/samantha/services/unifi/unifi-config
+          path: /storage/appdata/unifi/unifi-config
           type: Directory

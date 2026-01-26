@@ -29,7 +29,7 @@ spec:
       volumes:
       - name: config
         hostPath:
-          path: /home/samantha/services/radarr/config
+          path: /storage/appdata/radarr/config
           type: Directory
       - name: movies
         hostPath:

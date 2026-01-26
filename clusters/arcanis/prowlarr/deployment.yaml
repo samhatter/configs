@@ -25,7 +25,7 @@ spec:
       volumes:
       - name: config
         hostPath:
-          path: /home/samantha/services/prowlarr/config
+          path: /storage/appdata/prowlarr/config
           type: Directory
 ---
 apiVersion: apps/v1
