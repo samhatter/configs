@@ -200,7 +200,7 @@ spec:
           value: "messages"
         - name: POSTGRES_PORT
           value: "5432"
-        - name: POSTGRES_HOST
+        - name: POSTGRES_URL
           value: "db"
         - name: ARTIFACTS_PATH
           value: "/data/artifacts.pkl"
