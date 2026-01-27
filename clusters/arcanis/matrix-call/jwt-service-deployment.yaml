@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lk-jwt-service
+  namespace: matrix-call
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: lk-jwt-service
+  template:
+    metadata:
+      labels:
+        app: lk-jwt-service
+    spec:
+      containers:
+      - name: lk-jwt-service
+        image: ghcr.io/element-hq/lk-jwt-service:latest-ci
+        ports:
+        - containerPort: 8080
+          name: http
+        env:
+        - name: LIVEKIT_URL
+          value: "wss://sfu.samantha-home-server.net"
+        - name: LIVEKIT_FULL_ACCESS_HOMESERVERS
+          value: "matrix.samantha-home-server.net"
+        envFrom:
+        - secretRef:
+            name: matrix-call-jwt-env
+

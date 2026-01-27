@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - namespace.yaml
+  - matrix-call-secrets.sops.yaml
+  - redis-deployment.yaml
+  - livekit-deployment.yaml
+  - jwt-service-deployment.yaml
+  - element-call-deployment.yaml
+  - service.yaml
+  - ingress.yaml

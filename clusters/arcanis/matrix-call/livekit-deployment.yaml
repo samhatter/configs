@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: livekit
+  namespace: matrix-call
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: livekit
+  template:
+    metadata:
+      labels:
+        app: livekit
+    spec:
+      containers:
+      - name: livekit
+        image: livekit/livekit-server:latest
+        command: ["livekit-server", "--config", "/etc/livekit.yaml"]
+        ports:
+        - containerPort: 7880
+          name: http
+          protocol: TCP
+        - containerPort: 7881
+          name: rtc-tcp
+          protocol: TCP
+        - containerPort: 7882
+          name: rtc-udp
+          protocol: UDP
+        - containerPort: 3478
+          name: turn-udp
+          protocol: UDP
+        - containerPort: 5349
+          name: turn-tls
+          protocol: TCP
+        volumeMounts:
+        - name: livekit-config
+          mountPath: /etc/livekit.yaml
+          subPath: livekit.yaml
+      volumes:
+      - name: livekit-config
+        hostPath:
+          path: /storage/appdata/matrix-call
+          type: Directory
