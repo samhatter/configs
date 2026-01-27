@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana
+  namespace: monitoring
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: grafana
+  template:
+    metadata:
+      labels:
+        app: grafana
+    spec:
+      containers:
+      - name: grafana
+        image: grafana/grafana:latest
+        env:
+        - name: GF_PATHS_PROVISIONING
+          value: /etc/grafana/provisioning
+        - name: GF_INSTALL_PLUGINS
+          value: yesoreyeram-infinity-datasource
+        envFrom:
+        - secretRef:
+            name: grafana-admin
+        ports:
+        - containerPort: 3000
+          name: http
+        volumeMounts:
+        - name: data
+          mountPath: /var/lib/grafana
+        - name: datasources
+          mountPath: /etc/grafana/provisioning/datasources
+      volumes:
+      - name: data
+        hostPath:
+          path: /storage/appdata/monitoring/grafana
+          type: DirectoryOrCreate
+      - name: datasources
+        hostPath:
+          path: /storage/appdata/monitoring/grafana/provisioning/datasources
+          type: Directory
