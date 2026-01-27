@@ -126,6 +126,8 @@ spec:
           mountPath: /storage
         - name: app
           mountPath: /app
+        - name: theme
+          mountPath: /slskd/wwwroot/theme.css
       volumes:
       - name: gluetun
         hostPath:
@@ -143,3 +145,7 @@ spec:
         hostPath:
           path: /storage/appdata/web-graffiti/slskd
           type: DirectoryOrCreate
+      - name: theme
+        hostPath:
+          path: /storage/appdata/web-graffiti/theme.css
+          type: FileOrCreate
