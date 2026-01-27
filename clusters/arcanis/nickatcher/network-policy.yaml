@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: nickatcher-vpn-only
+  namespace: nickatcher
+spec:
+  podSelector:
+    matchLabels:
+      app: slskd
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    # Allow traffic from nickatcher app pod to slskd API
+    - from:
+        - podSelector:
+            matchLabels:
+              app: nickatcher
+      ports:
+        - protocol: TCP
+          port: 4568
+  egress:
+    # Allow DNS queries to kube-system for gluetun to resolve VPN hostnames
+    - to:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: kube-system
+      ports:
+        - protocol: UDP
+          port: 53
+    
+    # Allow WireGuard traffic to ANY IP (only on WireGuard port)
+    # Gluetun will only connect to the VPN provider
+    - ports:
+        - protocol: UDP
+          port: 51820

@@ -1,0 +1,229 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: slskd
+  namespace: nickatcher
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: slskd
+  template:
+    metadata:
+      labels:
+        app: slskd
+    spec:
+      containers:
+      - name: gluetun
+        image: qmcgaw/gluetun:latest
+        securityContext:
+          capabilities:
+            add:
+            - NET_ADMIN
+        env:
+        - name: VPN_SERVICE_PROVIDER
+          valueFrom:
+            secretKeyRef:
+              name: nickatcher-vpn
+              key: vpn-service-provider
+        - name: TZ
+          value: "UTC/UTC"
+        - name: VPN_TYPE
+          valueFrom:
+            secretKeyRef:
+              name: nickatcher-vpn
+              key: vpn-type
+        - name: WIREGUARD_PUBLIC_KEY
+          valueFrom:
+            secretKeyRef:
+              name: nickatcher-vpn
+              key: wireguard-public-key
+        - name: WIREGUARD_PRIVATE_KEY
+          valueFrom:
+            secretKeyRef:
+              name: nickatcher-vpn
+              key: wireguard-private-key
+        - name: WIREGUARD_ADDRESSES
+          valueFrom:
+            secretKeyRef:
+              name: nickatcher-vpn
+              key: wireguard-addresses
+        - name: WIREGUARD_PERSISTENT_KEEPALIVE
+          value: "25"
+        - name: LOG_LEVEL
+          value: "info"
+        - name: VPN_INTERFACE_MTU
+          value: "1280"
+        - name: SERVER_CITIES
+          valueFrom:
+            secretKeyRef:
+              name: nickatcher-vpn
+              key: server-cities
+        ports:
+        - containerPort: 4568
+          name: slskd
+        volumeMounts:
+        - name: gluetun
+          mountPath: /gluetun
+      - name: slskd
+        image: slskd/slskd:latest
+        env:
+        - name: SLSKD_DISK_LOGGER
+          value: "true"
+        - name: SLSKD_HTTP_PORT
+          value: "4568"
+        - name: SLSKD_NO_AUTH
+          value: "true"
+        - name: SLSKD_ROOMS
+          value: "! ! LGBTQ+ ! !"
+        - name: SLSKD_SLSK_DESCRIPTION
+          value: "nothing to see here"
+        - name: SLSKD_SWAGGER
+          value: "true"
+        - name: DEVICE
+          value: "cpu"
+        - name: EXECUTOR_THREADS
+          value: "4"
+        - name: SLSKD_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: nickatcher-slskd
+              key: slskd-username
+        - name: SLSKD_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: nickatcher-slskd
+              key: slskd-password
+        - name: SLSKD_SLSK_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: nickatcher-slskd
+              key: slskd-slsk-username
+        - name: SLSKD_SLSK_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: nickatcher-slskd
+              key: slskd-slsk-password
+        securityContext:
+          runAsUser: 1000
+          runAsGroup: 100
+        volumeMounts:
+        - name: slskd
+          mountPath: /app
+      volumes:
+      - name: gluetun
+        hostPath:
+          path: /storage/appdata/nickatcher/gluetun
+          type: DirectoryOrCreate
+      - name: slskd
+        hostPath:
+          path: /storage/appdata/nickatcher/slskd
+          type: DirectoryOrCreate
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db
+  namespace: nickatcher
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:16-alpine
+        env:
+        - name: POSTGRES_USER
+          value: "nickatcher"
+        - name: POSTGRES_DB
+          value: "messages"
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: nickatcher-db
+              key: postgres-password
+        ports:
+        - containerPort: 5432
+          name: postgres
+        volumeMounts:
+        - name: pgdata
+          mountPath: /var/lib/postgresql/data
+      volumes:
+      - name: pgdata
+        hostPath:
+          path: /storage/appdata/nickatcher/pgdata
+          type: DirectoryOrCreate
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nickatcher
+  namespace: nickatcher
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nickatcher
+  template:
+    metadata:
+      labels:
+        app: nickatcher
+    spec:
+      containers:
+      - name: nickatcher
+        image: ghcr.io/samhatter/nickatcher:latest
+        env:
+        - name: SLSKD_HTTP_PORT
+          value: "4568"
+        - name: SLSKD_ROOMS
+          value: "! ! LGBTQ+ ! !"
+        - name: LOG_LEVEL
+          value: "INFO"
+        - name: MIN_CHUNKS
+          value: "10"
+        - name: POSTGRES_USER
+          value: "nickatcher"
+        - name: POSTGRES_DB
+          value: "messages"
+        - name: POSTGRES_PORT
+          value: "5432"
+        - name: POSTGRES_HOST
+          value: "db"
+        - name: ARTIFACTS_PATH
+          value: "/data/artifacts.pkl"
+        - name: RECOMPUTE_ARTIFACTS_ON_START
+          value: "false"
+        - name: ARTIFACT_REFRESH_HOURS
+          value: "24"
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: nickatcher-app
+              key: postgres-password
+        volumeMounts:
+        - name: logs
+          mountPath: /logs
+        - name: model-data
+          mountPath: /data
+      volumes:
+      - name: logs
+        hostPath:
+          path: /storage/appdata/nickatcher/logs
+          type: DirectoryOrCreate
+      - name: model-data
+        hostPath:
+          path: /storage/appdata/nickatcher/model_data
+          type: DirectoryOrCreate

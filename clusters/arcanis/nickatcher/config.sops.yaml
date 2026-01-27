@@ -1,0 +1,74 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: nickatcher-slskd
+    namespace: nickatcher
+type: Opaque
+stringData:
+    slskd-username: ENC[AES256_GCM,data:tfosFS9/Ncg=,iv:HMYlLOZja+TVkgnh2bHIZ0cbFkN3y6wB52WseBAxXYo=,tag:D3ECe4oivsRDbvbfEB+JHQ==,type:str]
+    slskd-password: ENC[AES256_GCM,data:FyOXfb4o0n6ZEYM=,iv:fl5wHbrSRfut/okZvoPHJpyuuuM36Ljdmj4Mgrhvv58=,tag:CX+O1TkfOYaNpQ5Q1KaAYA==,type:str]
+    slskd-slsk-username: ENC[AES256_GCM,data:hQOtnnmg03bldQ==,iv:ivbs5DLhH4QNjm9+2fTztpRFznQypi99SPMKM3shOwo=,tag:7/sEAG+WPMJg6CfQwwo5LA==,type:str]
+    slskd-slsk-password: ENC[AES256_GCM,data:l5jMDOPG2IUek4P+M1h2,iv:JKzGPlkkvkccK1VZliYgvBhwzrkv1ESh3QeZmnBMqSg=,tag:JehJQu6Fnh2ncMiDHdgE7Q==,type:str]
+sops:
+    age:
+        - recipient: age1n7m4qddze6jmky0zzgasxr2fsea25t4ejppzv0flftsuzhrytgaqm49c2d
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAyTUkrKy9IeUhEVlpENy8z
+            VG51NlgzLzMyaGR6M1RQTTV2YzdLSVorK1NjCkZpS1hGMTBIV0VOdEVMcGM3alJj
+            d0NNOTQxMkkvYW5qYVA5UFBCeVZtazAKLS0tIGMrOVo4S1dyZlhyY0RybzNrRnRj
+            UWwzdCszK2hIcHpnQ1FtdE80T1JFeTgKb0ALVlplAu6oQYPJyXRUGv6zCnGVBW0R
+            e2D4lBBadS3ykj4vzCQ7iE2MrH/cwEt4KkikPQ+In633URNLbAOWVA==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2026-01-27T06:57:24Z"
+    mac: ENC[AES256_GCM,data:JARogL65BYC/8tBQPtmrcn8dMMb5xc4fHK60edXy8VKd6YtgiAX9PgWUlggPZBeZqoWc97fckSBOujgE2jHct5ZWmBuUtty1KIjykqsCAOYe8Nsl8IeyJdHYC9beet1vsGe3wvR0f1pDie0O+1jqgzG2CWON1l1mqofhtbvuTJ4=,iv:BooXA6FSE7J4/rvF63MRxwmAex2ch1+Q8qv9i7TXFek=,tag:mjAbSKzAHlpU77TpIxDo4w==,type:str]
+    encrypted_regex: ^(data|stringData)$
+    version: 3.11.0
+---
+apiVersion: v1
+kind: Secret
+metadata:
+    name: nickatcher-db
+    namespace: nickatcher
+type: Opaque
+stringData:
+    postgres-password: ENC[AES256_GCM,data:hhoaix4F9rYAOhA=,iv:oZbMyphlY9rGkxRyRWJf/Wy//BZN1ON0oZp6/VJjw9Q=,tag:7xkWjJbH+9vMts4eWGFj+g==,type:str]
+sops:
+    age:
+        - recipient: age1n7m4qddze6jmky0zzgasxr2fsea25t4ejppzv0flftsuzhrytgaqm49c2d
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAyTUkrKy9IeUhEVlpENy8z
+            VG51NlgzLzMyaGR6M1RQTTV2YzdLSVorK1NjCkZpS1hGMTBIV0VOdEVMcGM3alJj
+            d0NNOTQxMkkvYW5qYVA5UFBCeVZtazAKLS0tIGMrOVo4S1dyZlhyY0RybzNrRnRj
+            UWwzdCszK2hIcHpnQ1FtdE80T1JFeTgKb0ALVlplAu6oQYPJyXRUGv6zCnGVBW0R
+            e2D4lBBadS3ykj4vzCQ7iE2MrH/cwEt4KkikPQ+In633URNLbAOWVA==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2026-01-27T06:57:24Z"
+    mac: ENC[AES256_GCM,data:JARogL65BYC/8tBQPtmrcn8dMMb5xc4fHK60edXy8VKd6YtgiAX9PgWUlggPZBeZqoWc97fckSBOujgE2jHct5ZWmBuUtty1KIjykqsCAOYe8Nsl8IeyJdHYC9beet1vsGe3wvR0f1pDie0O+1jqgzG2CWON1l1mqofhtbvuTJ4=,iv:BooXA6FSE7J4/rvF63MRxwmAex2ch1+Q8qv9i7TXFek=,tag:mjAbSKzAHlpU77TpIxDo4w==,type:str]
+    encrypted_regex: ^(data|stringData)$
+    version: 3.11.0
+---
+apiVersion: v1
+kind: Secret
+metadata:
+    name: nickatcher-app
+    namespace: nickatcher
+type: Opaque
+stringData:
+    postgres-password: ENC[AES256_GCM,data:i44e3N5waEKGoXk=,iv:pnG3i6dUY6vaDADtx7h3iagFHOXdFIPVa7759lGb9k8=,tag:7zIQS5FNYUf3jwVElCaurg==,type:str]
+sops:
+    age:
+        - recipient: age1n7m4qddze6jmky0zzgasxr2fsea25t4ejppzv0flftsuzhrytgaqm49c2d
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAyTUkrKy9IeUhEVlpENy8z
+            VG51NlgzLzMyaGR6M1RQTTV2YzdLSVorK1NjCkZpS1hGMTBIV0VOdEVMcGM3alJj
+            d0NNOTQxMkkvYW5qYVA5UFBCeVZtazAKLS0tIGMrOVo4S1dyZlhyY0RybzNrRnRj
+            UWwzdCszK2hIcHpnQ1FtdE80T1JFeTgKb0ALVlplAu6oQYPJyXRUGv6zCnGVBW0R
+            e2D4lBBadS3ykj4vzCQ7iE2MrH/cwEt4KkikPQ+In633URNLbAOWVA==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2026-01-27T06:57:24Z"
+    mac: ENC[AES256_GCM,data:JARogL65BYC/8tBQPtmrcn8dMMb5xc4fHK60edXy8VKd6YtgiAX9PgWUlggPZBeZqoWc97fckSBOujgE2jHct5ZWmBuUtty1KIjykqsCAOYe8Nsl8IeyJdHYC9beet1vsGe3wvR0f1pDie0O+1jqgzG2CWON1l1mqofhtbvuTJ4=,iv:BooXA6FSE7J4/rvF63MRxwmAex2ch1+Q8qv9i7TXFek=,tag:mjAbSKzAHlpU77TpIxDo4w==,type:str]
+    encrypted_regex: ^(data|stringData)$
+    version: 3.11.0
