@@ -12,7 +12,6 @@ spec:
       labels:
         app: cadvisor
     spec:
-      hostNetwork: true
       hostPID: true
       containers:
       - name: cadvisor
