@@ -208,6 +208,8 @@ spec:
           value: "false"
         - name: ARTIFACT_REFRESH_HOURS
           value: "24"
+        - name: SLSKD_BASE_URL
+          value: "http://slskd:4568"
         - name: POSTGRES_PASSWORD
           valueFrom:
             secretKeyRef:
