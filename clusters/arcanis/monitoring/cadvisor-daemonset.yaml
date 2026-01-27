@@ -12,6 +12,7 @@ spec:
       labels:
         app: cadvisor
     spec:
+      automountServiceAccountToken: false
       hostPID: true
       containers:
       - name: cadvisor
