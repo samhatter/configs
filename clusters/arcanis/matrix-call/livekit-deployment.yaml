@@ -21,7 +21,9 @@ spec:
       containers:
       - name: livekit
         image: livekit/livekit-server:latest
-        command: ["livekit-server", "--config", "/etc/livekit.yaml"]
+        args:
+        - --config
+        - /etc/livekit.yaml
         ports:
         - containerPort: 7880
           name: http
