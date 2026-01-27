@@ -44,7 +44,7 @@ spec:
     - match: Host(`sfu.samantha-home-server.net`)
       kind: Rule
       services:
-        - name: livekit
+        - name: livekit-sfu
           port: 7880
   tls:
     certResolver: letsencrypt

@@ -14,7 +14,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: livekit
+  name: livekit-sfu
   namespace: matrix-call
 spec:
   type: NodePort
