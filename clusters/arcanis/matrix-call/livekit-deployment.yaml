@@ -37,9 +37,9 @@ spec:
         - containerPort: 3478
           name: turn-udp
           protocol: UDP
-        - containerPort: 5349
-          name: turn-tls
-          protocol: TCP
+        # - containerPort: 5349
+        #   name: turn-tls
+        #   protocol: TCP
         volumeMounts:
         - name: livekit-config
           mountPath: /etc/livekit.yaml

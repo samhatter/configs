@@ -7,7 +7,7 @@
       80 # HTTP
       443 # HTTPS
       32400 # Plex
-      5349 # TURN TLS
+      # 5349 # TURN TLS
       7881 # RTC TCP
 
       # ONLY on host
