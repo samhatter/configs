@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - secrets.sops.yaml
+  - prometheus-rbac.yaml
   - prometheus-deployment.yaml
   - grafana-deployment.yaml
   - cadvisor-daemonset.yaml
