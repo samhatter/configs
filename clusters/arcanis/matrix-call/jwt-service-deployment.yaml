@@ -27,6 +27,11 @@ spec:
         env:
         - name: LIVEKIT_URL
           value: "wss://sfu.samantha-home-server.net"
+        - name: LIVEKIT_KEY
+          valueFrom:
+            secretKeyRef:
+              name: matrix-call-jwt-env
+              key: LIVEKIT_KEY
         - name: LIVEKIT_SECRET
           valueFrom:
             secretKeyRef:
