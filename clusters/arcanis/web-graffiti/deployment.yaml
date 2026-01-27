@@ -58,7 +58,7 @@ spec:
         - name: JWT
           valueFrom:
             secretKeyRef:
-              name: slskd-jwt
+              name: web-graffiti-vpn
               key: slskd-jwt
         - name: WIREGUARD_ADDRESSES
           value: "10.2.0.2/32"
