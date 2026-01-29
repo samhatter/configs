@@ -28,15 +28,15 @@ spec:
         - containerPort: 7880
           name: http
           protocol: TCP
-        - containerPort: 7881
-          name: rtc-tcp
-          protocol: TCP
         - containerPort: 7882
+          hostPort: 7882
           name: rtc-udp
           protocol: UDP
         - containerPort: 3478
+          hostPort: 3478
           name: turn-udp
           protocol: UDP
+
         # - containerPort: 5349
         #   name: turn-tls
         #   protocol: TCP
