@@ -17,24 +17,13 @@ metadata:
   name: livekit-sfu
   namespace: matrix-call
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: livekit
   ports:
   - port: 7880
     targetPort: 7880
     name: http
-    protocol: TCP
-  - port: 7882
-    targetPort: 7882
-    name: rtc-udp
-    protocol: UDP
-    nodePort: 7882
-  - port: 3478
-    targetPort: 3478
-    name: turn-udp
-    protocol: UDP
-    nodePort: 3478
 ---
 apiVersion: v1
 kind: Service
