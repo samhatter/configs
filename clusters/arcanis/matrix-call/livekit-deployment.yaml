@@ -443,7 +443,7 @@ spec:
           protocol: UDP
         volumeMounts:
         - name: livekit-config
-          mountPath: /app/assets/livekit.yaml
+          mountPath: /etc/livekit.yaml
           subPath: livekit.yaml
       volumes:
       - name: livekit-config
