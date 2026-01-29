@@ -441,6 +441,10 @@ spec:
           hostPort: 50200
           name: rtc-udp-50200
           protocol: UDP
+        volumeMounts:
+        - name: livekit-config
+          mountPath: /app/assets/livekit.yaml
+          subPath: livekit.yaml
       volumes:
       - name: livekit-config
         hostPath:
