@@ -20,20 +20,19 @@ spec:
     spec:
       containers:
       - name: plex
-        image: linuxserver/plex:latest
+        image: linuxserver/plex:1.42.2
         env:
         - name: PUID
           value: "1000"
         - name: PGID
-          value: "1000"
+          value: "100"
         - name: TZ
           value: "Etc/UTC"
         - name: VERSION
           value: "docker"
         ports:
         - containerPort: 32400
-          hostPort: 32400
-          name: plex
+          name: http
           protocol: TCP
         - containerPort: 32410
           hostPort: 32410
@@ -60,8 +59,6 @@ spec:
           mountPath: /private
         - name: dri
           mountPath: /dev/dri
-        securityContext:
-          privileged: true
       volumes:
       - name: config
         hostPath:
