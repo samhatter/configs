@@ -32,6 +32,7 @@ spec:
           value: "docker"
         ports:
         - containerPort: 32400
+          hostPort: 32400
           name: http
           protocol: TCP
         - containerPort: 32410
@@ -59,11 +60,6 @@ spec:
           mountPath: /private
         - name: dri
           mountPath: /dev/dri
-        securityContext:
-          capabilities:
-            add:
-              - SYS_ADMIN
-              - SYS_RAWIO
       volumes:
       - name: config
         hostPath:
