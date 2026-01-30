@@ -36,10 +36,411 @@ spec:
           hostPort: 3478
           name: turn-udp
           protocol: UDP
-
-        # - containerPort: 5349
-        #   name: turn-tls
-        #   protocol: TCP
+        # Explicitly map each port in the RTC range
+        - containerPort: 50100
+          hostPort: 50100
+          name: rtc-udp-50100
+          protocol: UDP
+        - containerPort: 50101
+          hostPort: 50101
+          name: rtc-udp-50101
+          protocol: UDP
+        - containerPort: 50102
+          hostPort: 50102
+          name: rtc-udp-50102
+          protocol: UDP
+        - containerPort: 50103
+          hostPort: 50103
+          name: rtc-udp-50103
+          protocol: UDP
+        - containerPort: 50104
+          hostPort: 50104
+          name: rtc-udp-50104
+          protocol: UDP
+        - containerPort: 50105
+          hostPort: 50105
+          name: rtc-udp-50105
+          protocol: UDP
+        - containerPort: 50106
+          hostPort: 50106
+          name: rtc-udp-50106
+          protocol: UDP
+        - containerPort: 50107
+          hostPort: 50107
+          name: rtc-udp-50107
+          protocol: UDP
+        - containerPort: 50108
+          hostPort: 50108
+          name: rtc-udp-50108
+          protocol: UDP
+        - containerPort: 50109
+          hostPort: 50109
+          name: rtc-udp-50109
+          protocol: UDP
+        - containerPort: 50110
+          hostPort: 50110
+          name: rtc-udp-50110
+          protocol: UDP
+        - containerPort: 50111
+          hostPort: 50111
+          name: rtc-udp-50111
+          protocol: UDP
+        - containerPort: 50112
+          hostPort: 50112
+          name: rtc-udp-50112
+          protocol: UDP
+        - containerPort: 50113
+          hostPort: 50113
+          name: rtc-udp-50113
+          protocol: UDP
+        - containerPort: 50114
+          hostPort: 50114
+          name: rtc-udp-50114
+          protocol: UDP
+        - containerPort: 50115
+          hostPort: 50115
+          name: rtc-udp-50115
+          protocol: UDP
+        - containerPort: 50116
+          hostPort: 50116
+          name: rtc-udp-50116
+          protocol: UDP
+        - containerPort: 50117
+          hostPort: 50117
+          name: rtc-udp-50117
+          protocol: UDP
+        - containerPort: 50118
+          hostPort: 50118
+          name: rtc-udp-50118
+          protocol: UDP
+        - containerPort: 50119
+          hostPort: 50119
+          name: rtc-udp-50119
+          protocol: UDP
+        - containerPort: 50120
+          hostPort: 50120
+          name: rtc-udp-50120
+          protocol: UDP
+        - containerPort: 50121
+          hostPort: 50121
+          name: rtc-udp-50121
+          protocol: UDP
+        - containerPort: 50122
+          hostPort: 50122
+          name: rtc-udp-50122
+          protocol: UDP
+        - containerPort: 50123
+          hostPort: 50123
+          name: rtc-udp-50123
+          protocol: UDP
+        - containerPort: 50124
+          hostPort: 50124
+          name: rtc-udp-50124
+          protocol: UDP
+        - containerPort: 50125
+          hostPort: 50125
+          name: rtc-udp-50125
+          protocol: UDP
+        - containerPort: 50126
+          hostPort: 50126
+          name: rtc-udp-50126
+          protocol: UDP
+        - containerPort: 50127
+          hostPort: 50127
+          name: rtc-udp-50127
+          protocol: UDP
+        - containerPort: 50128
+          hostPort: 50128
+          name: rtc-udp-50128
+          protocol: UDP
+        - containerPort: 50129
+          hostPort: 50129
+          name: rtc-udp-50129
+          protocol: UDP
+        - containerPort: 50130
+          hostPort: 50130
+          name: rtc-udp-50130
+          protocol: UDP
+        - containerPort: 50131
+          hostPort: 50131
+          name: rtc-udp-50131
+          protocol: UDP
+        - containerPort: 50132
+          hostPort: 50132
+          name: rtc-udp-50132
+          protocol: UDP
+        - containerPort: 50133
+          hostPort: 50133
+          name: rtc-udp-50133
+          protocol: UDP
+        - containerPort: 50134
+          hostPort: 50134
+          name: rtc-udp-50134
+          protocol: UDP
+        - containerPort: 50135
+          hostPort: 50135
+          name: rtc-udp-50135
+          protocol: UDP
+        - containerPort: 50136
+          hostPort: 50136
+          name: rtc-udp-50136
+          protocol: UDP
+        - containerPort: 50137
+          hostPort: 50137
+          name: rtc-udp-50137
+          protocol: UDP
+        - containerPort: 50138
+          hostPort: 50138
+          name: rtc-udp-50138
+          protocol: UDP
+        - containerPort: 50139
+          hostPort: 50139
+          name: rtc-udp-50139
+          protocol: UDP
+        - containerPort: 50140
+          hostPort: 50140
+          name: rtc-udp-50140
+          protocol: UDP
+        - containerPort: 50141
+          hostPort: 50141
+          name: rtc-udp-50141
+          protocol: UDP
+        - containerPort: 50142
+          hostPort: 50142
+          name: rtc-udp-50142
+          protocol: UDP
+        - containerPort: 50143
+          hostPort: 50143
+          name: rtc-udp-50143
+          protocol: UDP
+        - containerPort: 50144
+          hostPort: 50144
+          name: rtc-udp-50144
+          protocol: UDP
+        - containerPort: 50145
+          hostPort: 50145
+          name: rtc-udp-50145
+          protocol: UDP
+        - containerPort: 50146
+          hostPort: 50146
+          name: rtc-udp-50146
+          protocol: UDP
+        - containerPort: 50147
+          hostPort: 50147
+          name: rtc-udp-50147
+          protocol: UDP
+        - containerPort: 50148
+          hostPort: 50148
+          name: rtc-udp-50148
+          protocol: UDP
+        - containerPort: 50149
+          hostPort: 50149
+          name: rtc-udp-50149
+          protocol: UDP
+        - containerPort: 50150
+          hostPort: 50150
+          name: rtc-udp-50150
+          protocol: UDP
+        - containerPort: 50151
+          hostPort: 50151
+          name: rtc-udp-50151
+          protocol: UDP
+        - containerPort: 50152
+          hostPort: 50152
+          name: rtc-udp-50152
+          protocol: UDP
+        - containerPort: 50153
+          hostPort: 50153
+          name: rtc-udp-50153
+          protocol: UDP
+        - containerPort: 50154
+          hostPort: 50154
+          name: rtc-udp-50154
+          protocol: UDP
+        - containerPort: 50155
+          hostPort: 50155
+          name: rtc-udp-50155
+          protocol: UDP
+        - containerPort: 50156
+          hostPort: 50156
+          name: rtc-udp-50156
+          protocol: UDP
+        - containerPort: 50157
+          hostPort: 50157
+          name: rtc-udp-50157
+          protocol: UDP
+        - containerPort: 50158
+          hostPort: 50158
+          name: rtc-udp-50158
+          protocol: UDP
+        - containerPort: 50159
+          hostPort: 50159
+          name: rtc-udp-50159
+          protocol: UDP
+        - containerPort: 50160
+          hostPort: 50160
+          name: rtc-udp-50160
+          protocol: UDP
+        - containerPort: 50161
+          hostPort: 50161
+          name: rtc-udp-50161
+          protocol: UDP
+        - containerPort: 50162
+          hostPort: 50162
+          name: rtc-udp-50162
+          protocol: UDP
+        - containerPort: 50163
+          hostPort: 50163
+          name: rtc-udp-50163
+          protocol: UDP
+        - containerPort: 50164
+          hostPort: 50164
+          name: rtc-udp-50164
+          protocol: UDP
+        - containerPort: 50165
+          hostPort: 50165
+          name: rtc-udp-50165
+          protocol: UDP
+        - containerPort: 50166
+          hostPort: 50166
+          name: rtc-udp-50166
+          protocol: UDP
+        - containerPort: 50167
+          hostPort: 50167
+          name: rtc-udp-50167
+          protocol: UDP
+        - containerPort: 50168
+          hostPort: 50168
+          name: rtc-udp-50168
+          protocol: UDP
+        - containerPort: 50169
+          hostPort: 50169
+          name: rtc-udp-50169
+          protocol: UDP
+        - containerPort: 50170
+          hostPort: 50170
+          name: rtc-udp-50170
+          protocol: UDP
+        - containerPort: 50171
+          hostPort: 50171
+          name: rtc-udp-50171
+          protocol: UDP
+        - containerPort: 50172
+          hostPort: 50172
+          name: rtc-udp-50172
+          protocol: UDP
+        - containerPort: 50173
+          hostPort: 50173
+          name: rtc-udp-50173
+          protocol: UDP
+        - containerPort: 50174
+          hostPort: 50174
+          name: rtc-udp-50174
+          protocol: UDP
+        - containerPort: 50175
+          hostPort: 50175
+          name: rtc-udp-50175
+          protocol: UDP
+        - containerPort: 50176
+          hostPort: 50176
+          name: rtc-udp-50176
+          protocol: UDP
+        - containerPort: 50177
+          hostPort: 50177
+          name: rtc-udp-50177
+          protocol: UDP
+        - containerPort: 50178
+          hostPort: 50178
+          name: rtc-udp-50178
+          protocol: UDP
+        - containerPort: 50179
+          hostPort: 50179
+          name: rtc-udp-50179
+          protocol: UDP
+        - containerPort: 50180
+          hostPort: 50180
+          name: rtc-udp-50180
+          protocol: UDP
+        - containerPort: 50181
+          hostPort: 50181
+          name: rtc-udp-50181
+          protocol: UDP
+        - containerPort: 50182
+          hostPort: 50182
+          name: rtc-udp-50182
+          protocol: UDP
+        - containerPort: 50183
+          hostPort: 50183
+          name: rtc-udp-50183
+          protocol: UDP
+        - containerPort: 50184
+          hostPort: 50184
+          name: rtc-udp-50184
+          protocol: UDP
+        - containerPort: 50185
+          hostPort: 50185
+          name: rtc-udp-50185
+          protocol: UDP
+        - containerPort: 50186
+          hostPort: 50186
+          name: rtc-udp-50186
+          protocol: UDP
+        - containerPort: 50187
+          hostPort: 50187
+          name: rtc-udp-50187
+          protocol: UDP
+        - containerPort: 50188
+          hostPort: 50188
+          name: rtc-udp-50188
+          protocol: UDP
+        - containerPort: 50189
+          hostPort: 50189
+          name: rtc-udp-50189
+          protocol: UDP
+        - containerPort: 50190
+          hostPort: 50190
+          name: rtc-udp-50190
+          protocol: UDP
+        - containerPort: 50191
+          hostPort: 50191
+          name: rtc-udp-50191
+          protocol: UDP
+        - containerPort: 50192
+          hostPort: 50192
+          name: rtc-udp-50192
+          protocol: UDP
+        - containerPort: 50193
+          hostPort: 50193
+          name: rtc-udp-50193
+          protocol: UDP
+        - containerPort: 50194
+          hostPort: 50194
+          name: rtc-udp-50194
+          protocol: UDP
+        - containerPort: 50195
+          hostPort: 50195
+          name: rtc-udp-50195
+          protocol: UDP
+        - containerPort: 50196
+          hostPort: 50196
+          name: rtc-udp-50196
+          protocol: UDP
+        - containerPort: 50197
+          hostPort: 50197
+          name: rtc-udp-50197
+          protocol: UDP
+        - containerPort: 50198
+          hostPort: 50198
+          name: rtc-udp-50198
+          protocol: UDP
+        - containerPort: 50199
+          hostPort: 50199
+          name: rtc-udp-50199
+          protocol: UDP
+        - containerPort: 50200
+          hostPort: 50200
+          name: rtc-udp-50200
+          protocol: UDP
         volumeMounts:
         - name: livekit-config
           mountPath: /etc/livekit.yaml
