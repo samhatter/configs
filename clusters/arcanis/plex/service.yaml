@@ -11,19 +11,3 @@ spec:
     port: 32400
     targetPort: 32400
     protocol: TCP
-  - name: gdm-1
-    port: 32410
-    targetPort: 32410
-    protocol: UDP
-  - name: gdm-2
-    port: 32412
-    targetPort: 32412
-    protocol: UDP
-  - name: gdm-3
-    port: 32413
-    targetPort: 32413
-    protocol: UDP
-  - name: gdm-4
-    port: 32414
-    targetPort: 32414
-    protocol: UDP
