@@ -59,6 +59,10 @@ spec:
           mountPath: /private
         - name: dri
           mountPath: /dev/dri
+        securityContext:
+          capabilities:
+            add:
+              - SYS_ADMIN
       volumes:
       - name: config
         hostPath:
