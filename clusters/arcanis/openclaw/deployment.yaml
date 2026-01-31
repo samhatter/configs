@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: openclaw
+  namespace: openclaw
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: openclaw
+  template:
+    metadata:
+      labels:
+        app: openclaw
+    spec:
+      containers:
+        - name: openclaw
+          image: ghcr.io/openclaw/openclaw:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 18789
+          env:
+            # Adjust/remove if OpenClaw uses different env var names in your setup.
+            - name: OPENCLAW_BIND
+              value: "0.0.0.0"
+          volumeMounts:
+            - name: appdata
+              mountPath: /data
+      volumes:
+        - name: appdata
+          hostPath:
+            path: /storage/appdata/openclaw
+            type: DirectoryOrCreate
