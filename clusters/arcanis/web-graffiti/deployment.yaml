@@ -55,11 +55,16 @@ spec:
             secretKeyRef:
               name: web-graffiti-vpn
               key: server-cities
-        - name: JWT
+        - name: SLSKD_USERNAME
           valueFrom:
             secretKeyRef:
               name: web-graffiti-vpn
-              key: slskd-jwt
+              key: slskd-username
+        - name: SLSKD_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: web-graffiti-vpn
+              key: slskd-password
         - name: WIREGUARD_ADDRESSES
           value: "10.2.0.2/32"
         - name: WIREGUARD_PERSISTENT_KEEPALIVE
