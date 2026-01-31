@@ -18,8 +18,6 @@ spec:
       containers:
       - name: openclaw
         image: moltbot/moltbot:latest
-        command: ["openclaw"]
-        args: ["gateway", "--port", "18789", "--host", "0.0.0.0"]
         env:
         - name: CLAWDBOT_GATEWAY_TOKEN
           valueFrom:
