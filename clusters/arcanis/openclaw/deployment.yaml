@@ -26,7 +26,7 @@ spec:
               key: CLAWDBOT_GATEWAY_TOKEN
         volumeMounts:
         - name: clawdbot-config
-          mountPath: /home/node/.clawdbot
+          mountPath: /home/node/.moltbot
         - name: clawdbot-workspace
           mountPath: /home/node/clawd
       volumes:
