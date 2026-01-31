@@ -29,6 +29,8 @@ spec:
           mountPath: /home/node/.moltbot
         - name: clawdbot-workspace
           mountPath: /home/node/clawd
+        - name: clawdbot-templates
+          mountPath: /app/docs/templates
       volumes:
       - name: clawdbot-config
         hostPath:
@@ -38,6 +40,10 @@ spec:
         hostPath:
           path: /storage/appdata/openclaw/workspace
           type: DirectoryOrCreate
+      - name: clawdbot-templates
+        hostPath:
+          path: /storage/appdata/openclaw/templates
+          types: DirectoryOrCreate
       ports:
       - containerPort: 18789
         name: api
