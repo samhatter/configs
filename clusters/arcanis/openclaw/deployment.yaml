@@ -17,19 +17,31 @@ spec:
     spec:
       containers:
       - name: openclaw
-        image: ghcr.io/openclaw/moltbot:main
+        image: moltbot/moltbot:latest
         command: ["openclaw"]
         args: ["gateway", "--port", "18789", "--host", "0.0.0.0"]
         env:
-        - name: OPENCLAW_STATE_DIR
-          value: /data/state
-        - name: OPENCLAW_CONFIG_PATH
-          value: /data/openclaw.json
+        - name: CLAWDBOT_GATEWAY_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: gateway-secret
+              key: CLAWDBOT_GATEWAY_TOKEN
         volumeMounts:
-        - name: appdata
-          mountPath: /data
+        - name: clawdbot-config
+          mountPath: /home/node/.clawdbot
+        - name: clawdbot-workspace
+          mountPath: /home/node/clawd
       volumes:
-      - name: appdata
+      - name: clawdbot-config
         hostPath:
-          path: /storage/appdata/openclaw
+          path: /storage/appdata/openclaw/config
           type: DirectoryOrCreate
+      - name: clawdbot-workspace
+        hostPath:
+          path: /storage/appdata/openclaw/workspace
+          type: DirectoryOrCreate
+      ports:
+      - containerPort: 18789
+        name: api
+      - containerPort: 18790
+        name: control
