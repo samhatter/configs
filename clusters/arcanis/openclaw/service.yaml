@@ -10,4 +10,3 @@ spec:
     - name: ws
       port: 18789
       targetPort: 18789
-  type: ClusterIP
