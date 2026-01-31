@@ -27,8 +27,6 @@ spec:
         volumeMounts:
         - name: clawdbot-config
           mountPath: /home/node/.moltbot
-        - name: clawdbot-config
-          mountPath: /home/node/.clawdbot
         - name: clawdbot-workspace
           mountPath: /home/node/clawd
       volumes:
