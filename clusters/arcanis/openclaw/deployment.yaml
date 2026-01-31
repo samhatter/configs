@@ -16,25 +16,20 @@ spec:
         app: openclaw
     spec:
       containers:
-        - name: openclaw
-          image: ghcr.io/openclaw/openclaw:latest
-          command: ["openclaw"]
-          args: ["gateway", "--port", "18789", "--host", "0.0.0.0"]
-          ports:
-            - name: http
-              containerPort: 18789
-          env:
-            - name: OPENCLAW_BIND
-              value: "0.0.0.0"
-            - name: OPENCLAW_STATE_DIR
-              value: /data/state
-            - name: OPENCLAW_CONFIG_PATH
-              value: /data/openclaw.json
-          volumeMounts:
-            - name: appdata
-              mountPath: /data
-      volumes:
+      - name: openclaw
+        image: ghcr.io/openclaw/moltbot:main
+        command: ["openclaw"]
+        args: ["gateway", "--port", "18789", "--host", "0.0.0.0"]
+        env:
+        - name: OPENCLAW_STATE_DIR
+          value: /data/state
+        - name: OPENCLAW_CONFIG_PATH
+          value: /data/openclaw.json
+        volumeMounts:
         - name: appdata
-          hostPath:
-            path: /storage/appdata/openclaw
-            type: DirectoryOrCreate
+          mountPath: /data
+      volumes:
+      - name: appdata
+        hostPath:
+          path: /storage/appdata/openclaw
+          type: DirectoryOrCreate
