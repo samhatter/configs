@@ -7,7 +7,7 @@ spec:
   selector:
     app: openclaw
   ports:
-    - name: http
+    - name: ws
       port: 18789
       targetPort: 18789
   type: ClusterIP
