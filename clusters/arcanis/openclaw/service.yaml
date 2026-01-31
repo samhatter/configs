@@ -7,6 +7,6 @@ spec:
   selector:
     app: openclaw
   ports:
-    - name: ws
+    - name: http
       port: 18789
       targetPort: 18789
