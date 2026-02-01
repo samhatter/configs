@@ -21,6 +21,8 @@ spec:
         command: ["node"]
         args: ["dist/index.js", "gateway", "--bind", "lan", "--port", "18789"]
         env:
+        - name: GOG_CREDENTIALS_DIR
+          value: /app/gog-creds
         volumeMounts:
         - name: clawdbot-config
           mountPath: /home/node/.openclaw
@@ -28,6 +30,8 @@ spec:
           mountPath: /home/node/clawd
         - name: clawdbot-templates
           mountPath: /app/docs/reference/templates
+        - name: gog-creds
+          mountPath: /app/gog-creds/credentials.json
       volumes:
       - name: clawdbot-config
         hostPath:
@@ -41,6 +45,10 @@ spec:
         hostPath:
           path: /storage/appdata/openclaw/templates
           types: DirectoryOrCreate
+      - name: gog-creds
+        hostPath:
+          path: /storage/appdata/openclaw/config/credentials/gog/credentials.json
+          type: FileOrCreate
       ports:
       - containerPort: 18789
         name: api
