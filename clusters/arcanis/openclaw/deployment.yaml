@@ -30,7 +30,7 @@ spec:
         - name: clawdbot-workspace
           mountPath: /home/node/clawd
         - name: clawdbot-templates
-          mountPath: /app/docs/templates
+          mountPath: /app/docs/reference/templates
       volumes:
       - name: clawdbot-config
         hostPath:
