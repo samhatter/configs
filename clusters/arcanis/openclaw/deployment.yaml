@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: openclaw
-        image: moltbot/moltbot:latest
+        image: gchr.io/samhatter/openclaw:latest
         env:
         - name: CLAWDBOT_GATEWAY_TOKEN
           valueFrom:
