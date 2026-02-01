@@ -21,16 +21,9 @@ spec:
         command: ["node"]
         args: ["dist/index.js", "gateway", "--bind", "0.0.0.0", "--port", "18789"]
         env:
-        - name: CLAWDBOT_GATEWAY_TOKEN
-          valueFrom:
-            secretKeyRef:
-              name: gateway-secret
-              key: CLAWDBOT_GATEWAY_TOKEN
         volumeMounts:
-        # - name: clawdbot-config
-        #   mountPath: /home/node/.moltbot
         - name: clawdbot-config
-          mountPath: /home/node/.clawdbot
+          mountPath: /home/node/.openclaw
         - name: clawdbot-workspace
           mountPath: /home/node/clawd
         - name: clawdbot-templates
