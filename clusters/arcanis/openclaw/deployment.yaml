@@ -18,6 +18,8 @@ spec:
       containers:
       - name: openclaw
         image: ghcr.io/samhatter/openclaw:latest
+        command: ["node"]
+        args: ["dist/index.js", "gateway", "--bind", "0.0.0.0", "--port", "18789"]
         env:
         - name: CLAWDBOT_GATEWAY_TOKEN
           valueFrom:
