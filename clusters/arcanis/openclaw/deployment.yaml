@@ -25,10 +25,10 @@ spec:
               name: gateway-secret
               key: CLAWDBOT_GATEWAY_TOKEN
         volumeMounts:
-        - name: clawdbot-config
-          mountPath: /home/node/.moltbot
         # - name: clawdbot-config
-        #   mountPath: /home/node/.clawdbot
+        #   mountPath: /home/node/.moltbot
+        - name: clawdbot-config
+          mountPath: /home/node/.clawdbot
         - name: clawdbot-workspace
           mountPath: /home/node/clawd
         - name: clawdbot-templates
