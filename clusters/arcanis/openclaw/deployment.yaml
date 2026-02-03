@@ -56,6 +56,21 @@ spec:
             secretKeyRef:
               name: openclaw-secrets
               key: GEMINI_API_KEY
+        - name: SLSKD_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: openclaw-secrets
+              key: SLSKD_API_KEY
+        - name: SONARR_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: openclaw-secrets
+              key: SONARR_API_KEY
+        - name: RADARR_API_KEY
+          valueFrom:
+              secretKeyRef:
+                name: openclaw-secrets
+                key: RADARR_API_KEY
         volumeMounts:
         - name: clawdbot-home
           mountPath: /home
