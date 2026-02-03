@@ -51,6 +51,11 @@ spec:
             secretKeyRef:
               name: openclaw-secrets
               key: GOG_KEYRING_PASSWORD
+        - name: GEMINI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: openclaw-secrets
+              key: GEMINI_API_KEY
         volumeMounts:
         - name: clawdbot-home
           mountPath: /home
