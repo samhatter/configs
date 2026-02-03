@@ -23,7 +23,7 @@ spec:
         env:
         volumeMounts:
         - name: clawdbot-home
-          mountPath: /home/node
+          mountPath: /home
       volumes:
       - name: clawdbot-home
         hostPath:
