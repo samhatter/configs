@@ -21,6 +21,36 @@ spec:
         command: ["node"]
         args: ["dist/index.js", "gateway", "--bind", "lan", "--port", "18789"]
         env:
+        - name: BRAVE_SEARCH_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: openclaw-secrets
+              key: BRAVE_SEARCH_API_KEY
+        - name: GOPLACES_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: openclaw-secrets
+              key: GOPLACES_API_KEY
+        - name: MATRIX_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: openclaw-secrets
+              key: MATRIX_PASSWORD
+        - name: OPENCLAW_GATEWAY_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: openclaw-secrets
+              key: OPENCLAW_GATEWAY_TOKEN
+        - name: OPENCLAW_REMOTE_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: openclaw-secrets
+              key: OPENCLAW_REMOTE_TOKEN
+        - name: GOG_KEYRING_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: openclaw-secrets
+              key: GOG_KEYRING_PASSWORD
         volumeMounts:
         - name: clawdbot-home
           mountPath: /home
