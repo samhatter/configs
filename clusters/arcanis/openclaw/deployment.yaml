@@ -22,7 +22,7 @@ spec:
         args:
           - >
               rm -f /home/node/.openclaw/browser/openclaw/user-data/Singleton* || true
-        volumeMounts
+        volumeMounts:
         - name: clawdbot-home
           mountpath: /home
       containers:
