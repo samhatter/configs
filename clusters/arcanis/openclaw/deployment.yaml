@@ -21,10 +21,10 @@ spec:
         command: ["/bin/sh", "-c"]
         args:
           - >
-              rm -f /home/node/.openclaw/browser/openclaw/user-data/Singleton* || true
+            rm -f /home/node/.openclaw/browser/openclaw/user-data/Singleton* || true
         volumeMounts:
         - name: clawdbot-home
-          mountpath: /home
+          mountPath: /home
       containers:
       - name: openclaw
         image: ghcr.io/samhatter/openclaw:latest
