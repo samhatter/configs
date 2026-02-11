@@ -15,6 +15,10 @@ spec:
       labels:
         app: soulseek
     spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 100
+        fsGroup: 1000
       containers:
       - name: gluetun
         image: qmcgaw/gluetun:latest
