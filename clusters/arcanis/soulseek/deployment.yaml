@@ -15,10 +15,6 @@ spec:
       labels:
         app: soulseek
     spec:
-      securityContext:
-        runAsUser: 1000
-        runAsGroup: 100
-        fsGroup: 1000
       containers:
       - name: gluetun
         image: qmcgaw/gluetun:latest
@@ -92,6 +88,10 @@ spec:
           mountPath: /scripts
       - name: slskd
         image: ghcr.io/samhatter/slskd:latest
+        securityContext:
+            runAsUser: 1000
+            runAsGroup: 1000
+            allowPrivilegeEscalation: false
         env:
         - name: SLSKD_DOWNLOADS_DIR
           value: /media
