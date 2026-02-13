@@ -12,5 +12,6 @@
   home.packages = with pkgs; [
     xclip
     pciutils
+    beets
   ];
 }
