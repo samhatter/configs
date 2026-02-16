@@ -202,7 +202,7 @@ spec:
         - name: ARTIFACTS_PATH
           value: "/data/artifacts.pkl"
         - name: RECOMPUTE_ARTIFACTS_ON_START
-          value: true"
+          value: "true"
         - name: ARTIFACT_REFRESH_HOURS
           value: "24"
         - name: SLSKD_BASE_URL
