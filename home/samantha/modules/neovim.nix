@@ -35,7 +35,7 @@
     extraLuaConfig = ''
       -- Alejandra (Nix)
       vim.lsp.config("alejandra", {
-        cmd = { "alejandra", "--lsp" },
+        cmd = { "alejandra" },
         filetypes = { "nix" },
         root_markers = { "flake.nix", ".git" },
       })
