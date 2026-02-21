@@ -28,10 +28,6 @@ spec:
         - name: VERSION
           value: "docker"
         ports:
-        - containerPort: 32400
-          hostPort: 32400
-          name: http
-          protocol: TCP
         - containerPort: 32410
           hostPort: 32410
           name: gdm-1
