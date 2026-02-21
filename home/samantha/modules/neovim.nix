@@ -33,14 +33,21 @@
     '';
 
     extraLuaConfig = ''
-      -- Alejandra (Nix)
-      vim.lsp.config("alejandra", {
-        cmd = { "alejandra" },
+      -- Nil (Nix)
+      vim.lsp.config("nil_ls", {
+        cmd = { "nil" },
         filetypes = { "nix" },
         root_markers = { "flake.nix", ".git" },
+        settings = {
+          ['nil'] = {
+            formatting = {
+              command = { "alejandra" },
+            },
+          },
+        },
       })
 
-      vim.lsp.enable("alejandra")
+      vim.lsp.enable("nil_ls")
 
 
       -- Pyright (Python)
