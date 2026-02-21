@@ -27,6 +27,8 @@ spec:
           value: "Etc/UTC"
         - name: VERSION
           value: "docker"
+        - name: ADVERTISE_IP
+          value: "https://plex.samantha-home-server.net"
         ports:
         - containerPort: 32410
           hostPort: 32410
