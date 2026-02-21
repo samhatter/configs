@@ -21,6 +21,10 @@
       core = {
         editor = "nvim";
       };
+      
+      pull = {
+        rebase = true;
+      };
     };
   };
 }
