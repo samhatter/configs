@@ -20,6 +20,7 @@
 
       core = {
         editor = "nvim";
+        pager = "less -FRX"
       };
       
       pull = {
