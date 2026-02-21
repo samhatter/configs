@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: plex
-        image: linuxserver/plex:1.42.2
+        image: linuxserver/plex:latest
         env:
         - name: PUID
           value: "1000"
