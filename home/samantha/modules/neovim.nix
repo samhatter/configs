@@ -9,6 +9,7 @@
       gruvbox
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
+      copilot-vim
     ];
 
     extraPackages = with pkgs; [
@@ -29,6 +30,11 @@
       colorscheme gruvbox
       syntax on
       filetype plugin indent on
+
+      " Copilot setup
+      let g:copilot_no_tab_map = v:true
+      imap <silent><script><expr> <C-j> copilot#Accept("\<CR>")
+      nnoremap <leader>cp :Copilot panel<CR>
     '';
 
     extraLuaConfig = ''
