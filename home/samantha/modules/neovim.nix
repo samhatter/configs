@@ -9,8 +9,6 @@
       gruvbox
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
-      copilot-vim
-      CopilotChat-nvim
     ];
 
     extraPackages = with pkgs; [
@@ -32,8 +30,6 @@
       syntax on
       filetype plugin indent on
 
-      " Copilot setup
-      nnoremap <leader>cp :Copilot panel<CR>
     '';
 
     extraLuaConfig = ''
@@ -110,17 +106,6 @@
           enable = true,
         },
       }
-
-      -- Copilot Chat
-      require("CopilotChat").setup()
-
-      vim.keymap.set("n", "<leader>cc", function()
-        require("CopilotChat").toggle()
-      end, { desc = "CopilotChat: toggle chat" })
-
-      vim.keymap.set("v", "<leader>ce", function()
-        require("CopilotChat").toggle({ selection = true })
-      end, { desc = "CopilotChat: chat about selection" })
 
       -- LSP keymaps
       vim.api.nvim_create_autocmd("LspAttach", {
