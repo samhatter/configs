@@ -23,7 +23,6 @@
       set shiftwidth=2    " spaces per indent
       set expandtab       " convert tabs to spaces
       set smartindent     " auto-indent new lines
-      set clipboard+=unnamedplus " use system clipboard
       set cursorline      " highlight current line
       set termguicolors   " 24-bit colors
       set background=dark
