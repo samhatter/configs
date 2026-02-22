@@ -30,6 +30,9 @@
       syntax on
       filetype plugin indent on
 
+      " File explorer
+      nnoremap <leader>e :Explore<CR>
+
     '';
 
     extraLuaConfig = ''
