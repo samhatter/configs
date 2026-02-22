@@ -23,24 +23,34 @@
       set shiftwidth=2    " spaces per indent
       set expandtab       " convert tabs to spaces
       set smartindent     " auto-indent new lines
-      set clipboard+=unnamedplus " use system clipboard
       set cursorline      " highlight current line
       set termguicolors   " 24-bit colors
       set background=dark
       colorscheme gruvbox
       syntax on
       filetype plugin indent on
+
+      " File explorer
+      nnoremap <leader>e :Explore<CR>
+
     '';
 
     extraLuaConfig = ''
-      -- Alejandra (Nix)
-      vim.lsp.config("alejandra", {
-        cmd = { "alejandra", "--lsp" },
+      -- Nil (Nix)
+      vim.lsp.config("nil_ls", {
+        cmd = { "nil" },
         filetypes = { "nix" },
         root_markers = { "flake.nix", ".git" },
+        settings = {
+          ['nil'] = {
+            formatting = {
+              command = { "alejandra" },
+            },
+          },
+        },
       })
 
-      vim.lsp.enable("alejandra")
+      vim.lsp.enable("nil_ls")
 
 
       -- Pyright (Python)
@@ -100,10 +110,21 @@
         },
       }
 
-      -- Keymaps
-      vim.keymap.set("n", "<leader>f", function()
-          vim.lsp.buf.format({ async = true })
-      end, { desc = "Format file with LSP" })
+      -- LSP keymaps
+      vim.api.nvim_create_autocmd("LspAttach", {
+        callback = function(event)
+          local opts = { buffer = event.buf }
+
+          vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+          vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+          vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+          vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+          vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+          vim.keymap.set("n", "<leader>f", function()
+            vim.lsp.buf.format({ async = true })
+          end, opts)
+        end,
+      })
     '';
   };
 }
