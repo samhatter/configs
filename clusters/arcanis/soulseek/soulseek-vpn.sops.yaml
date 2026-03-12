@@ -8,7 +8,7 @@ stringData:
     vpn-service-provider: ENC[AES256_GCM,data:TgItrABTmXNW,iv:Nz2fLldd3tgHgLy3sArbzNHcOvZ4eYC0SuRiwQps3Jw=,tag:XhdmjusXSH1VsoTgAXapYQ==,type:str]
     vpn-port-forwarding-provider: ENC[AES256_GCM,data:b2C4CQoi7VGT,iv:pk3SfYyPWapMZUw0Ncn4Qv1mbvmtN3W18E+e8Ti3Qdo=,tag:jQM/MhMYoT9OnGWu0WOKpg==,type:str]
     slskd-username: ENC[AES256_GCM,data:E91IcwYNDqY=,iv:+sfYOy5glA2/nfSsk7zzO2c16rdw4ieza2n/37yqGQo=,tag:ZWUxrCVUDgFFTNkhTcV2bw==,type:str]
-    slsd-password: ENC[AES256_GCM,data:mXd3WgiAuRG8mTg=,iv:+TYrry+2g3f8mm9rQ3Aeu88dT9ERMErcb3kGju2DeSQ=,tag:uEsJKxRG9UwCuq77hH8t6A==,type:str]
+    slskd-password: ENC[AES256_GCM,data:dkm4TjDLwROr80o=,iv:82uAFgemMvPYrxCYJjKn/fiU+OPBWxn3+Cn27Yn/jWs=,tag:Ijq4chY0X4HYBCSvTToD/w==,type:str]
     slskd-host: ENC[AES256_GCM,data:tb9j+cUVBXidaObGBce4OE1tZRS8HjNv0+GyRFA+o3YSCIdBCW1barg=,iv:rdLaxL6/tHfAfyzaJz2gEIFCLGbnDMGZgfEPCTyQU40=,tag:4IhjjYIoqd7Nt5QramTtbg==,type:str]
     wireguard-public-key: ENC[AES256_GCM,data:ZooRFXjQHMc/Hl+Ld9D6pAW/hEZmCeV9UOt3G8XcJ0EnATbh55sSHut8krA=,iv:29l8R3hbbvYjkuGnfNO6FEAT3kqUP2Nli8UyEYlb6io=,tag:VTPR25EwsMhltlDZB6UWDg==,type:str]
     wireguard-private-key: ENC[AES256_GCM,data:OSbwMPvJtWXaZhA42qv60e84+9pK222GtCT9iMINHIyooyYALUDyYl6k2ag=,iv:9LBzDBv/MGdQQQHrVxGPstpt4dANIqNL94BBJmx0fZ4=,tag:stQBTlDiVslekrKtpLJVmw==,type:str]
@@ -24,7 +24,7 @@ sops:
             MG51OHJvSE1heG5zcll6T1hqaGcxTTgKDRopNJAIdcWdraMnlPgahOQkB327jNXJ
             JwR8w7x8apdz/k/sP2fDH8O3Rlu8XBPT3gYIcuDzAycgL2LMi6qZtg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2026-03-12T00:52:03Z"
-    mac: ENC[AES256_GCM,data:FIdp/TJ1PBA4hl2jjZ+8hDc9sib6kwlWUCwz2wgKZo5WJOhG9FckK4B4RARY6tpGvTeFKS/VxobKSAvOMYNs4Kp4o/rEH1HZldgsTIOUxvWhdoFA50mEFR4h7nwNsr5nOIre7KRD2g/N8iSPDx0fVsGAUk8xOEqNoDLOD5TEtAc=,iv:blEyNEkRfuWLvB+9eKcIzdZFsu4fEB4WB+FvwD0g1UQ=,tag:Ob5cBxbOz1VgDSZiTbHg/w==,type:str]
+    lastmodified: "2026-03-12T01:33:09Z"
+    mac: ENC[AES256_GCM,data:3Ld9fvRAADM7FmWshIZdhLeddferDSdjXOE6Cs4IAY05CLuiFGu32NO1CL20ey0gX9m7yhHy+MVoLZGGWvSW7rTHjTse2MO4C/c5sSGCxsS1jb0HemSabav6HfViPSG78H7CpiteAqhivTXVVv6NDVljP3WKYlFbR6d88r0uYno=,iv:MyvQYgYQdCIitPTa9th4Bs0Qa58ZQywpEOwDE7sB+fE=,tag:PkCQ/1jua/ZwfTTsDzToIA==,type:str]
     encrypted_regex: ^(data|stringData)$
     version: 3.11.0
