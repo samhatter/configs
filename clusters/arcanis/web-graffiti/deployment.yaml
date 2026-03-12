@@ -33,13 +33,14 @@ spec:
           value: "UTC/UTC"
         - name: VPN_TYPE
           value: "wireguard"
-        - name: WIREGUARD_PUBLIC_KEY
         - name: WIREGUARD_ADDRESSES
           value: "10.2.0.2/32"
         - name: WIREGUARD_PERSISTENT_KEEPALIVE
           value: "25"
         - name: LOG_LEVEL
           value: "info"
+        - name: VPN_INTERFACE_MTU
+          value: "1420"
         - name: VPN_SERVICE_PROVIDER
           valueFrom:
             secretKeyRef:
@@ -50,8 +51,7 @@ spec:
           secretKeyRef:
             name: web-graffiti-vpn
             key: vpn-port-forwarding-provider
-        - name: VPN_INTERFACE_MTU
-          value: "1420"
+        - name: WIREGUARD_PUBLIC_KEY
           valueFrom:
             secretKeyRef:
               name: web-graffiti-vpn
