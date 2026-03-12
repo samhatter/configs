@@ -26,14 +26,14 @@ spec:
         - name: VPN_SERVICE_PROVIDER
           valueFrom:
             secretKeyRef:
-              name: soulseek-vpn
+              name: web-graffiti-vpn
               key: vpn-service-provider
         - name: VPN_PORT_FORWARDING
           value: "on"
         - name: VPN_PORT_FORWARDING_PROVIDER
           valueFrom:
           secretKeyRef:
-            name: soulseek-vpn
+            name: web-graffiti-vpn
             key: vpn-port-forwarding-provider
         - name: VPN_PORT_FORWARDING_STATUS_FILE
           value: "/gluetun/forwarded_port"
