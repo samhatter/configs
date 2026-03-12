@@ -23,18 +23,8 @@ spec:
             add:
             - NET_ADMIN
         env:
-        - name: VPN_SERVICE_PROVIDER
-          valueFrom:
-            secretKeyRef:
-              name: soulseek-vpn
-              key: vpn-service-provider
         - name: VPN_PORT_FORWARDING
           value: "on"
-        - name: VPN_PORT_FORWARDING_PROVIDER
-          valueFrom:
-          secretKeyRef:
-            name: soulseek-vpn
-            key: vpn-port-forwarding-provider
         - name: VPN_PORT_FORWARDING_STATUS_FILE
           value: "/gluetun/forwarded_port"
         - name: VPN_PORT_FORWARDING_UP_COMMAND
@@ -43,6 +33,24 @@ spec:
           value: "UTC/UTC"
         - name: VPN_TYPE
           value: "wireguard"
+        - name: WIREGUARD_ADDRESSES
+          value: "10.2.0.2/32"
+        - name: WIREGUARD_PERSISTENT_KEEPALIVE
+          value: "25"
+        - name: LOG_LEVEL
+          value: "info"
+        - name: VPN_INTERFACE_MTU
+          value: "1420"
+        - name: VPN_PORT_FORWARDING_PROVIDER
+          valueFrom:
+          secretKeyRef:
+            name: soulseek-vpn
+            key: vpn-port-forwarding-provider
+        - name: VPN_SERVICE_PROVIDER
+          valueFrom:
+            secretKeyRef:
+              name: soulseek-vpn
+              key: vpn-service-provider
         - name: WIREGUARD_PUBLIC_KEY
           valueFrom:
             secretKeyRef:
@@ -73,14 +81,6 @@ spec:
             secretKeyRef:
               name: soulseek-vpn
               key: slskd-host
-        - name: WIREGUARD_ADDRESSES
-          value: "10.2.0.2/32"
-        - name: WIREGUARD_PERSISTENT_KEEPALIVE
-          value: "25"
-        - name: LOG_LEVEL
-          value: "info"
-        - name: VPN_INTERFACE_MTU
-          value: "1420"
         ports:
         - containerPort: 2048
           name: slskd
