@@ -7,8 +7,9 @@ type: Opaque
 stringData:
     vpn-service-provider: ENC[AES256_GCM,data:TgItrABTmXNW,iv:Nz2fLldd3tgHgLy3sArbzNHcOvZ4eYC0SuRiwQps3Jw=,tag:XhdmjusXSH1VsoTgAXapYQ==,type:str]
     vpn-port-forwarding-provider: ENC[AES256_GCM,data:b2C4CQoi7VGT,iv:pk3SfYyPWapMZUw0Ncn4Qv1mbvmtN3W18E+e8Ti3Qdo=,tag:jQM/MhMYoT9OnGWu0WOKpg==,type:str]
-    vpn-port-forwarding-status-file: ENC[AES256_GCM,data:d3M1f5jO5gRgbaPqYhRp5UsoM3eJaqU=,iv:Jbz3KVYAIhlyxe58ZHO+zt1iDh//1CnQphq1tBB/PpI=,tag:bchVoQcn0klIc83wZqyqIg==,type:str]
-    vpn-port-forwarding-up-command: ENC[AES256_GCM,data:Zwb0IDAye+HRzg/ZEc6FnccfZQTPVGVcZuOi9qU/ECG+,iv:3jVJS1bslgLl3DRS2qyBmL2zr+enFlsXpoPJlhUMHsc=,tag:bASyuc0dSEow0yYNWE3X+A==,type:str]
+    slskd-username: ENC[AES256_GCM,data:E91IcwYNDqY=,iv:+sfYOy5glA2/nfSsk7zzO2c16rdw4ieza2n/37yqGQo=,tag:ZWUxrCVUDgFFTNkhTcV2bw==,type:str]
+    slsd-password: ENC[AES256_GCM,data:mXd3WgiAuRG8mTg=,iv:+TYrry+2g3f8mm9rQ3Aeu88dT9ERMErcb3kGju2DeSQ=,tag:uEsJKxRG9UwCuq77hH8t6A==,type:str]
+    slskd-host: ENC[AES256_GCM,data:tb9j+cUVBXidaObGBce4OE1tZRS8HjNv0+GyRFA+o3YSCIdBCW1barg=,iv:rdLaxL6/tHfAfyzaJz2gEIFCLGbnDMGZgfEPCTyQU40=,tag:4IhjjYIoqd7Nt5QramTtbg==,type:str]
     vpn-type: ENC[AES256_GCM,data:VAmXujWCeq3N,iv:3GIaLbwjUgH6E0OXZI3xE/hoQbdCuZ+DC01TBWIzL/k=,tag:MM720yk1xAXoj1N6B5R75g==,type:str]
     wireguard-public-key: ENC[AES256_GCM,data:ZooRFXjQHMc/Hl+Ld9D6pAW/hEZmCeV9UOt3G8XcJ0EnATbh55sSHut8krA=,iv:29l8R3hbbvYjkuGnfNO6FEAT3kqUP2Nli8UyEYlb6io=,tag:VTPR25EwsMhltlDZB6UWDg==,type:str]
     wireguard-private-key: ENC[AES256_GCM,data:OSbwMPvJtWXaZhA42qv60e84+9pK222GtCT9iMINHIyooyYALUDyYl6k2ag=,iv:9LBzDBv/MGdQQQHrVxGPstpt4dANIqNL94BBJmx0fZ4=,tag:stQBTlDiVslekrKtpLJVmw==,type:str]
@@ -25,7 +26,7 @@ sops:
             MG51OHJvSE1heG5zcll6T1hqaGcxTTgKDRopNJAIdcWdraMnlPgahOQkB327jNXJ
             JwR8w7x8apdz/k/sP2fDH8O3Rlu8XBPT3gYIcuDzAycgL2LMi6qZtg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2026-01-26T07:09:04Z"
-    mac: ENC[AES256_GCM,data:5RpmofqwyXjpeA8J68yLOOpH+190llqoEITNfIHAhauVr5wtMeY3z0afgtEIjNkCnClF1rmK0QoJ7R/v5nlVgibZkWHQe4oo5Mce46J7DSuJFDpXY2LE2n6ctcXnHItTEF3XhWVjxeqYcsHi70wPprOU3Xjc5ta8WPVzUfgkk34=,iv:Y3CEZ6JjFA8Ld83cZ2s/773hLM6Allch5pxeTSN1D+o=,tag:K7mlmGVoMl0wUdiDpiEmwA==,type:str]
+    lastmodified: "2026-03-12T00:40:16Z"
+    mac: ENC[AES256_GCM,data:qgyqs96xdlulcSTp8jjrqZhh730OHn/n9b3s1h261OgJ6W6RftcDxPiPwRY0WsZfLeBYyWpaaCR0YfWz135fbGXWjPm0IaXoEg2SVm+VDgKhT7ff73G9miaoHbu9tx5vEBuVx5Qd7kENLZACcD2+QMgiSkbGAXwVIcYxcRP3Un4=,iv:wwdDr2dCP5gRv/J/cC1iboh/J5l9naN4N/ru05E04tA=,tag:qEiASBEDkwI9wTL6Vwgacg==,type:str]
     encrypted_regex: ^(data|stringData)$
     version: 3.11.0

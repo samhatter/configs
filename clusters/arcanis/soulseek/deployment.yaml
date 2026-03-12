@@ -32,26 +32,17 @@ spec:
           value: "on"
         - name: VPN_PORT_FORWARDING_PROVIDER
           valueFrom:
-            secretKeyRef:
-              name: soulseek-vpn
-              key: vpn-port-forwarding-provider
+          secretKeyRef:
+            name: soulseek-vpn
+            key: vpn-port-forwarding-provider
         - name: VPN_PORT_FORWARDING_STATUS_FILE
-          valueFrom:
-            secretKeyRef:
-              name: soulseek-vpn
-              key: vpn-port-forwarding-status-file
+          value: "/gluetun/forwarded_port"
         - name: VPN_PORT_FORWARDING_UP_COMMAND
-          valueFrom:
-            secretKeyRef:
-              name: soulseek-vpn
-              key: vpn-port-forwarding-up-command
+          value: "/scripts/update-port.sh {{PORTS}}"
         - name: TZ
           value: "UTC/UTC"
         - name: VPN_TYPE
-          valueFrom:
-            secretKeyRef:
-              name: soulseek-vpn
-              key: vpn-type
+          value: "wireguard"
         - name: WIREGUARD_PUBLIC_KEY
           valueFrom:
             secretKeyRef:
@@ -62,22 +53,34 @@ spec:
             secretKeyRef:
               name: soulseek-vpn
               key: wireguard-private-key
-        - name: WIREGUARD_ADDRESSES
-          valueFrom:
-            secretKeyRef:
-              name: soulseek-vpn
-              key: wireguard-addresses
-        - name: WIREGUARD_PERSISTENT_KEEPALIVE
-          value: "25"
-        - name: LOG_LEVEL
-          value: "info"
-        - name: VPN_INTERFACE_MTU
-          value: "1280"
         - name: SERVER_CITIES
           valueFrom:
             secretKeyRef:
               name: soulseek-vpn
               key: server-cities
+        - name: SLSKD_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: soulseek-vpn
+              key: slskd-username
+        - name: SLSKD_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: soulseek-vpn
+              key: slskd-password
+        - name: SLSKD_HOST
+          valueFrom:
+            secretKeyRef:
+              name: soulseek-vpn
+              key: slskd-host
+        - name: WIREGUARD_ADDRESSES
+          value: "10.2.0.2/32"
+        - name: WIREGUARD_PERSISTENT_KEEPALIVE
+          value: "25"
+        - name: LOG_LEVEL
+          value: "info"
+        - name: VPN_INTERFACE_MTU
+          value: "1420"
         ports:
         - containerPort: 2048
           name: slskd
