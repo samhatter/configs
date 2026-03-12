@@ -47,6 +47,11 @@ spec:
               key: vpn-port-forwarding-up-command
         - name: TZ
           value: "UTC/UTC"
+        - name: SLSKD_HOST
+          valueFrom:
+            secretKeyRef:
+              name: soulseek-vpn
+              key: slskd-host
         - name: VPN_TYPE
           valueFrom:
             secretKeyRef:
@@ -105,6 +110,11 @@ spec:
           value: "true"
         - name: SLSKD_HTTP_PORT
           value: "2048"
+        - name: SLSKD_HOST
+          valueFrom:
+            secretKeyRef:
+              name: soulseek-config
+              key: slskd-host
         - name: SECRET_MESSAGE
           valueFrom:
             secretKeyRef:
