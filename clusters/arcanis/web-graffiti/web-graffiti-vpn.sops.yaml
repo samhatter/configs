@@ -12,7 +12,7 @@ stringData:
     server-cities: ENC[AES256_GCM,data:7AFQJAN82Qo=,iv:DG9IlqWgSKT+2+FGO1INpPexgkGQHy94xg0GCRmgPbQ=,tag:i3QhHDkHF9vySx32nPb8XA==,type:str]
     slskd-password: ENC[AES256_GCM,data:vmuWPuCb+AtSPIw=,iv:uBzSZ1l6vA7MrWKXZoidl04R88fBiUW0UncsNifkQS0=,tag:x4L4yalYeqPRQV8tH9VFyw==,type:str]
     slskd-username: ENC[AES256_GCM,data:dg7NjRW6IU8=,iv:sh7EDl5u9DEaIHv82BMBpCruoCXaRESGg8YFBfHDGEQ=,tag:GiUUWFltjRJITDbbXHm4jg==,type:str]
-    slskd-host: ENC[AES256_GCM,data:roJ1D+7/rX/iwc/G4GYThIqYM2oxiRuazpV1Ja3QFgBPVPPgiQ==,iv:BT3vnL9BZPn5+L3nmSqDYuB2rV8zulnCPDRSHQGctpg=,tag:IDbPFYG5BK23OLHo87RQMA==,type:str]
+    slskd-host: ENC[AES256_GCM,data:hwJ9ZvZW0fL+baM0OMNrhxbO0q93ggOeAP+rkI0ukkos0flJLUG007jU5Lth,iv:ttQAPvr+LkrWmGsFhipZA4e0aN1qNe5dRKxUpINlt6I=,tag:IsyKnybLO6I6so0LP7buvA==,type:str]
 sops:
     age:
         - recipient: age1n7m4qddze6jmky0zzgasxr2fsea25t4ejppzv0flftsuzhrytgaqm49c2d
@@ -24,7 +24,7 @@ sops:
             Z1lqUHZ2SXhvNWJKZGNaMlhaVGxTMncKTFzQJ//Xl9KXV7e5dPOPYyQ25XHh39gS
             1J4y0sbCis3w3Ceq3iBrME+gvJzD4ZsjumrOL01OOcpbxdW508cyfA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2026-03-12T00:52:06Z"
-    mac: ENC[AES256_GCM,data:2PIKn/6gp0oRT5u0aFPvGV8Parhb9KQmvZnFrInjorGzsNMoKO5ZXx41oB08fvTVZ/QOUFPlSNRDKwTwi3N/OyGzSsD/Dft9LbdQUOJrGgK95QFC94QqDK+hZGGr0NVunbdFCyNbZT0dipDPs+z77LXdXj78h4cpf68NYrpWNMo=,iv:W1ezj66XkxIBpuo/VWUBXuVh+Q8nI03pgZ/O7pFFysw=,tag:7EfmpJJY/EaDHfdQ88q+FQ==,type:str]
+    lastmodified: "2026-03-12T01:18:56Z"
+    mac: ENC[AES256_GCM,data:868MlkjURx/Zcjd7lYFRdPWQkJjHOE8xFy9aAqUpRkCDN0eQ2sncNft3IjiwT2eix1wQVK+6BbW3WDAhJYKF2HiwbOWmKjk4r5RuhMRTp14N9x0Mw49uWg9zSOokS9eOMDr4L4Bicrjkrjhsx7s7MqI0dcSnOX0+5a/pCm71fwM=,iv:F/HYh31hrUIZYQ051Vg+li4p/pnlzMvAHWqIA79ReC4=,tag:QwXkwZw+eitsyLGJ89YKxA==,type:str]
     encrypted_regex: ^(data|stringData)$
     version: 3.11.0
