@@ -50,8 +50,6 @@ spec:
           value: "25"
         - name: LOG_LEVEL
           value: "info"
-        - name: VPN_INTERFACE_MTU
-          value: "1280"
         ports:
         volumeMounts:
         - name: gluetun
