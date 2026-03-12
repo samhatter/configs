@@ -43,9 +43,9 @@ spec:
           value: "1420"
         - name: VPN_PORT_FORWARDING_PROVIDER
           valueFrom:
-          secretKeyRef:
-            name: soulseek-vpn
-            key: vpn-port-forwarding-provider
+            secretKeyRef:
+              name: soulseek-vpn
+              key: vpn-port-forwarding-provider
         - name: VPN_SERVICE_PROVIDER
           valueFrom:
             secretKeyRef:
