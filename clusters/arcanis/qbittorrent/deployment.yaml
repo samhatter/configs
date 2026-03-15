@@ -87,9 +87,6 @@ spec:
           value: "100"
         - name: WEBUI_PORT
           value: "80"
-        ports:
-        - containerPort: 80
-          name: webui
         volumeMounts:
         - name: config
           mountPath: /config
