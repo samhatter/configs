@@ -4,6 +4,7 @@
     allowedTCPPorts = [
       # Exposed through NAT
       200 # Obfuscated SSH
+      2022 # SFTPGo SFTP
       80 # HTTP
       443 # HTTPS
       32400 # Plex
