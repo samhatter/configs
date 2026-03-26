@@ -61,6 +61,9 @@ spec:
           mountPath: /srv/sftpgo
         - name: home
           mountPath: /var/lib/sftpgo
+        - name: media
+          mountPath: /mnt/media
+          readOnly: false
         livenessProbe:
           httpGet:
             path: /healthz
@@ -84,3 +87,7 @@ spec:
         hostPath:
           path: /storage/appdata/sftpgo/home
           type: DirectoryOrCreate
+      - name: media
+        hostPath:
+          path: /storage/media
+          type: Directory

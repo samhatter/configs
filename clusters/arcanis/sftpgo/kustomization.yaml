@@ -5,4 +5,4 @@ resources:
   - deployment.yaml
   - service.yaml
   - ingress.yaml
-  # Add sftpgo-secrets.sops.yaml here after creating it from the example file.
+  - sftpgo-secrets.sops.yaml
