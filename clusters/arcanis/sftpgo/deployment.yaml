@@ -63,7 +63,7 @@ spec:
           mountPath: /var/lib/sftpgo
         - name: media
           mountPath: /mnt/media
-          readOnly: false
+          readOnly: true
         livenessProbe:
           httpGet:
             path: /healthz
