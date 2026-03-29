@@ -27,7 +27,7 @@ spec:
           mountPath: /home
       containers:
       - name: openclaw
-        image: ghcr.io/samhatter/openclaw:latest
+        image: ghcr.io/samhatter/openclaw:2026.3.28-fork-4a1fc5c6be0c
         command: ["node"]
         args: ["dist/index.js", "gateway", "--bind", "lan", "--port", "18789"]
         env:
