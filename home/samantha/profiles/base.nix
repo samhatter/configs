@@ -11,6 +11,7 @@
 
   home.packages = with pkgs; [
     nodejs
+    pnpm
     xclip
     pciutils
     beets
