@@ -6,10 +6,8 @@ metadata:
 type: Opaque
 stringData:
     vpn-service-provider: ENC[AES256_GCM,data:cHSNDhYf/bpX,iv:PXNvRKu54QY/l9thKlZemFoMUdFq8jLGaO3XoBebTLs=,tag:/pUVer19eWFocetA2bhG3g==,type:str]
-    vpn-type: ENC[AES256_GCM,data:ZToM1h7kr5Fb,iv:wezlV9gzbOlnijQkWrEEgjB3PnzO/5cDBTBIFQjcsKo=,tag:8vcNk1JG6QIUQtgQjjcLow==,type:str]
     wireguard-public-key: ENC[AES256_GCM,data:mxjuXsXAfgUPFPryEWEFNbBwAlTOZsrJ6YcJ6D3fUXMp4euvOFpJXC8bU/g=,iv:px5qbymDDzHyPnEk65M9jWIQXyyJaFeohcpP0rwup9o=,tag:DRV5YM/iARSYk+TltBToyQ==,type:str]
     wireguard-private-key: ENC[AES256_GCM,data:2ScC/NQuTGkX0GQmpO5jCktSgzDE9DiUNWlmnaq69d1fgE39OwN9ueV1TVI=,iv:8Bb59i8ga5svze5M4fURKNwJhWYeKcNg5LFTtqQvwhg=,tag:PvZFU6/vwRR7VYAqVy74mw==,type:str]
-    wireguard-addresses: ENC[AES256_GCM,data:MGMNCq2k46D9XQs=,iv:0P7yfXV3/waiLEGwOWWZHKv3nlmmS9k9TYqmyygKOYs=,tag:1uuYwabVOpYD3XW/xdT/7A==,type:str]
     server-cities: ENC[AES256_GCM,data:fBShprYerps=,iv:qAWOemjSdHAx5pBjlm3TNOCiwg94xXT3lD9Z5JqnXy8=,tag:8b9bFum/THYZRx2bpLYjuA==,type:str]
 sops:
     age:
@@ -22,7 +20,7 @@ sops:
             azNGUjBTaWhPRkhleUxWNmkrWkFTN0kK2jwAFIkGfVv77xQAg/CXk8c1VMh9FoOy
             GMcZTAxnYoPSpOHOmtUA6B7ARRXCcbppbj152crukOa12RXBRs08rA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2026-01-27T17:22:16Z"
-    mac: ENC[AES256_GCM,data:jI6zmA3vOiMpAC0tVXhHufgIDlb+hncXqVhDHsOdfOnvONEZWUCfQsS52tScCeSSpdT9vuvuIylqcmH1/WafHpUaxqtr7bJn71pHLQEEl2MopxIo36UVBe5vnLMmC89cZejam+KWox8fRbmq7gtV6RDUN+cqYO+rCecQbyd30G8=,iv:ZTDHqnfyz7Dz/DwoscKoyJswP5xJoXj4y+35Tb4KJi0=,tag:+OedD0aCfPspzySGCFFG6g==,type:str]
+    lastmodified: "2026-03-30T16:34:36Z"
+    mac: ENC[AES256_GCM,data:3U242M98vgAF7mlHQ2iPKdRH4kDZlKgun2oAKnTWZO22zXyGjQqJ7R74a+tZ1E5rlkI/YJlVP2BKOSOgqmfYtYsvBQ6djz7+oKj8QJ+8ezni09SaHXjx01IbjT52Ht25JOMlkmt81kkvSl3b5uinMQMzr5+d66MfoohIsjY3SCw=,iv:DUemLhUmOpoy8sUgCLWWSkNqd2nDOqBYKf9JvxOiB9Y=,tag:D9dGu17BvexAjDPEFAZOHQ==,type:str]
     encrypted_regex: ^(data|stringData)$
     version: 3.11.0
