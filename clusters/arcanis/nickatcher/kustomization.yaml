@@ -7,4 +7,3 @@ resources:
   - config.sops.yaml
   - deployment.yaml
   - service.yaml
-  - network-policy.yaml
