@@ -81,6 +81,11 @@ spec:
               secretKeyRef:
                 name: openclaw-secrets
                 key: RADARR_API_KEY
+        - name: PROWLARR_API_KEY
+          valueFrom:
+              secretKeyRef:
+                name: openclaw-secrets
+                key: PROWLARR_API_KEY
         volumeMounts:
         - name: clawdbot-home
           mountPath: /home
